@@ -1,0 +1,542 @@
+{
+  "generated": "2026-06-01",
+  "source": "wiki/products/packages-full-pricing.md",
+  "ssot_version": "v6",
+  "canonical": true,
+  "currency": "IDR",
+  "pricing_note": "All prices per person in IDR. Solo supplement (1-pax tier) only listed where available in SSOT. Bali-origin packages include Java-Bali ferry in base price.",
+  "packages": [
+    {
+      "id": "bromo-1d1n",
+      "name": "1D1N Bromo Midnight",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 1,
+      "duration_nights": 1,
+      "duration_iso": "P1D",
+      "ijen_relevant": false,
+      "health_screening_required": false,
+      "destinations": ["mount-bromo"],
+      "url": "/tours/from-surabaya/bromo-1d1n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 1550000},
+          {"pax_min": 3, "pax_max": 4, "per_person": 1400000},
+          {"pax_min": 5, "pax_max": 7, "per_person": 1250000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 1050000},
+          {"pax_min": 11, "pax_max": null, "per_person": 1000000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "bromo-2d1n",
+      "name": "2D1N Bromo Sunrise + Madakaripura",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 2,
+      "duration_nights": 1,
+      "duration_iso": "P2D",
+      "ijen_relevant": false,
+      "health_screening_required": false,
+      "destinations": ["mount-bromo", "madakaripura"],
+      "url": "/tours/from-surabaya/bromo-2d1n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 2800000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 2550000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 2350000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 2150000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 1950000},
+          {"pax_min": 11, "pax_max": null, "per_person": 1750000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "ijen-2d1n",
+      "name": "2D1N Ijen Blue Fire Expedition",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 2,
+      "duration_nights": 1,
+      "duration_iso": "P2D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["kawah-ijen"],
+      "url": "/tours/from-surabaya/ijen-2d1n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 2300000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 2200000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 2050000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 1850000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 1650000},
+          {"pax_min": 11, "pax_max": null, "per_person": 1550000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "ijen-bromo-madakaripura-3d2n",
+      "name": "3D2N Ijen + Bromo + Madakaripura (Surabaya–Surabaya)",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 3,
+      "duration_nights": 2,
+      "duration_iso": "P3D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["kawah-ijen", "mount-bromo", "madakaripura"],
+      "url": "/tours/from-surabaya/ijen-bromo-madakaripura-3d2n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 3570000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 3275000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3050000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 2850000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 2550000},
+          {"pax_min": 11, "pax_max": null, "per_person": 2450000}
+        ],
+        "solo_supplement": 6300000
+      }
+    },
+    {
+      "id": "bromo-madakaripura-ijen-3d2n",
+      "name": "3D2N Bromo + Madakaripura + Ijen (Surabaya–Bali overland)",
+      "origin": "Surabaya",
+      "destination_end": "Bali",
+      "duration_days": 3,
+      "duration_nights": 2,
+      "duration_iso": "P3D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["mount-bromo", "madakaripura", "kawah-ijen"],
+      "url": "/tours/from-surabaya/bromo-madakaripura-ijen-3d2n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 3570000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 3275000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3050000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 2850000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 2550000},
+          {"pax_min": 11, "pax_max": null, "per_person": 2450000}
+        ],
+        "solo_supplement": 6300000
+      }
+    },
+    {
+      "id": "ijen-bromo-madakaripura-4d3n",
+      "name": "4D3N Ijen + Bromo + Madakaripura Expedition (Surabaya–Surabaya)",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 4,
+      "duration_nights": 3,
+      "duration_iso": "P4D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["kawah-ijen", "mount-bromo", "madakaripura"],
+      "url": "/tours/from-surabaya/ijen-bromo-madakaripura-4d3n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4450000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 4250000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3950000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3650000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3175000},
+          {"pax_min": 11, "pax_max": null, "per_person": 3025000}
+        ],
+        "solo_supplement": 7550000
+      }
+    },
+    {
+      "id": "ijen-papuma-tumpak-sewu-bromo-4d3n",
+      "name": "4D3N Ijen + Papuma + Tumpak Sewu + Bromo (Surabaya–Surabaya)",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 4,
+      "duration_nights": 3,
+      "duration_iso": "P4D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["kawah-ijen", "papuma-beach", "tumpak-sewu", "mount-bromo"],
+      "url": "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-4d3n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4550000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 4350000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 4050000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3750000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3275000},
+          {"pax_min": 11, "pax_max": null, "per_person": 3125000}
+        ],
+        "solo_supplement": 8050000
+      }
+    },
+    {
+      "id": "tumpak-sewu-bromo-ijen-4d3n",
+      "name": "4D3N Tumpak Sewu + Bromo + Ijen (Surabaya–Bali overland)",
+      "origin": "Surabaya",
+      "destination_end": "Bali",
+      "duration_days": 4,
+      "duration_nights": 3,
+      "duration_iso": "P4D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["tumpak-sewu", "mount-bromo", "kawah-ijen"],
+      "url": "/tours/from-surabaya/tumpak-sewu-bromo-ijen-4d3n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4550000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 4350000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 4050000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3750000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3275000},
+          {"pax_min": 11, "pax_max": null, "per_person": 3125000}
+        ],
+        "solo_supplement": 8050000
+      }
+    },
+    {
+      "id": "ijen-papuma-tumpak-sewu-bromo-5d4n",
+      "name": "5D4N Full East Java Circuit (Surabaya–Surabaya)",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 5,
+      "duration_nights": 4,
+      "duration_iso": "P5D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["kawah-ijen", "papuma-beach", "tumpak-sewu", "mount-bromo"],
+      "url": "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-5d4n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 5050000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 4850000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 4550000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 4250000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3850000},
+          {"pax_min": 11, "pax_max": null, "per_person": 3650000}
+        ],
+        "solo_supplement": 9050000
+      }
+    },
+    {
+      "id": "ijen-bromo-madakaripura-malang-5d4n",
+      "name": "5D4N Ijen + Bromo + Madakaripura + Malang (Surabaya–Surabaya)",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 5,
+      "duration_nights": 4,
+      "duration_iso": "P5D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["kawah-ijen", "mount-bromo", "madakaripura", "malang"],
+      "url": "/tours/from-surabaya/ijen-bromo-madakaripura-malang-5d4n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 5250000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 5050000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 4750000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 4450000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 4050000},
+          {"pax_min": 11, "pax_max": null, "per_person": 3850000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
+      "name": "6D5N Grand East Java (Surabaya–Surabaya)",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 6,
+      "duration_nights": 5,
+      "duration_iso": "P6D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "destinations": ["kawah-ijen", "papuma-beach", "tumpak-sewu", "mount-bromo", "malang"],
+      "url": "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 6050000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 5750000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 5550000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 5250000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 4950000},
+          {"pax_min": 11, "pax_max": null, "per_person": 4750000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "bali-bromo-ijen-3d2n",
+      "name": "3D2N Bromo + Ijen (Bali–Bali)",
+      "origin": "Bali",
+      "destination_end": "Bali",
+      "duration_days": 3,
+      "duration_nights": 2,
+      "duration_iso": "P3D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "ferry_included": true,
+      "destinations": ["mount-bromo", "kawah-ijen"],
+      "url": "/tours/from-bali/bromo-ijen-3d2n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4050000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 3800000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3550000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3350000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3050000},
+          {"pax_min": 11, "pax_max": null, "per_person": 2850000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "bali-ijen-bromo-madakaripura-3d2n",
+      "name": "3D2N Ijen + Bromo + Madakaripura (Bali–Surabaya)",
+      "origin": "Bali",
+      "destination_end": "Surabaya",
+      "duration_days": 3,
+      "duration_nights": 2,
+      "duration_iso": "P3D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "ferry_included": true,
+      "destinations": ["kawah-ijen", "mount-bromo", "madakaripura"],
+      "url": "/tours/from-bali/ijen-bromo-madakaripura-3d2n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4050000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 3800000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3550000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3350000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3050000},
+          {"pax_min": 11, "pax_max": null, "per_person": 2850000}
+        ],
+        "solo_supplement": 7500000
+      }
+    },
+    {
+      "id": "bali-ijen-papuma-tumpak-sewu-bromo-4d3n",
+      "name": "4D3N Full Circuit (Bali–Surabaya)",
+      "origin": "Bali",
+      "destination_end": "Surabaya",
+      "duration_days": 4,
+      "duration_nights": 3,
+      "duration_iso": "P4D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "ferry_included": true,
+      "destinations": ["kawah-ijen", "papuma-beach", "tumpak-sewu", "mount-bromo"],
+      "url": "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4900000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 4700000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 4400000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 4100000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3625000},
+          {"pax_min": 11, "pax_max": null, "per_person": 3475000}
+        ],
+        "solo_supplement": 9050000
+      }
+    },
+    {
+      "id": "bali-ijen-papuma-tumpak-sewu-bromo-5d4n",
+      "name": "5D4N Full Circuit Extended (Bali–Surabaya)",
+      "origin": "Bali",
+      "destination_end": "Surabaya",
+      "duration_days": 5,
+      "duration_nights": 4,
+      "duration_iso": "P5D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "ferry_included": true,
+      "destinations": ["kawah-ijen", "papuma-beach", "tumpak-sewu", "mount-bromo"],
+      "url": "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-5d4n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 5450000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 5250000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 4950000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 4650000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 4250000},
+          {"pax_min": 11, "pax_max": null, "per_person": 4050000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "student-bromo-ijen-3d2n",
+      "name": "Student: 3D2N Bromo + Ijen (Surabaya–Surabaya)",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 3,
+      "duration_nights": 2,
+      "duration_iso": "P3D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "isic_required": true,
+      "url": "/tours/student-package/bromo-ijen-3d2n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 3050000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 2850000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 2650000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 2450000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 2250000},
+          {"pax_min": 11, "pax_max": null, "per_person": 2050000}
+        ],
+        "solo_supplement": 5400000
+      }
+    },
+    {
+      "id": "student-bromo-ijen-3d2n-to-bali",
+      "name": "Student: 3D2N Bromo + Ijen to Bali (Surabaya–Bali)",
+      "origin": "Surabaya",
+      "destination_end": "Bali",
+      "duration_days": 3,
+      "duration_nights": 2,
+      "duration_iso": "P3D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "isic_required": true,
+      "url": "/tours/student-package/bromo-ijen-3d2n-to-bali",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 3050000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 2850000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 2650000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 2450000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 2250000},
+          {"pax_min": 11, "pax_max": null, "per_person": 2050000}
+        ],
+        "solo_supplement": 5400000
+      }
+    },
+    {
+      "id": "student-ijen-bromo-3d2n-bali",
+      "name": "Student: 3D2N Ijen + Bromo (Bali origin)",
+      "origin": "Bali",
+      "destination_end": "Surabaya",
+      "duration_days": 3,
+      "duration_nights": 2,
+      "duration_iso": "P3D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "isic_required": true,
+      "ferry_included": true,
+      "url": "/tours/student-package/ijen-bromo-3d2n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 2900000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 2700000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 2500000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 2300000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 2100000},
+          {"pax_min": 11, "pax_max": null, "per_person": 1900000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "student-ijen-bromo-madakaripura-night-market-4d3n",
+      "name": "Student: 4D3N Ijen + Bromo + Madakaripura + Night Market",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 4,
+      "duration_nights": 3,
+      "duration_iso": "P4D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "isic_required": true,
+      "url": "/tours/student-package/ijen-bromo-madakaripura-night-market-4d3n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 3700000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 3500000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3300000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3100000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 2900000},
+          {"pax_min": 11, "pax_max": null, "per_person": 2700000}
+        ],
+        "solo_supplement": 6500000
+      }
+    },
+    {
+      "id": "student-ijen-papuma-tumpak-sewu-bromo-4d3n",
+      "name": "Student: 4D3N Ijen + Papuma + Tumpak Sewu + Bromo",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 4,
+      "duration_nights": 3,
+      "duration_iso": "P4D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "isic_required": true,
+      "url": "/tours/student-package/ijen-papuma-tumpak-sewu-bromo-4d3n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4100000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 3900000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3600000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3350000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3000000},
+          {"pax_min": 11, "pax_max": null, "per_person": 2900000}
+        ],
+        "solo_supplement": 7150000
+      }
+    },
+    {
+      "id": "student-ijen-papuma-tumpak-sewu-bromo-5d4n",
+      "name": "Student: 5D4N Ijen + Papuma + Tumpak Sewu + Bromo",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 5,
+      "duration_nights": 4,
+      "duration_iso": "P5D",
+      "ijen_relevant": true,
+      "health_screening_required": true,
+      "isic_required": true,
+      "url": "/tours/student-package/ijen-papuma-tumpak-sewu-bromo-5d4n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4050000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 3850000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3650000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3450000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3250000},
+          {"pax_min": 11, "pax_max": null, "per_person": 3050000}
+        ],
+        "solo_supplement": null
+      }
+    },
+    {
+      "id": "taman-safari-prigen-bromo-madakaripura-3d2n",
+      "name": "3D2N Taman Safari Prigen + Bromo + Madakaripura (Specialty)",
+      "origin": "Surabaya",
+      "destination_end": "Surabaya",
+      "duration_days": 3,
+      "duration_nights": 2,
+      "duration_iso": "P3D",
+      "ijen_relevant": false,
+      "health_screening_required": false,
+      "destinations": ["taman-safari-prigen", "mount-bromo", "madakaripura"],
+      "url": "/tours/from-surabaya/taman-safari-prigen-bromo-madakaripura-3d2n",
+      "pricing": {
+        "tiers": [
+          {"pax_min": 2, "pax_max": 2, "per_person": 4350000},
+          {"pax_min": 3, "pax_max": 3, "per_person": 4150000},
+          {"pax_min": 4, "pax_max": 5, "per_person": 3950000},
+          {"pax_min": 6, "pax_max": 7, "per_person": 3750000},
+          {"pax_min": 8, "pax_max": 10, "per_person": 3550000},
+          {"pax_min": 11, "pax_max": null, "per_person": 3450000}
+        ],
+        "solo_supplement": null
+      }
+    }
+  ]
+}

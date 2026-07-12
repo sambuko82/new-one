@@ -1,0 +1,147 @@
+{
+  "generated": "2026-06-01",
+  "source": "wiki/website/operational-facts.md + wiki/website/hotels.md",
+  "canonical": true,
+  "temperatures": {
+    "mount_bromo": {"range_celsius": "5–15", "range_fahrenheit": "41–59", "when": "Pre-dawn sunrise slot"},
+    "kawah_ijen": {"range_celsius": "10–15", "range_fahrenheit": "50–59", "when": "Midnight departure + crater rim"},
+    "note": "Both require warm layers. Layering recommended over single thick garment."
+  },
+  "travel_times": [
+    {"route": "Surabaya → Bromo (Cemoro Lawang)", "estimated": "~3 hours"},
+    {"route": "Ijen (Paltuding) → Surabaya", "estimated": "5–6 hours"},
+    {"route": "Tumpak Sewu → Bromo", "estimated": "3–4 hours"},
+    {"route": "Bali → Ijen (Banyuwangi side)", "estimated": "5–7 hours"}
+  ],
+  "timing_guidelines": {
+    "day1_latest_pickup": "16:00 WIB (applies to all packages starting in Surabaya)",
+    "last_day_flight_minimum": "Depart no earlier than 18:00 WIB; 20:00 WIB is safer",
+    "note": "These apply to packages starting or ending in Surabaya"
+  },
+  "support": {
+    "hours": "08:00–22:00 WIB (GMT+7) daily",
+    "whatsapp": "+62 822-4478-8833",
+    "email": "hello@javavolcano-touroperator.com"
+  },
+  "ijen_closures": {
+    "monthly_rijik": {
+      "schedule": "First Friday of every month, 00:00–23:59 WIB",
+      "scope": "Total closure of TWA Kawah Ijen — ALL tourism and mining activities",
+      "purpose": "Ecosystem cleaning (100–150 kg waste removal from Paltuding to crater rim) + Cemara Gunung planting",
+      "program_started": "2019-03-01"
+    },
+    "additional": "Issued by BBKSDA East Java based on volcanic gas levels and safety assessments",
+    "status_url": "https://bbksdajatim.org",
+    "sar_call_center": "0812 2018 0930"
+  },
+  "seasonal_guide": {
+    "dry_season": {
+      "months": "April–October",
+      "quality": "Best overall. Clear skies for Bromo sunrise and Ijen blue fire. Peak season — book 2–4 weeks ahead."
+    },
+    "shoulder": {
+      "months": "March, November",
+      "quality": "Viable. Mix of dry/wet. Blue fire odds slightly lower. Fewer crowds."
+    },
+    "wet_season": {
+      "months": "December–February",
+      "quality": "Risky. Heavy rain affects trails. JVTO still operates but issues weather advisories."
+    },
+    "ramadan": "Hotels and tours fully operational. Meal scheduling may be adjusted.",
+    "yadnya_kasada": {
+      "description": "Annual Tengger Hindu ceremony at Pura Luhur Poten (Bromo caldera floor)",
+      "date_type": "Variable — lunar calendar, shifts each year",
+      "impact": "Bromo area extremely crowded. JVTO activates Plan-B SOP."
+    }
+  },
+  "ijen_practical": {
+    "trolley_ojek": "Man-powered porter service — extra cost, arranged on-site (NOT a JVTO inclusion)",
+    "screening_location": "Nurse visits guest hotel evening before hike (Bondowoso / Banyuwangi area)",
+    "trek_difficulty": "Moderate — ~1.5–2 hours each way; steep rocky trail",
+    "gas_mask": "Provided by JVTO as standard inclusion on all Ijen-relevant packages",
+    "gate_rule": "No Valid QR Code = No Crater Zone Access (BBKSDA SE.1658/KSA.9/2024)"
+  },
+  "bromo_practical": {
+    "milky_way": "Available on overnight packages departing ~02:00 WIB (weather permitting)",
+    "horse_riding": "Optional, extra cost, arranged on-site (NOT a JVTO inclusion)",
+    "luggage": "Main luggage stays at hotel during sunrise sequence; guests carry daypack only",
+    "yadnya_kasada_impact": "JVTO activates Plan-B SOP for bookings during this festival period"
+  },
+  "waterfall_practical": {
+    "tumpak_sewu": {
+      "trail": "Steep, wet — fixed ropes and handholds on canyon descent",
+      "recommended_gear": "Water shoes (grip on river rocks)",
+      "helmets": "Local site management provision — NOT a JVTO inclusion"
+    },
+    "madakaripura": {
+      "trail": "Canyon approach: wading through stream, narrow passages, wet stones",
+      "note": "You WILL get wet — waterproof bags + change of clothes essential",
+      "helmets": "Local site management provision — NOT a JVTO inclusion per packages-overview §madakaripura-caveat"
+    }
+  },
+  "customization_policy": {
+    "allowed": [
+      "Twin vs double bed preference",
+      "Hotel room category upgrade (may cost extra)",
+      "Optional on-site activities (horse riding, trolley ojek)",
+      "Adjusting meal plans within limits"
+    ],
+    "not_offered": [
+      "Unbundled / transport-only services",
+      "Significant route changes altering primary destination sequence"
+    ]
+  },
+  "dietary_accommodation": {
+    "supported": ["Vegetarian", "Vegan", "Gluten-free"],
+    "requirement": "Must be declared at booking — cannot be confirmed on arrival"
+  },
+  "hotels": {
+    "total_partners": 23,
+    "room_allocation": {
+      "standard": "1 room per 2 guests (King or Twin)",
+      "odd_groups": "Extra bed in one room",
+      "max_per_room": 2,
+      "note": "JVTO manages hotel bookings on guests' behalf. Hotel name on voucher is binding."
+    },
+    "by_phase": {
+      "bondowoso_ijen_surabaya_origin": [
+        {"name": "Riverside Homestay", "area": "Bondowoso", "note": "Primary Ijen staging hotel"},
+        {"name": "Baratha Hotel and Resto", "area": "Bondowoso", "note": "Student packages primary"},
+        {"name": "Grand Padis Hotel", "area": "Banyuwangi"},
+        {"name": "Aston Banyuwangi", "area": "Banyuwangi"},
+        {"name": "Hotel Santika Banyuwangi", "area": "Banyuwangi"}
+      ],
+      "banyuwangi_ijen_bali_origin": [
+        {"name": "Luminor Hotel", "area": "Banyuwangi", "note": "Primary for Bali-origin packages entering via Banyuwangi"}
+      ],
+      "bromo": [
+        {"name": "Joglo Kecombrang Bromo", "area": "Malang", "note": "Primary Bromo overnight"},
+        {"name": "Whizz Bromo", "area": "Cemoro Lawang"},
+        {"name": "ARTOTEL Cabin Bromo", "note": "Premium option"},
+        {"name": "Lava View Lodge"},
+        {"name": "Manis Ae Cabin & Resto Bromo"},
+        {"name": "Bromo Terrace", "area": "Lumajang"}
+      ],
+      "tumpak_sewu_jember": [
+        {"name": "Doho Homestay", "note": "Jember area"},
+        {"name": "Artha Cottage", "note": "Tumpak Sewu staging"},
+        {"name": "Yanto Homestay Anugerah Tumpak Sewu"}
+      ],
+      "malang": [
+        {"name": "Whiz Prime Malang"},
+        {"name": "Atria Malang"},
+        {"name": "Shanaya Resort Malang"},
+        {"name": "THE 1O1 Malang OJ"}
+      ],
+      "surabaya_finish": [
+        {"name": "Holiday Inn Express Surabaya Centerpoint (IHG)"},
+        {"name": "Harris Hotel Satelit"},
+        {"name": "Hotel 88 Kedungsari"},
+        {"name": "Luminor Hotel"}
+      ],
+      "specialty": [
+        {"name": "Baobab Safari Resort", "note": "Taman Safari Prigen package"}
+      ]
+    }
+  }
+}

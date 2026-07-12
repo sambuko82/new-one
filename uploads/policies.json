@@ -1,0 +1,196 @@
+{
+  "generated": "2026-06-01",
+  "source": "wiki/sources/jvto-policy-pack-v6.md + wiki/website/brand-voice.md",
+  "document_version": "v5 (2026-01-17)",
+  "canonical": true,
+  "policies": {
+    "booking": {
+      "confirmation_requirements": [
+        "Package selected and pricing agreed",
+        "Required payment processed (minimum 20% deposit)",
+        "Official E-Voucher / Invoice (PDF) issued"
+      ],
+      "official_channels": [
+        "https://javavolcano-touroperator.com",
+        "WhatsApp: +62 822-4478-8833",
+        "Email: hello@javavolcano-touroperator.com"
+      ],
+      "currency": "IDR only (official pricing and accounting)",
+      "deposit_standard": "20% of total booking value",
+      "deposit_accelerated": "Up to 100% if Day 1 is within 14 days",
+      "balance_deadline_card": "No later than 5 days before Day 1",
+      "balance_deadline_transfer": "No later than 3 days before Day 1 (bank transfer or Wise)",
+      "bank_accounts": [
+        {
+          "bank": "BRI",
+          "account_name": "PT Java Volcano Rendezvous",
+          "account_number": "001301001779564",
+          "swift": "BRINIDJAXXX"
+        },
+        {
+          "bank": "BCA",
+          "account_name": "PT Java Volcano Rendezvous",
+          "account_number": "1200944352",
+          "swift": "CENAIDJAXXX"
+        }
+      ],
+      "payment_security": "SSL-encrypted checkout, PCI DSS-compliant gateway. JVTO never asks for full card numbers, CVV, or banking credentials via chat or email.",
+      "document_precedence": [
+        "Official E-Voucher / Invoice (PDF)",
+        "Booking, Payment & Cancellation Policy",
+        "Inclusions & Exclusions Policy",
+        "Privacy & Data Protection Policy",
+        "Travel Guide — Booking Information"
+      ]
+    },
+    "cancellation": {
+      "cutoff_hours": 48,
+      "cutoff_timezone": "Local Indonesia time (WIB, GMT+7)",
+      "on_time": {
+        "threshold": "≥48h before Day 1 start",
+        "outcome": "100% of booking value converts to JVTO Travel Credit",
+        "travel_credit_properties": {
+          "currency": "IDR",
+          "expiry": "Non-expiring",
+          "transferable": true,
+          "transfer_requirement": "Written confirmation required"
+        }
+      },
+      "late": {
+        "threshold": "<48h before Day 1 start",
+        "outcome": "Booking forfeited up to 100%. Travel Credit and cash refunds generally not provided."
+      },
+      "force_majeure": {
+        "triggers": ["Volcanic activity", "Gas conditions", "Earthquakes", "Floods", "Government closures", "Civil unrest", "Severe weather"],
+        "jvto_options": ["Reasonable alternatives", "Travel Credit for unused portion", "Partial or full cash refund net of non-recoverable expenses"]
+      },
+      "health_clearance_denied": "If guest is denied health clearance (Ijen), affected components are non-refundable. Costs are pre-committed.",
+      "amendment": {
+        "free_reschedule": "One free reschedule ≥48h before Day 1, subject to availability",
+        "late_reschedule": "Reschedules <48h before Day 1 not permitted"
+      },
+      "cash_refund_policy": "JVTO does not issue cash refunds as standard policy. Cancellations within the approved window receive Travel Credit only."
+    },
+    "inclusions": {
+      "standard": [
+        "Private air-conditioned vehicle for all land sectors in confirmed itinerary (fuel, tolls, parking)",
+        "Bromo 4WD jeep (when Bromo included) — private, max ±4 guests per jeep",
+        "Accommodation (hotel/homestay) for all overnight stays with breakfast",
+        "Professional crew (driver-guide or driver + escort guide, per group size)",
+        "Entrance tickets and park permits for all confirmed itinerary sites",
+        "Ijen safety gear when Ijen included: professional gas mask + trekking poles + mandatory medical check + digital/printed health clearance",
+        "Daily bottled mineral water in vehicle for overland sectors",
+        "Java-Bali ferry tickets (when crossing listed in itinerary and specified on voucher)",
+        "1 × JVTO travel T-shirt per participant for eligible packages",
+        "Custom JVTO group T-shirt for groups ≥12 guests in a single booking (when written on voucher)"
+      ],
+      "conditional": [
+        "Custom group T-shirts (when written on voucher)",
+        "Additional hosted meals — dinner before Ijen, lunch after Tumpak Sewu, special dinners (when written on voucher)",
+        "Bali hotel/airport transfers beyond standard ferry crossing (when written on voucher)",
+        "Early check-in / late check-out (when written on voucher)",
+        "Dedicated photographer/videographer (when written on voucher)",
+        "Police escort or special convoy for VIP/large groups (subject to availability and regulation; when written on voucher)"
+      ],
+      "write_to_bind_rule": "Only inclusions listed on the official tour page AND Official E-Voucher / Invoice (PDF) are legally binding."
+    },
+    "exclusions": {
+      "default_exclusions": [
+        "International and domestic flights",
+        "Long-distance trains",
+        "Visas",
+        "Travel insurance",
+        "Personal expenses (snacks, drinks, souvenirs, laundry)",
+        "Tips and gratuities"
+      ]
+    },
+    "vehicle_allocation": {
+      "2_to_3_guests": {
+        "vehicle": "1 × MPV (e.g., Toyota Avanza or similar)",
+        "crew": "1 × driver-guide (English-speaking) + licensed local site guides"
+      },
+      "4_to_9_guests": {
+        "vehicle": "1 × Toyota Hiace (or similar 16-seat minibus)",
+        "crew": "1 × professional driver + 1 × escort guide + licensed local site guides"
+      },
+      "10_to_11_guests": {
+        "vehicle": "1 × Toyota Hiace + 1 × MPV (seating + luggage)",
+        "crew": "1 × professional driver + 1 × escort guide + licensed local site guides"
+      },
+      "bromo_jeep": {
+        "type": "Private 4WD jeep",
+        "max_guests_per_jeep": 4,
+        "note": "Max ±4 guests per jeep for comfort and safety. Multiple jeeps for larger groups."
+      }
+    },
+    "room_allocation": {
+      "standard": "1 room per 2 guests (King or Twin bed)",
+      "odd_groups": "1 extra bed in one room for the unpaired guest",
+      "max_per_room": 2,
+      "couple_preference": "King bed on request",
+      "non_couple_sharing": "Twin beds on request"
+    },
+    "foc_group_policy": {
+      "tiers": [
+        {"paying_pax_min": 18, "foc_seats": 1, "discount_percent": null},
+        {"paying_pax_min": 35, "foc_seats": 2, "discount_percent": null},
+        {"paying_pax_min": 50, "foc_seats": 3, "discount_percent": 5}
+      ],
+      "note": "Pax = paying guests only. FOC seats not counted toward threshold. 5% discount at 50+ tier applies to entire group total."
+    },
+    "health_screening": {
+      "regulatory_basis": "BBKSDA Surat Edaran SE.1658/KSA.9/2024",
+      "applies_to": "Ijen-relevant packages only",
+      "wording_rule": "CONDITIONAL — never describe as mandatory without referencing BBKSDA SE.1658/KSA.9/2024",
+      "approved_phrases": [
+        "Ijen access rules can require a recent local health certificate.",
+        "JVTO coordinates clinic workflow when access rules require it.",
+        "Health-certificate screening coordination for Ijen routes when current access rules require it.",
+        "Health-screening is required when crater conditions meet BBKSDA SE.1658/KSA.9/2024 threshold.",
+        "On routes that include Mount Ijen, JVTO integrates health screening as a practical safety step when BBKSDA rules apply."
+      ],
+      "forbidden_phrases": [
+        "Mandatory health screening (without conditional qualifier)",
+        "Required by JVTO"
+      ],
+      "medical_officer": "Dr. Ahmad Irwandanu SIP",
+      "str_verification_url": "https://satusehat.kemkes.go.id/sdmk/nakes/QN00001073380217",
+      "screening_location": "Nurse/doctor visits guest hotel evening before hike (Bondowoso / Banyuwangi area)",
+      "process": [
+        "Nurse/doctor visits guest hotel evening before hike",
+        "Vitals recorded: SpO2, blood pressure, resting heart rate, respiratory history",
+        "QR-verified surat sehat issued by Dr. Ahmad Irwandanu SIP",
+        "Certificate presented at crater gate for BBKSDA QR verification"
+      ],
+      "gate_rule": "No Valid QR Code = No Crater Zone Access",
+      "failure_protocol": "Climb cancelled for individual (not group). Screening cost non-refundable.",
+      "system_url": "https://health.mountijen.com"
+    },
+    "micro_customization": {
+      "allowed": [
+        "Twin vs double bed preference",
+        "Hotel room category upgrade (may cost extra)",
+        "Optional on-site activities (horse riding at Bromo, trolley ojek at Ijen)",
+        "Adjusting meal plans within operational limits"
+      ],
+      "not_offered": [
+        "Unbundled or transport-only services",
+        "Significant route changes altering primary destination sequence"
+      ]
+    },
+    "forbidden_wording": {
+      "global": [
+        {"phrase": "Blue Fire guaranteed", "reason": "Weather-dependent, cannot be promised"},
+        {"phrase": "100% Blue Fire visible", "reason": "Same"},
+        {"phrase": "Mandatory health screening (without conditional)", "reason": "Regulatory, not JVTO-imposed"},
+        {"phrase": "JVTO provides police escort (unconditional)", "reason": "Conditional on group size and approval"},
+        {"phrase": "Full refund", "reason": "Not cash — Travel Credit only"},
+        {"phrase": "Flexible cancellation available (without threshold)", "reason": "Misleads on the 48h policy"},
+        {"phrase": "Rp 1.500.000 (dot thousand separators)", "reason": "Use comma: IDR 1,500,000/person"},
+        {"phrase": "USD / EUR pricing", "reason": "IDR only for all pricing"},
+        {"phrase": "Tips included / Tipping covered / Service charge included", "reason": "Tips are explicit exclusion per policy pack"}
+      ]
+    },
+    "specialty_packages": ["taman-safari-prigen-bromo-madakaripura-3d2n"]
+  }
+}

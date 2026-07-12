@@ -1,0 +1,1635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>JVTO — Tourist Police-Led Private Volcano Tours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jvto-system.css" />
+<style>
+  /* Real photo layer: sits above ph-stripes (which becomes the loading fallback) */
+  .real-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; display: block; }
+  .hero-bg .real-photo { opacity: 1; }
+  .hero-bg { opacity: 1 !important; }
+  .hero-bg::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(13,27,42,0.55) 0%, rgba(13,27,42,0.78) 100%);
+    z-index: 2;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     MBA-inspired optimizations (layered on top of jvto-system.css).
+     Keeps the editorial dossier identity intact; adds what genuinely
+     improves accessibility, rhythm, and interaction confidence.
+     ───────────────────────────────────────────────────────────────── */
+
+  /* Warmer page background (#FAFBF4 nudge from #F6F5F2) */
+  body { background: #FAFBF4; }
+
+  /* Universal keyboard focus ring — 2px solid + 2px offset, brand-tinted */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  /* Dark-section focus needs higher contrast against navy */
+  .bg-navy a:focus-visible,
+  .bg-navy button:focus-visible,
+  .hero a:focus-visible,
+  .hero button:focus-visible,
+  .ribbon a:focus-visible,
+  footer a:focus-visible {
+    outline-color: var(--lime);
+  }
+
+  /* Two-layer hover elevation on the main card families (MBA L2) */
+  .tour-card,
+  .pillar,
+  .landscape {
+    transition: transform .35s cubic-bezier(.2,.7,.3,1),
+                box-shadow .35s cubic-bezier(.2,.7,.3,1);
+  }
+  .tour-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 14px 28px rgba(13,27,42,0.14),
+      0 8px 12px rgba(13,27,42,0.10);
+  }
+  .landscape:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 14px 28px rgba(13,27,42,0.18),
+      0 8px 12px rgba(13,27,42,0.12);
+  }
+  .pillar:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 10px 20px rgba(13,27,42,0.10),
+      0 4px 8px rgba(13,27,42,0.08);
+  }
+
+  /* Primary hero CTA — confident lime action color
+     (was white→orange; lime is JVTO's "verify / take action" hue) */
+  .start-btn.primary {
+    background: var(--lime);
+    color: var(--navy);
+    font-weight: 700;
+    box-shadow: 0 8px 20px -10px rgba(140,198,63,0.55);
+  }
+  .start-btn.primary:hover {
+    background: #7BB52F;
+    color: var(--navy);
+    transform: translateY(-1px);
+  }
+
+  /* "Book inquiry" button — lime primary action on light card surface */
+  .btn-block {
+    transition: background .2s, transform .2s, box-shadow .2s;
+  }
+  .btn-block:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px -8px rgba(13,27,42,0.35);
+  }
+
+  /* Verify-bar — promotional banner posture (MBA pattern) */
+  .verify-bar a {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* Touch target floor — every nav, pill, link gets enough hit area on mobile */
+  @media (max-width: 768px) {
+    .nav-links a,
+    .pill,
+    .start-btn,
+    .btn-block,
+    .guide-link,
+    .check-chip,
+    .footer-bottom a,
+    .footer-socials a {
+      min-height: 44px;
+    }
+  }
+
+  /* Section rhythm — align big gaps to 8px scale (was 4rem = 64px ✓; tighten odd values) */
+  .pillar { padding: 24px 24px 32px; }
+  .hero-stats { margin-top: 24px; }
+
+  /* Mono labels — subtle uppercase spacing trim for legibility */
+  .micro { letter-spacing: 0.18em; }
+
+  /* Inline link underline — thicker on hover (MBA underline-persists pattern) */
+  .inline-link { transition: gap .25s ease, color .2s, border-color .2s; }
+  .inline-link:hover { border-bottom-width: 2px; }
+</style>
+
+<!-- Tweaks defaults (do not remove markers) -->
+<script>
+  window.__JVTO_TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "palette": "default",
+    "density": "compact",
+    "displayItalic": false
+  }/*EDITMODE-END*/;
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "@id": "https://javavolcano-touroperator.com/#organization",
+  "name": "Java Volcano Tour Operator",
+  "legalName": "PT Java Volcano Rendezvous",
+  "url": "https://javavolcano-touroperator.com",
+  "logo": "https://javavolcano-touroperator.com/assets/img/jvto-color.png",
+  "telephone": "+6282244788833",
+  "email": "hello@javavolcano-touroperator.com",
+  "foundingDate": "2016",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Khairil Anwar No.102 A, Badean",
+    "addressLocality": "Bondowoso",
+    "addressRegion": "Jawa Timur",
+    "postalCode": "68214",
+    "addressCountry": "ID"
+  },
+  "identifier": [
+    {"@type": "PropertyValue", "propertyID": "NIB", "value": "1102230032918"},
+    {"@type": "PropertyValue", "propertyID": "TDUP", "value": "1102230032918"}
+  ],
+  "areaServed": {"@type": "AdministrativeArea", "name": "East Java", "identifier": "ID-JI"},
+  "founder": {
+    "@type": "Person",
+    "name": "Bripka Agung Sambuko",
+    "jobTitle": "Active Tourist Police Officer, Ditpamobvit East Java",
+    "description": "Bripka Agung Sambuko is an active officer of the Indonesian Tourist Police (Ditpamobvit) and founder of PT Java Volcano Rendezvous."
+  },
+  "memberOf": [
+    {"@type": "Organization", "name": "HPWKI (Himpunan Pelaku Wisata Khusus Ijen)", "identifier": "AHU-0001072.AH.01.07.TAHUN 2024"},
+    {"@type": "Organization", "name": "INDECON (Indonesian Ecotourism Network)"}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "195",
+    "bestRating": "5"
+  },
+  "sameAs": [
+    "https://www.facebook.com/javavolcanotours/",
+    "https://www.instagram.com/javavolcanotouroperator/",
+    "https://twitter.com/jvto_tours",
+    "https://www.trustpilot.com/review/javavolcano-touroperator.com",
+    "https://www.tripadvisor.com/Attraction_Review-g297715-d19983165-Reviews-Java_Volcano_Tour_Operator-Surabaya_East_Java_Java.html",
+    "https://www.google.com/maps?cid=1266403973589689021",
+    "https://www.getyourguide.com/java-volcano-tour-operator-s260697/",
+    "https://www.isic.org/discounts/?providerId=259268",
+    "https://www.indecon.id/spotlight-networks/java-volcano-tour-operator"
+  ]
+}
+</script>
+</head>
+
+<body data-screen-label="01 Homepage">
+
+  <!-- Top trust ribbon -->
+  <div class="ribbon">
+    <div class="container ribbon-row">
+      <div class="ribbon-marquee">
+        <span><i class="ribbon-dot"></i> PT Java Volcano Rendezvous</span>
+        <span>NIB · 1102230032918</span>
+        <span>TDUP · 11.02.230.03.2918</span>
+        <span>Bripka Agung Sambuko · Ditpamobvit East Java</span>
+      </div>
+      <div class="ribbon-right">
+        <span>WhatsApp 08:00–22:00 WIB</span>
+        <span style="color:var(--lime)">✓ Verify Us</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" data-screen-label="01a Hero">
+    <div class="hero-bg">
+      <div class="ph-stripes"></div>
+      <img class="real-photo" src="https://javavolcano-touroperator.com/assets/img/hero/home.webp" alt="Scenic view of Java volcanoes" loading="eager" />
+    </div>
+    <div class="hero-overlay"></div>
+
+    <nav class="topnav">
+      <div class="container nav-inner">
+        <a href="homepage.html" class="brand">JVTO <small>· EST 2016</small></a>
+        <div class="nav-links">
+          <a href="tours.html">Tours</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="why-jvto.html">Why JVTO</a>
+          <a href="travel-guide.html">Travel Guide</a>
+        </div>
+        <div class="nav-cta">
+          <a href="verify-jvto.html" class="pill pill-verify">✓ Verify Us</a>
+          <a href="contact.html" class="pill pill-wa">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-inner container">
+
+      <!-- photo slot label -->
+      <!-- <div class="ph-label tr">Hero photo · midnight Bromo caldera, full-bleed 1920×1080</div> -->
+
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow-row">
+            <span class="eyebrow-pill">Tourist Police-Led Private Tours</span>
+            <span class="eyebrow-meta">FILE 001 / HOMEPAGE</span>
+          </div>
+
+          <h1 class="hero-head" data-comment-anchor="hero-headline">
+            Tourist Police-Led <span class="italic">private</span><br />
+            volcano tours, <span class="accent-orange">Java.</span>
+          </h1>
+
+          <p class="hero-lede">
+            Private Bromo, Ijen &amp; Tumpak Sewu tours from Surabaya or Bali. Licensed operator (NIB 1102230032918), led by an active Tourist Police officer. No shared groups. Plan-B framework when conditions change. From IDR 1,000,000/pax.
+          </p>
+        </div>
+
+        <div class="hero-right">
+          <div class="start-block">
+            <div class="start-label">
+              <span class="micro micro-light" style="color: rgba(255,255,255,0.55)">Choose your start point</span>
+              <span class="micro micro-light" style="color: rgba(255,255,255,0.4)">02 routes</span>
+            </div>
+            <div class="start-btns">
+              <a href="#" class="start-btn primary">
+                From Surabaya
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#" class="start-btn ghost">
+                From Bali
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="n">2015</div>
+              <div class="l">Est. · guesthouse era</div>
+            </div>
+            <div class="hero-stat">
+              <div class="n">4.8<small>/5</small></div>
+              <div class="l">Trustpilot · 51 verified</div>
+            </div>
+            <div class="hero-stat">
+              <div class="n">16</div>
+              <div class="l">Private itineraries · 1D–6D</div>
+            </div>
+            <div class="hero-stat">
+              <div class="n">14</div>
+              <div class="l">Crew · 11 KTA-confirmed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LIME VERIFY BAR -->
+  <div class="verify-bar">
+    <div class="container">
+      <a href="verify-jvto.html">
+        ✓ Credentials you can check — not logos you have to take on faith. Open the proof library →
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- TRUST STRIP -->
+  <section class="bg-navy trust-strip">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-cell">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="9" width="18" height="11"/><path d="M3 9l9-6 9 6M8 20v-7M12 20v-7M16 20v-7"/></svg>
+          <span class="label">NIB · TDUP · oss.go.id</span>
+          <span class="sub">1102230032918 · checkable</span>
+        </div>
+        <div class="trust-cell">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="label">Ditpamobvit East Java</span>
+          <span class="sub">Bripka Agung Sambuko · SPRIN</span>
+        </div>
+        <div class="trust-cell">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><circle cx="17" cy="7" r="3"/></svg>
+          <span class="label">100% Private — Always</span>
+          <span class="sub">Your vehicle · guide · driver</span>
+        </div>
+        <div class="trust-cell">
+          <svg class="icn" viewBox="0 0 24 24" fill="#F5A623" stroke="#F5A623" stroke-width="1.5"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+          <span class="label">4.8★ Trustpilot · 4.90 Google</span>
+          <span class="sub">195+ reviews across platforms</span>
+        </div>
+        <div class="trust-cell">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+          <span class="label">HPWKI-trained guides · BBKSDA</span>
+          <span class="sub">Ijen specialist · park clearance · ISIC 259268</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED TOURS -->
+  <section class="bg-off section stack" id="tours">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-num">§ 02</span>
+        <h2 class="section-title">Find your <span class="accent-orange">perfect route.</span></h2>
+        <span class="section-meta">16 private itineraries · 1D–6D</span>
+      </div>
+
+      <div class="tours-grid">
+        <article class="tour-card">
+          <div class="tour-img">
+            <div class="ph-stripes"></div>
+            <div class="tour-badges">
+              <span class="badge">From Surabaya</span>
+              <span class="badge badge-dark">✓ Police-Led</span>
+              <span class="badge badge-lime">⚕ Health Check</span>
+            </div>
+            <span class="tour-num">JVTO-01</span>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta-row">
+              <div class="stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <span class="micro" style="color:var(--navy); margin-left:8px;">4.9 Rating</span>
+              </div>
+              <span class="micro">Photographers</span>
+            </div>
+            <h3 class="tour-name">Ijen Blue Fire + Bromo + Madakaripura — 3D2N from Surabaya</h3>
+            <p class="tour-desc">Surabaya pickup, sunrise at King Kong Hill, the midnight Ijen ascent for blue fire and the turquoise crater lake, and the canyon approach to Madakaripura. Includes Bromo 4WD jeep, gas masks, and health-screening coordination when access rules require it.</p>
+
+            <div class="tour-foot">
+              <div class="tour-divider"></div>
+              <div class="tour-row">
+                <div>
+                  <div class="k">Duration</div>
+                  <div class="v">3D · 2N</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="k">From</div>
+                  <div class="price">IDR 2,450,000<small style="font-size:11px; font-weight:400; opacity:.6; margin-left:4px;">/pax</small></div>
+                </div>
+              </div>
+              <button class="btn-block">Book inquiry <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-img">
+            <div class="ph-stripes warm"></div>
+            <div class="tour-badges">
+              <span class="badge">From Bali</span>
+              <span class="badge badge-dark">✓ Police-Led</span>
+              <span class="badge badge-lime">⚕ Health Check</span>
+            </div>
+            <span class="tour-num">JVTO-02</span>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta-row">
+              <div class="stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <span class="micro" style="color:var(--navy); margin-left:8px;">5.0 Rating</span>
+              </div>
+              <span class="micro">First-Timers</span>
+            </div>
+            <h3 class="tour-name">Bromo Sunrise + Ijen Blue Fire — 3D2N from Bali</h3>
+            <p class="tour-desc">Bali Strait ferry crossing (included), the midnight Ijen ascent from Paltuding for blue fire, then the Tengger caldera and Bromo sunrise. Blue Fire visibility is subject to weather and gas activity.</p>
+
+            <div class="tour-foot">
+              <div class="tour-divider"></div>
+              <div class="tour-row">
+                <div>
+                  <div class="k">Duration</div>
+                  <div class="v">3D · 2N</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="k">From</div>
+                  <div class="price">IDR 2,850,000<small style="font-size:11px; font-weight:400; opacity:.6; margin-left:4px;">/pax</small></div>
+                </div>
+              </div>
+              <button class="btn-block">Book inquiry <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-img">
+            <div class="ph-stripes"></div>
+            <div class="tour-badges">
+              <span class="badge">From Surabaya</span>
+              <span class="badge badge-dark">✓ Police-Led</span>
+              <span class="badge badge-lime">⚕ Health Check</span>
+            </div>
+            <span class="tour-num">JVTO-03</span>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta-row">
+              <div class="stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+                <span class="micro" style="color:var(--navy); margin-left:8px;">4.8 Rating</span>
+              </div>
+              <span class="micro">Couples · Hikers</span>
+            </div>
+            <h3 class="tour-name">Ijen + Tumpak Sewu + Papuma + Bromo — 4D3N from Surabaya</h3>
+            <p class="tour-desc">Ijen's blue fire, the 120m Tumpak Sewu curtain falls in Lumajang, white-sand Papuma Beach, and the Tengger caldera at dawn. Realistic driving days, English-speaking guide, gas masks included.</p>
+
+            <div class="tour-foot">
+              <div class="tour-divider"></div>
+              <div class="tour-row">
+                <div>
+                  <div class="k">Duration</div>
+                  <div class="v">4D · 3N</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="k">From</div>
+                  <div class="price">IDR 3,125,000<small style="font-size:11px; font-weight:400; opacity:.6; margin-left:4px;">/pax</small></div>
+                </div>
+              </div>
+              <button class="btn-block">Book inquiry <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="display:flex; justify-content:center; margin-top: 4rem;">
+        <a href="tours.html" class="inline-link">View all 16 private itineraries (12 from Surabaya · 4 from Bali) <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATIONAL CERTAINTY -->
+  <section class="bg-white section stack" id="why">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-num">§ 03</span>
+        <h2 class="section-title">Operational <span class="accent-orange">certainty.</span></h2>
+        <a href="#" class="inline-link">Open proof library →</a>
+      </div>
+
+      <p style="max-width: 60ch; color: var(--muted); font-size: 18px; font-weight: 300; margin-bottom: 4rem;">
+        In a landscape where volcanic nature is uncertain, JVTO sells <em style="color:var(--navy)">operational certainty</em> — built on disciplined safety, documented proof, and local execution. Every license below is checkable in a public registry. SHA-256 hashes for credential documents are published in <code style="font-family:var(--font-mono); font-size:14px; background:rgba(0,0,0,0.04); padding:1px 6px; border-radius:4px;">public/llms.txt</code>.
+      </p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="ix-wrap"><svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="9" width="18" height="11"/><path d="M3 9l9-6 9 6M8 20v-7M12 20v-7M16 20v-7"/></svg></div>
+          <h3>Legal Identity</h3>
+          <p>PT Java Volcano Rendezvous — incorporated 2016-01-01 via AHU. NIB 1102230032918 checkable at oss.go.id. TDUP issued 2023-02-11 by Dinas Pariwisata.</p>
+          <span class="meta">Schema: TravelAgency · KBLI 79121 / 79911</span>
+        </div>
+        <div class="pillar">
+          <div class="ix-wrap"><svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Police Context</h3>
+          <p>Founder Bripka Agung Sambuko serves with Ditpamobvit East Java (Directorate of Vital Object Security). SPRIN Polpar credentials and SPRIN Wal Travel documents are SHA-256 anchored.</p>
+          <span class="meta">Authority · Active officer · corroborated by 4 press articles</span>
+        </div>
+        <div class="pillar">
+          <div class="ix-wrap"><svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M8.4 13.5L7 22l5-3 5 3-1.4-8.5"/></svg></div>
+          <h3>Partners &amp; Press</h3>
+          <p>Guides hold HPWKI Ijen specialist credentials; aligned with national ecotourism principles (INDECON); ISIC Provider 259268. As featured in Detik.com (2021), Radar Jember ×2, BBKSDA Jatim (2024) and Stefan Loose Indonesien (2018, p.287).</p>
+          <span class="meta">Recognition · 5 platforms, 4 press articles</span>
+        </div>
+        <div class="pillar">
+          <div class="ix-wrap"><svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Continuous History</h3>
+          <p>Guesthouse era opened 2015 (Booking.com Ijen Bondowoso Homestay, 9.4/10). PT registered 2016. TDUP formalized 2023. Same founder, same address: Jl. Khairil Anwar 102A, Bondowoso.</p>
+          <span class="meta">Golden thread · 11 years, single legal entity</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE CAROUSEL — interactive trust pillars -->
+  <section class="bg-off section stack" id="trust-rotator">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 04</span>
+        <h2 class="section-title">Six things that <span class="accent-orange">set us apart.</span></h2>
+        <span class="section-meta">Police-led · private · verifiable</span>
+      </div>
+      <div class="feature-carousel" aria-label="JVTO trust pillars"></div>
+    </div>
+  </section>
+
+  <!-- FOUNDER SPOTLIGHT (Reference style: dark bg, image card w/ floating badge + name overlay, orange headline, news embed, stat strip) -->
+  <section class="bg-navy section stack" id="founder">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+
+        <!-- LEFT: founder portrait card with floating badge + name overlay -->
+        <div style="position:relative;">
+          <div style="position:relative; aspect-ratio: 4/5; border-radius: var(--r-xl); overflow: hidden; background: var(--navy-mid); box-shadow: 0 30px 80px -30px rgba(0,0,0,0.6);">
+            <div class="ph-stripes warm"></div>
+            <img class="real-photo" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Agung_Sambuko.jpg" alt="Bripka Agung Sambuko — founder and active Tourist Police officer" loading="lazy" />
+
+            <!-- gradient overlay -->
+            <div style="position:absolute; inset:0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.8) 100%); z-index: 2;"></div>
+
+            <!-- bottom name + role overlay -->
+            <div style="position:absolute; bottom: 2rem; left: 2rem; right: 2rem; z-index: 4; color: white;">
+              <div style="display:flex; align-items:center; gap: .75rem; margin-bottom: .85rem;">
+                <span style="width: 32px; height: 2px; background: var(--orange);"></span>
+                <span style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--orange);">Founder &amp; Active Officer</span>
+              </div>
+              <div style="font-family: var(--font-display); font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: .4rem;">Agung Sambuko <span style="font-weight: 300; opacity: .85;">(Mr. Sam)</span></div>
+              <div style="font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 300;">Bripka Agung Sambuko — Bondowoso Tourist Police (Polpar)</div>
+            </div>
+          </div>
+
+          <!-- floating badge top-right of the card -->
+          <div class="floating-badge" style="top: 1.75rem; right: -.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div>
+              <div class="fb-title">Official Safety Authority</div>
+              <div class="fb-sub">Directly monitored by Police standards.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: headline + news embed + stat cards -->
+        <div>
+          <div class="eyebrow-row" style="margin-bottom: 1.5rem;">
+            <span class="eyebrow-pill" style="border-color: rgba(232,101,10,0.4); background: rgba(232,101,10,0.08); color: var(--orange);">
+              <span style="background: var(--orange); box-shadow: 0 0 0 4px rgba(232,101,10,0.18);"></span>
+              Verified Media Spotlight
+            </span>
+          </div>
+
+          <h2 style="font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px); letter-spacing: -0.03em; line-height: 1.0; color: white; margin-bottom: 2.25rem;">
+            Duty over profit,<br><span class="italic accent-orange" style="font-weight: 400; font-style: italic;">not just marketing.</span>
+          </h2>
+
+          <!-- News embed card -->
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-lg); padding: 1.5rem; margin-bottom: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: baseline; gap: .25rem;">
+                <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: #ee2e22;">detik</span>
+                <span style="font-family: var(--font-display); font-weight: 300; font-size: 18px; letter-spacing: -0.02em; color: rgba(255,255,255,0.9);">news</span>
+              </div>
+              <svg style="width: 18px; height: 18px; color: rgba(255,255,255,0.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l10-10M7 7h10v10"/></svg>
+            </div>
+
+            <div style="position: relative; aspect-ratio: 16/9; background: var(--navy-mid); border-radius: var(--r-md); overflow: hidden; margin-bottom: 1rem;">
+              <div class="ph-stripes"></div>
+              <div style="position:absolute; inset:0; display:grid; place-items:center; z-index: 3;">
+                <span style="background: rgba(0,0,0,0.55); color: white; padding: 8px 14px; border-radius: 999px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;">Detik.com · 2021-03-14 · Suka Duka Polisi Pariwisata</span>
+              </div>
+            </div>
+
+            <p style="font-family: var(--font-display); font-style: italic; font-size: 17px; line-height: 1.45; color: rgba(255,255,255,0.85); font-weight: 300; border-left: 2px solid var(--orange); padding-left: 1rem; margin-bottom: 1rem;">
+              "The important thing is that the people who travel are safe. Since the holiday began… I have never gone home."
+            </p>
+            <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.55);">— Bripka Agung Sambuko, detik.com (2021)</div>
+          </div>
+
+          <!-- Stat cards strip -->
+          <div class="stat-cards">
+            <div class="stat-card">
+              <div class="n">100%</div>
+              <div class="l">Police-led operations</div>
+            </div>
+            <div class="stat-card">
+              <div class="n">24/7</div>
+              <div class="l">Safety monitoring</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPES -->
+  <section class="bg-off section stack" id="destinations">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-num">§ 05</span>
+        <h2 class="section-title">Iconic <span class="accent-orange">landscapes.</span></h2>
+        <span class="section-meta">Bromo · Ijen · Tumpak Sewu · Madakaripura</span>
+      </div>
+
+      <div class="landscapes">
+        <a href="#" class="landscape">
+          <div class="ph-stripes"></div>
+          <div class="landscape-grad"></div>
+          <span class="ph-label tl" style="color:rgba(255,255,255,0.5);">3:4 photo · Mount Bromo caldera at dawn</span>
+          <div class="landscape-meta">
+            <div class="landscape-num">01 · 2,329 m · Probolinggo</div>
+            <div class="landscape-name">Mount Bromo</div>
+            <div class="landscape-tag">Tengger caldera · Penanjakan 2,770m · Sea of sand</div>
+          </div>
+        </a>
+        <a href="#" class="landscape">
+          <div class="ph-stripes warm"></div>
+          <div class="landscape-grad"></div>
+          <span class="ph-label tl" style="color:rgba(255,255,255,0.5);">3:4 photo · Ijen blue fire crater</span>
+          <div class="landscape-meta">
+            <div class="landscape-num">02 · 2,386 m · Banyuwangi</div>
+            <div class="landscape-name">Kawah Ijen</div>
+            <div class="landscape-tag">Blue fire · World's highest-volume acidic lake</div>
+          </div>
+        </a>
+        <a href="#" class="landscape">
+          <div class="ph-stripes"></div>
+          <div class="landscape-grad"></div>
+          <span class="ph-label tl" style="color:rgba(255,255,255,0.5);">3:4 photo · Tumpak Sewu waterfall</span>
+          <div class="landscape-meta">
+            <div class="landscape-num">03 · ~120 m · Lumajang</div>
+            <div class="landscape-name">Tumpak Sewu</div>
+            <div class="landscape-tag">Curtain falls · Optional canyon descent</div>
+          </div>
+        </a>
+        <a href="#" class="landscape">
+          <div class="ph-stripes warm"></div>
+          <div class="landscape-grad"></div>
+          <span class="ph-label tl" style="color:rgba(255,255,255,0.5);">3:4 photo · Madakaripura tunnel falls</span>
+          <div class="landscape-meta">
+            <div class="landscape-num">04 · Probolinggo</div>
+            <div class="landscape-name">Madakaripura</div>
+            <div class="landscape-tag">Tallest in Java · Canyon chamber</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IJEN HEALTH RAIL -->
+  <section class="health-rail stack">
+    <div class="container">
+      <div class="health-row">
+        <div class="health-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="health-text">
+          <span class="micro" style="display:block; margin-bottom:.6rem;">§ 06 — Ijen health-screening coordination</span>
+          <h3>Ijen access rules can require a health certificate. We coordinate the clinic.</h3>
+          <p>BBKSDA SE.1658/KSA.9/2024 governs entry to the crater zone. When access rules require it, JVTO arranges the workflow with Dr. Ahmad Irwandanu — SIP license issued by Kemenkes RI — the evening before your hike, at your hotel. Gas masks are provided. No valid QR = no crater access; we won't let you go up without it.</p>
+        </div>
+        <div class="health-checks">
+          <span class="check-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+            Dr. Irwandanu · SIP verified
+          </span>
+          <span class="check-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+            BBKSDA SE.1658/KSA.9/2024
+          </span>
+          <span class="check-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+            Gas mask included
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLCANO STATUS — live activity (PVMBG / MAGMA Indonesia) -->
+  <section class="bg-off section stack" id="volcano-status" data-screen-label="01g Volcano Status">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-num">§ 07</span>
+        <h2 class="section-title">Volcano <span class="accent-orange">activity.</span></h2>
+        <a href="https://magma.esdm.go.id/" target="_blank" rel="noopener noreferrer" class="section-meta" style="text-decoration: underline; text-underline-offset: 4px;">Source · PVMBG / MAGMA Indonesia ↗</a>
+      </div>
+
+      <!-- Volcano Activity Switcher (Bromo ↔ Ijen) -->
+      <div class="va-showcase" data-active="bromo">
+
+        <!-- Toggle pill -->
+        <div class="va-switcher" role="tablist" aria-label="Select volcano">
+          <span class="va-indicator" aria-hidden="true"></span>
+          <button type="button" class="va-tab" role="tab" data-volcano="bromo" aria-selected="true">
+            <span class="va-tab-num">01</span>
+            <span class="va-tab-label">Bromo</span>
+          </button>
+          <button type="button" class="va-tab" role="tab" data-volcano="ijen" aria-selected="false">
+            <span class="va-tab-num">02</span>
+            <span class="va-tab-label">Ijen</span>
+          </button>
+        </div>
+
+        <!-- Stage: visual + details -->
+        <div class="va-stage">
+
+          <!-- LEFT: 3D volcano visual -->
+          <div class="va-visual">
+            <div class="va-rings" aria-hidden="true">
+              <span class="va-ring va-ring-1"></span>
+              <span class="va-ring va-ring-2"></span>
+              <span class="va-ring va-ring-3"></span>
+            </div>
+            <div class="va-disc">
+              <!-- Bromo render slot -->
+              <div class="va-render" data-render="bromo">
+                <img src="assets/volcano-bromo-3d.png" alt="Mount Bromo 3D render" loading="lazy" class="va-render-img" />
+              </div>
+              <!-- Ijen render slot -->
+              <div class="va-render" data-render="ijen">
+                <img src="assets/volcano-ijen-3d.png" alt="Mount Ijen 3D render" loading="lazy" class="va-render-img" />
+              </div>
+            </div>
+            <div class="va-status-pill">
+              <span class="va-status-dot" aria-hidden="true"></span>
+              <span class="va-status-text">Tours operating</span>
+            </div>
+          </div>
+
+          <!-- RIGHT: details + live stats -->
+          <div class="va-details">
+
+            <!-- Bromo panel -->
+            <article class="va-panel" data-panel="bromo">
+              <div class="va-panel-head">
+                <span class="va-eyebrow">Mount Bromo · 2,329 m · Probolinggo</span>
+                <h3 class="va-title">Tengger <span class="accent-orange">caldera.</span></h3>
+                <p class="va-desc">Elevated seismic activity. Tours operate normally with standard 1 km safety distance maintained at the King Kong Hill viewpoint. No ash advisory.</p>
+              </div>
+
+              <div class="va-stats">
+                <div class="va-stat">
+                  <div class="va-stat-head">
+                    <span class="va-stat-label">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h3l2-7 4 14 2-7 2 4h5"/></svg>
+                      Seismic tremor
+                    </span>
+                    <span class="va-stat-value">8 mm <em>amp.</em></span>
+                  </div>
+                  <div class="va-bar"><span class="va-bar-fill" data-target="64"></span></div>
+                </div>
+
+                <div class="va-stat">
+                  <div class="va-stat-head">
+                    <span class="va-stat-label">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22V8M7 13l5-5 5 5M5 4h14"/></svg>
+                      Plume height
+                    </span>
+                    <span class="va-stat-value">600 <em>m</em></span>
+                  </div>
+                  <div class="va-bar"><span class="va-bar-fill" data-target="52"></span></div>
+                </div>
+
+                <div class="va-stat">
+                  <div class="va-stat-head">
+                    <span class="va-stat-label">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 15a4 4 0 014-4h.5a5 5 0 019.5 1h.5a3 3 0 010 6H7a4 4 0 01-4-3z"/></svg>
+                      SO₂ flux
+                    </span>
+                    <span class="va-stat-value">1,240 <em>t/day</em></span>
+                  </div>
+                  <div class="va-bar"><span class="va-bar-fill" data-target="61"></span></div>
+                </div>
+
+                <div class="va-stat">
+                  <div class="va-stat-head">
+                    <span class="va-stat-label">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                      Safe-distance margin
+                    </span>
+                    <span class="va-stat-value">1,000 <em>m enforced</em></span>
+                  </div>
+                  <div class="va-bar"><span class="va-bar-fill" data-target="100"></span></div>
+                </div>
+              </div>
+
+              <div class="va-panel-foot">
+                <div class="va-level" data-level="gold">
+                  <span class="va-level-dot"></span>
+                  <div>
+                    <div class="va-level-num">LEVEL II</div>
+                    <div class="va-level-name">Waspada</div>
+                  </div>
+                </div>
+                <span class="micro va-updated">Updated 28 May 2026 · 14:00 WIB</span>
+              </div>
+            </article>
+
+            <!-- Ijen panel -->
+            <article class="va-panel" data-panel="ijen">
+              <div class="va-panel-head">
+                <span class="va-eyebrow">Mount Ijen · 2,769 m · Banyuwangi</span>
+                <h3 class="va-title">Kawah <span class="accent-orange">Ijen.</span></h3>
+                <p class="va-desc">Standard activity. When BBKSDA access rules require it, JVTO coordinates pre-ascent health screening (SpO₂ &amp; blood pressure) before crater descent. Blue fire viewing window open.</p>
+              </div>
+
+              <div class="va-stats">
+                <div class="va-stat">
+                  <div class="va-stat-head">
+                    <span class="va-stat-label">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h3l2-7 4 14 2-7 2 4h5"/></svg>
+                      Seismic tremor
+                    </span>
+                    <span class="va-stat-value">2 mm <em>amp.</em></span>
+                  </div>
+                  <div class="va-bar"><span class="va-bar-fill" data-target="14"></span></div>
+                </div>
+
+                <div class="va-stat">
+                  <div class="va-stat-head">
+                    <span class="va-stat-label">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 14a8 8 0 11-16 0z"/></svg>
+                      Crater lake pH
+                    </span>
+                    <span class="va-stat-value">0.5 <em>acidic</em></span>
+                  </div>
+                  <div class="va-bar"><span class="va-bar-fill" data-target="98"></span></div>
+                </div>
+
+                <div class="va-stat">
+                  <div class="va-stat-head">
+                    <span class="va-stat-label">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 15a4 4 0 014-4h.5a5 5 0 019.5 1h.5a3 3 0 010 6H7a4 4 0 01-4-3z"/></svg>
+                      SO₂ at viewpoint
+                    </span>
+                    <span class="va-stat-value">320 <em>t/day</em></span>
+                  </div>
+                  <div class="va-bar"><span class="va-bar-fill" data-target="22"></span></div>
+                </div>
+
+                <div class="va-stat">
+                  <div class="va-stat-head">
+                    <span class="va-stat-label">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a6 6 0 016 6c0 4-6 12-6 12S6 13 6 9a6 6 0 016-6z"/><circle cx="12" cy="9" r="2"/></svg>
+                      Blue fire visibility
+                    </span>
+                    <span class="va-stat-value">92<em>% clear</em></span>
+                  </div>
+                  <div class="va-bar"><span class="va-bar-fill" data-target="92"></span></div>
+                </div>
+              </div>
+
+              <div class="va-panel-foot">
+                <div class="va-level" data-level="lime">
+                  <span class="va-level-dot"></span>
+                  <div>
+                    <div class="va-level-num">LEVEL I</div>
+                    <div class="va-level-name">Normal</div>
+                  </div>
+                </div>
+                <span class="micro va-updated">Updated 28 May 2026 · 14:00 WIB</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <style>
+        /* ── Volcano Activity Showcase ─────────────────────────────── */
+        .va-showcase {
+          --va-accent: var(--gold);
+          --va-accent-soft: rgba(245,166,35,0.14);
+          position: relative;
+        }
+        .va-showcase[data-active="ijen"] {
+          --va-accent: var(--lime);
+          --va-accent-soft: rgba(140,198,63,0.16);
+        }
+
+        /* Toggle pill */
+        .va-switcher {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 0;
+          padding: 6px;
+          background: var(--white);
+          border: 1px solid var(--border);
+          border-radius: 999px;
+          box-shadow: var(--shadow-soft);
+          margin-bottom: 2.5rem;
+        }
+        .va-indicator {
+          position: absolute;
+          top: 6px;
+          bottom: 6px;
+          left: 6px;
+          width: calc(50% - 6px);
+          background: var(--navy);
+          border-radius: 999px;
+          transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+          z-index: 0;
+        }
+        .va-showcase[data-active="ijen"] .va-indicator {
+          transform: translateX(100%);
+        }
+        .va-tab {
+          position: relative;
+          z-index: 1;
+          background: transparent;
+          border: 0;
+          padding: 0.65rem 1.6rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.55rem;
+          font-family: var(--font-display);
+          font-size: 15px;
+          font-weight: 600;
+          color: var(--muted);
+          cursor: pointer;
+          letter-spacing: -0.01em;
+          transition: color 280ms ease;
+          min-width: 130px;
+          justify-content: center;
+        }
+        .va-tab[aria-selected="true"] { color: #fff; }
+        .va-tab-num {
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+          opacity: 0.55;
+        }
+
+        /* Stage layout */
+        .va-stage {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+          align-items: center;
+          gap: 3.5rem;
+          transition: grid-template-columns 480ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .va-showcase[data-active="ijen"] .va-stage {
+          grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        }
+        .va-showcase[data-active="ijen"] .va-visual { order: 2; }
+        .va-showcase[data-active="ijen"] .va-details { order: 1; }
+
+        /* Visual / 3D volcano disc */
+        .va-visual {
+          position: relative;
+          aspect-ratio: 1 / 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .va-rings {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+        }
+        .va-ring {
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          border: 1px dashed rgba(13,27,42,0.10);
+          animation: va-rotate 60s linear infinite;
+        }
+        .va-ring-2 { inset: 8%; border-style: solid; border-color: rgba(13,27,42,0.06); animation-duration: 90s; animation-direction: reverse; }
+        .va-ring-3 {
+          inset: 16%;
+          border-style: dashed;
+          border-color: var(--va-accent);
+          opacity: 0.35;
+          transition: border-color 600ms ease;
+          animation-duration: 45s;
+        }
+        @keyframes va-rotate { to { transform: rotate(360deg); } }
+
+        .va-disc {
+          position: relative;
+          width: 78%;
+          aspect-ratio: 1 / 1;
+          border-radius: 50%;
+          background: var(--navy);
+          border: 1px solid var(--border);
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.05),
+            0 30px 60px -30px rgba(13,27,42,0.45),
+            0 0 0 8px rgba(255,255,255,0.4);
+          overflow: hidden;
+        }
+        .va-disc::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 50% 70%, var(--va-accent-soft), transparent 65%);
+          transition: background 600ms ease;
+          pointer-events: none;
+          z-index: 2;
+          mix-blend-mode: screen;
+          opacity: 0.6;
+        }
+        .va-render {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+          transform: scale(1.08) rotate(6deg);
+          filter: blur(8px);
+          transition: opacity 520ms ease, transform 720ms cubic-bezier(0.16, 1, 0.3, 1), filter 520ms ease;
+        }
+        .va-render .ph-stripes { width: 100%; height: 100%; }
+        .va-render-img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 55%;
+          display: block;
+        }
+        .va-render .ph-label {
+          position: absolute;
+          left: 50%;
+          bottom: 14%;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: rgba(13,27,42,0.55);
+          background: rgba(255,255,255,0.85);
+          padding: 6px 10px;
+          border-radius: 999px;
+          backdrop-filter: blur(4px);
+        }
+        .va-showcase[data-active="bromo"] .va-render[data-render="bromo"],
+        .va-showcase[data-active="ijen"]  .va-render[data-render="ijen"] {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+          filter: blur(0);
+        }
+
+        .va-status-pill {
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.55rem;
+          background: var(--white);
+          border: 1px solid var(--border);
+          border-radius: 999px;
+          padding: 0.55rem 1.1rem;
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--navy);
+          box-shadow: var(--shadow-soft);
+          z-index: 3;
+        }
+        .va-status-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--va-accent);
+          box-shadow: 0 0 0 4px var(--va-accent-soft);
+          transition: background 400ms ease, box-shadow 400ms ease;
+          animation: va-pulse 2.4s ease-in-out infinite;
+        }
+        @keyframes va-pulse {
+          0%, 100% { box-shadow: 0 0 0 4px var(--va-accent-soft); }
+          50%      { box-shadow: 0 0 0 7px var(--va-accent-soft); }
+        }
+
+        /* Details + panels */
+        .va-details {
+          position: relative;
+          min-height: 480px;
+        }
+        .va-panel {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+          transform: translateY(14px);
+          pointer-events: none;
+          transition: opacity 380ms ease, transform 480ms cubic-bezier(0.16, 1, 0.3, 1);
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .va-showcase[data-active="bromo"] .va-panel[data-panel="bromo"],
+        .va-showcase[data-active="ijen"]  .va-panel[data-panel="ijen"] {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+          position: relative;
+        }
+
+        .va-eyebrow {
+          display: inline-block;
+          font-family: var(--font-mono);
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: var(--muted);
+          margin-bottom: 0.5rem;
+        }
+        .va-title {
+          font-family: var(--font-display);
+          font-size: clamp(36px, 4.4vw, 56px);
+          line-height: 1.0;
+          letter-spacing: -0.025em;
+          font-weight: 800;
+          color: var(--navy);
+          margin: 0 0 1rem;
+        }
+        .va-desc {
+          color: var(--muted);
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 1.6;
+          margin: 0;
+          max-width: 46ch;
+        }
+
+        .va-stats {
+          background: var(--white);
+          border: 1px solid var(--border);
+          border-radius: var(--r-lg);
+          padding: 1.6rem 1.75rem;
+          box-shadow: var(--shadow-soft);
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+        }
+        .va-stat-head {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 1rem;
+          margin-bottom: 0.5rem;
+        }
+        .va-stat-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.55rem;
+          font-family: var(--font-display);
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--navy);
+          letter-spacing: -0.01em;
+        }
+        .va-stat-label svg { width: 14px; height: 14px; color: var(--muted); flex-shrink: 0; }
+        .va-stat-value {
+          font-family: var(--font-mono);
+          font-size: 13px;
+          font-weight: 700;
+          color: var(--navy);
+          letter-spacing: -0.01em;
+        }
+        .va-stat-value em {
+          font-style: normal;
+          font-weight: 500;
+          color: var(--muted);
+          margin-left: 2px;
+        }
+        .va-bar {
+          position: relative;
+          height: 6px;
+          background: rgba(13,27,42,0.06);
+          border-radius: 999px;
+          overflow: hidden;
+        }
+        .va-bar-fill {
+          display: block;
+          height: 100%;
+          width: 0;
+          background: var(--va-accent);
+          border-radius: 999px;
+          transition: width 900ms cubic-bezier(0.16, 1, 0.3, 1), background 400ms ease;
+        }
+
+        .va-panel-foot {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          padding-top: 0.25rem;
+        }
+        .va-level {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+        .va-level-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: var(--va-accent);
+          box-shadow: 0 0 0 5px var(--va-accent-soft);
+        }
+        .va-level[data-level="gold"] .va-level-dot { background: var(--gold); box-shadow: 0 0 0 5px rgba(245,166,35,0.15); }
+        .va-level[data-level="lime"] .va-level-dot { background: var(--lime); box-shadow: 0 0 0 5px rgba(140,198,63,0.18); }
+        .va-level-num {
+          font-family: var(--font-mono);
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          color: var(--navy);
+        }
+        .va-level[data-level="gold"] .va-level-num { color: var(--gold); }
+        .va-level[data-level="lime"] .va-level-num { color: var(--lime); }
+        .va-level-name {
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--muted);
+          margin-top: 1px;
+        }
+        .va-updated {
+          font-family: var(--font-mono);
+          font-size: 10px;
+          letter-spacing: 0.14em;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+          .va-stage,
+          .va-showcase[data-active="ijen"] .va-stage {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+          .va-showcase[data-active="ijen"] .va-visual { order: 1; }
+          .va-showcase[data-active="ijen"] .va-details { order: 2; }
+          .va-visual { max-width: 420px; margin: 0 auto; width: 100%; }
+          .va-details { min-height: 0; }
+          .va-tab { min-width: 110px; padding: 0.6rem 1.2rem; }
+        }
+      </style>
+
+      <script>
+        (function () {
+          var root = document.querySelector('.va-showcase');
+          if (!root) return;
+          var tabs = root.querySelectorAll('.va-tab');
+          var bars = root.querySelectorAll('.va-bar-fill');
+
+          function animateBarsFor(active) {
+            var activePanel = root.querySelector('.va-panel[data-panel="' + active + '"]');
+            if (!activePanel) return;
+            // Reset all bars, then re-fill ones in the active panel
+            bars.forEach(function (b) { b.style.width = '0%'; });
+            requestAnimationFrame(function () {
+              var activeBars = activePanel.querySelectorAll('.va-bar-fill');
+              activeBars.forEach(function (b, i) {
+                setTimeout(function () {
+                  b.style.width = (b.getAttribute('data-target') || '0') + '%';
+                }, 120 + i * 90);
+              });
+            });
+          }
+
+          function setActive(volcano) {
+            root.setAttribute('data-active', volcano);
+            tabs.forEach(function (t) {
+              t.setAttribute('aria-selected', t.getAttribute('data-volcano') === volcano ? 'true' : 'false');
+            });
+            animateBarsFor(volcano);
+          }
+
+          tabs.forEach(function (t) {
+            t.addEventListener('click', function () {
+              setActive(t.getAttribute('data-volcano'));
+            });
+          });
+
+          // Initial fill on mount (with small delay so transition is visible)
+          setTimeout(function () { animateBarsFor(root.getAttribute('data-active') || 'bromo'); }, 250);
+
+          // Re-trigger when section scrolls into view
+          if ('IntersectionObserver' in window) {
+            var seen = false;
+            var io = new IntersectionObserver(function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting && !seen) {
+                  seen = true;
+                  animateBarsFor(root.getAttribute('data-active') || 'bromo');
+                }
+              });
+            }, { threshold: 0.25 });
+            io.observe(root);
+          }
+        })();
+      </script>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="bg-off section stack" id="reviews">
+    <div class="container">
+
+      <div data-animated-testimonials></div>
+      <div style="display:flex; justify-content:center; margin-top: 3rem;">
+        <a href="why-jvto-reviews.html" class="inline-link">Read all verified reviews <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS — listed & verified on -->
+  <section class="bg-white stack" id="partners" style="padding: 4rem 0;" data-screen-label="01i Partners">
+    <div class="container">
+      <p class="micro" style="text-align: center; margin-bottom: 2.5rem;">Listed &amp; Verified On</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem 3.5rem;" class="partners-row">
+        <a href="https://www.trustpilot.com/review/javavolcano-touroperator.com" target="_blank" rel="noopener noreferrer" title="Trustpilot" class="partner-logo">
+          <span class="plogo-name" style="color: #00B67A;">★ Trustpilot</span>
+          <span class="plogo-meta">4.8 · 51 verified</span>
+        </a>
+        <a href="https://www.tripadvisor.com/Attraction_Review-g297715-d19983165-Reviews-Java_Volcano_Tour_Operator-Surabaya_East_Java_Java.html" target="_blank" rel="noopener noreferrer" title="Tripadvisor" class="partner-logo">
+          <span class="plogo-name" style="color: #00AA6C;">○ Tripadvisor</span>
+          <span class="plogo-meta">4.95 · 21 reviews</span>
+        </a>
+        <a href="https://www.google.com/maps?cid=1266403973589689021" target="_blank" rel="noopener noreferrer" title="Google" class="partner-logo">
+          <span class="plogo-name" style="color: #4285F4;">G · Google</span>
+          <span class="plogo-meta">4.90 · 123 reviews</span>
+        </a>
+        <a href="https://www.isic.org/discounts/?providerId=259268" target="_blank" rel="noopener noreferrer" title="ISIC" class="partner-logo">
+          <span class="plogo-name" style="color: var(--navy);">ISIC</span>
+          <span class="plogo-meta">Provider 259268</span>
+        </a>
+        <a href="https://www.klook.com" target="_blank" rel="noopener noreferrer" title="Klook" class="partner-logo">
+          <span class="plogo-name" style="color: #FF5A5F;">Klook</span>
+          <span class="plogo-meta">Listed operator</span>
+        </a>
+        <a href="https://www.indecon.id/spotlight-networks/java-volcano-tour-operator" target="_blank" rel="noopener noreferrer" title="Indecon" class="partner-logo">
+          <span class="plogo-name" style="color: var(--navy);">Indecon</span>
+          <span class="plogo-meta">Ecotourism-aligned</span>
+        </a>
+      </div>
+      <style>
+        .partner-logo { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; opacity: 0.55; transition: opacity .2s; text-align: center; }
+        .partner-logo:hover { opacity: 1; }
+        .plogo-name { font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+        .plogo-meta { font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+      </style>
+    </div>
+  </section>
+
+  <!-- FAQ — homepage common questions -->
+  <section class="bg-off section stack" id="faq" data-screen-label="01j FAQ">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-num">§ 09 · FAQ</span>
+        <h2 class="section-title">Common <span class="accent-orange">questions.</span></h2>
+        <a href="travel-guide-faq.html" class="section-meta" style="text-decoration: underline; text-underline-offset: 4px;">See all questions →</a>
+      </div>
+
+      <ul class="faq-list" style="border-top: 1px solid var(--border); list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem;" id="home-faq-list">
+        <li>
+          <h4><span class="num">Q01</span> Is JVTO a legitimate company?</h4>
+          <p>Yes. JVTO operates under PT Java Volcano Rendezvous (AHU-registered February 2023, NIB and TDUP 1102230032918) and uses a publicly verifiable business identity. We also maintain a dedicated proof library so travelers can review our trust layers before paying a deposit.</p>
+        </li>
+        <li>
+          <h4><span class="num">Q02</span> Are all your tours private?</h4>
+          <p>Yes. All JVTO tours are private by default. You will have your own vehicle, your own driver, and your own guide or team, without being mixed into a shared group. This is a deliberate operational choice — private execution is what enables our safety standards.</p>
+        </li>
+        <li>
+          <h4><span class="num">Q03</span> Is the Ijen health screening included?</h4>
+          <p>Yes. For routes that include Ijen, JVTO coordinates the BBKSDA SE.1658/KSA.9/2024 health screening with Dr. Ahmad Irwandanu at Klinik Bakti Husada (Bondowoso) — his SIP licence is publicly verifiable on satusehat.kemkes.go.id. Guests do not have to navigate the process alone.</p>
+        </li>
+        <li>
+          <h4><span class="num">Q04</span> What happens if weather or volcanic conditions change the plan?</h4>
+          <p>Safety comes first. If access conditions change, JVTO uses an alternative-route approach and communicates clearly. Force-majeure closures are handled under our travel-credit policy: 100% Travel Credit (non-expiring, transferable, IDR-denominated, no rebooking fee).</p>
+        </li>
+        <li>
+          <h4><span class="num">Q05</span> How can I verify JVTO before booking?</h4>
+          <p>You can review our legal, police, medical, press, and history-artifact proof through the /verify-jvto cluster before you make any payment. Every credential is verifiable on Indonesian government registries (ahu.go.id, satusehat.kemkes.go.id, polri.go.id) — not just on our own site.</p>
+        </li>
+        <li>
+          <h4><span class="num">Q06</span> Why should I trust JVTO with my deposit?</h4>
+          <p>JVTO operates with a 'Trust First' philosophy. We are a legally registered PT (Perseroan Terbatas) in Indonesia, founded by Bripka Agung Sambuko — an active Tourist Police officer (POLPAR) under Indonesia's Ditpamobvit. We provide our NIB (1102230032918) and legal documents upfront so you can verify us through official government channels before paying.</p>
+        </li>
+      </ul>
+      <style>
+        @media (max-width: 880px) { #home-faq-list { grid-template-columns: 1fr !important; column-gap: 0 !important; } }
+      </style>
+
+    </div>
+  </section>
+
+  <!-- TRAVEL GUIDE CTA -->
+  <section class="bg-white section stack" id="guide">
+    <div class="container">
+      <div class="guide">
+        <div class="guide-img">
+          <div class="ph-stripes"></div>
+          <div class="ph-label">1:1 photo · Ijen pre-ascent screening at partner hotel</div>
+          <div style="position:absolute; bottom: 2rem; left: 2rem; right: 2rem; z-index: 3; color: white; pointer-events:none;">
+            <span class="micro" style="color: rgba(255,255,255,0.55);">§ 08</span>
+          </div>
+        </div>
+        <div class="guide-text">
+          <span class="micro" style="display:block; margin-bottom: 1.25rem;">Read the Rulebook Before You Book</span>
+          <h2>The Java <span class="accent-orange">expedition guide.</span></h2>
+          <p>Informed travelers make better decisions. Cancellation rules, inclusions, weather closures, and screening protocols are published in full before payment — not buried in fine print after a deposit.</p>
+
+          <div class="guide-links">
+            <a class="guide-link" href="travel-guide-ijen-health-screening.html">
+              <span class="gl-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+              <span class="t">Ijen Health Screening</span>
+            </a>
+            <a class="guide-link" href="travel-guide-weather-and-closures.html">
+              <span class="gl-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+              <span class="t">Weather &amp; Closures</span>
+            </a>
+            <a class="guide-link" href="travel-guide-packing-list.html">
+              <span class="gl-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+              <span class="t">Packing &amp; Fitness</span>
+            </a>
+            <a class="guide-link" href="policy-booking-payment-cancellation.html">
+              <span class="gl-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+              <span class="t">Booking &amp; Cancellation</span>
+            </a>
+          </div>
+
+          <a href="travel-guide.html" class="inline-link">Open full travel guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="bg-off section stack" id="our-story" data-screen-label="01k Our Story">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-num">§ 10</span>
+        <h2 class="section-title">Built by someone who saw the <span class="accent-orange">alternatives.</span></h2>
+        <span class="section-meta">11 years · single legal entity</span>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-text">
+          <p class="story-lede">JVTO grew from a humble local guesthouse in Bondowoso into a licensed tour operator shaped by the Tourist Police experience of our founder, Mr. Sam.</p>
+          <p class="story-body">We saw the gaps in safety standards first-hand — unlicensed guides, no medical screening, operators with no BBKSDA clearance, no written rules for guests. We decided to build something different: private-only routes, realistic driving days, and clear written policies.</p>
+          <p class="story-body">Today, we act as a bridge between wild adventure and professional safety standards. The Tourist Police experience isn't a marketing credential — it's the lens through which every route, every safety rule, and every Plan-B decision is made.</p>
+          <a href="why-jvto-our-story.html" class="inline-link">Read the full story <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <ul class="timeline story-timeline">
+          <li>
+            <span class="year">2015</span>
+            <div>
+              <h4>Guesthouse era</h4>
+              <p>The Ijen Bondowoso Homestay opens. Booking.com 2015 award — guest score 9.4/10.</p>
+            </div>
+          </li>
+          <li>
+            <span class="year">2016</span>
+            <div>
+              <h4>PT registered</h4>
+              <p>PT Java Volcano Rendezvous incorporated via AHU. Same founder, same address: Jl. Khairil Anwar 102A, Bondowoso.</p>
+            </div>
+          </li>
+          <li>
+            <span class="year">2023</span>
+            <div>
+              <h4>TDUP formalized</h4>
+              <p>Tourism Business Registration (TDUP) issued 2023-02-11 by Dinas Pariwisata. NIB 1102230032918 — checkable at oss.go.id.</p>
+            </div>
+          </li>
+          <li>
+            <span class="year">2026</span>
+            <div>
+              <h4>Today</h4>
+              <p>16 private itineraries, a 14-person crew (11 KTA-confirmed), and every credential publicly verifiable. One legal entity, the whole way.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <style>
+        .story-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 5rem; align-items: start; }
+        .story-lede { font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 32px); font-weight: 400; color: var(--navy); line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 1.75rem; text-wrap: balance; }
+        .story-body { font-size: 17px; color: var(--muted); font-weight: 300; line-height: 1.65; margin-bottom: 1.5rem; max-width: 56ch; }
+        .story-body:last-of-type { margin-bottom: 2.5rem; }
+        .story-timeline { margin-top: .25rem; }
+        @media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; gap: 3rem; } }
+      </style>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA — Ready to explore -->
+  <section class="cta-block" data-screen-label="01l Final CTA">
+    <div class="container">
+      <h2>Ready to explore <span class="accent-orange">East Java?</span></h2>
+      <p style="max-width: 56ch; margin: -1rem auto 2.75rem; color: rgba(255,255,255,0.6); font-size: 17px; font-weight: 300; line-height: 1.6;">
+        16 private itineraries from Surabaya and Bali — or check every license, press article, and founder credential before you commit.
+      </p>
+      <div class="ctas">
+        <a class="primary" href="tours.html">
+          Browse Tours — 16 private itineraries
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a class="ghost" href="verify-jvto.html">Verify JVTO — check the proof</a>
+      </div>
+      <p style="max-width: 60ch; margin: 2.75rem auto 0; color: rgba(255,255,255,0.45); font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.7;">
+        Read the Rulebook Before You Book — cancellation rules, inclusions, and screening protocols are published in full before payment.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JVTO</div>
+          <p>Private Bromo, Ijen &amp; Tumpak Sewu tours from Surabaya or Bali. Tourist Police-led. NIB 1102230032918 · checkable at oss.go.id. Read the Rulebook Before You Book.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="tours.html">All 16 Tours</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="why-jvto.html">Why JVTO</a></li>
+            <li><a href="verify-jvto.html">Verify JVTO</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="policy.html">Legal &amp; Transparency</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact · 08:00–22:00 WIB</h4>
+          <ul>
+            <li><a href="https://wa.me/6282244788833">WhatsApp +62 822 4478 8833</a></li>
+            <li><a href="mailto:hello@javavolcano-touroperator.com">hello@javavolcano-touroperator.com</a></li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Jl. Khairil Anwar No.102A,<br />Bondowoso, East Java 68214,<br />Indonesia</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Verified credentials</h4>
+          <ul>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">PT Java Volcano Rendezvous</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">NIB · 1102230032918</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">TDUP · issued 2023-02-11</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">HPWKI-trained guides · ISIC 259268</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Trustpilot 4.8 · Google 4.90 · TripAdvisor 4.95</li>
+            <li><a href="verify-jvto.html">→ Open proof library</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2026 PT Java Volcano Rendezvous · All rights reserved · NIB 1102230032918 · TDUP issued 2023-02-11</small>
+        <div class="footer-legal">
+          <a href="policy-privacy.html">Privacy</a>
+          <a href="policy.html">Terms</a>
+          <a href="policy-booking-payment-cancellation.html">Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a class="fab" href="https://wa.me/6282244788833" aria-label="WhatsApp +62 822 4478 8833">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.4-1.1c-.3-.1-.7-.1-.9.2l-.7.9c-.1.2-.4.2-.6.1-.8-.4-2.4-1.8-2.8-2.6-.1-.2-.1-.4.1-.6l.7-.8c.2-.2.2-.5.1-.8l-1-2.5c-.2-.5-.7-.6-1.1-.4-1.1.6-1.8 1.7-1.7 2.9.1 2.7 3.6 6.2 6.3 6.5 1.2.1 2.4-.6 2.9-1.7.2-.5 0-.9-.4-1.1z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.2-1.4c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3.1-.2-.3C4.1 15 3.7 13.5 3.7 12 3.7 7.5 7.5 3.7 12 3.7s8.3 3.8 8.3 8.3-3.8 8.2-8.3 8.2z"/></svg>
+  </a>
+
+  <!-- ─────── Tweaks ─────── -->
+  <div id="tweaks-root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+  <script src="feature-carousel.js"></script>
+  <script src="animated-testimonials.js"></script>
+</body>
+</html>

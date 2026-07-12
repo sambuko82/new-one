@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Why JVTO · JVTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jvto-system.css" />
+<script src="image-slot.js"></script>
+<script>window.__JVTO_TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{"palette":"default","density":"comfortable","displayItalic":true}/*EDITMODE-END*/;</script>
+<style>
+  /* ───── Feature block scaffold ───── */
+  .feat { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+  .feat.reverse .feat-media { order: 2; }
+  @media (max-width: 940px) { .feat { grid-template-columns: 1fr; gap: 2.5rem; } .feat.reverse .feat-media { order: 0; } }
+
+  .media-frame {
+    position: relative; margin: 0;
+    aspect-ratio: 5/4; border-radius: var(--r-xl); overflow: hidden;
+    background: var(--navy); box-shadow: var(--shadow-card-hover);
+  }
+  .media-frame image-slot { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .media-frame::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 3;
+    background: linear-gradient(150deg, rgba(13,27,42,0) 40%, rgba(13,27,42,0.55) 100%);
+  }
+  .media-tag {
+    position: absolute; left: 18px; bottom: 18px; z-index: 4;
+    font-family: var(--font-mono); font-size: 9.5px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.25); padding: 6px 10px; border-radius: var(--r-pill);
+    backdrop-filter: blur(6px); background: rgba(0,0,0,0.2);
+  }
+  .feat .floating-badge { right: -22px; top: 28px; }
+  @media (max-width: 600px) { .feat .floating-badge { right: 12px; max-width: 200px; } }
+
+  .feat-eyebrow { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.25rem; }
+  .feat-eyebrow .fe-num { color: var(--muted); }
+  .feat-body h2 { font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 48px); letter-spacing: -0.03em; line-height: 1.04; margin-bottom: 1.1rem; }
+  .feat-body .feat-lede { color: var(--muted); font-size: 17px; font-weight: 300; line-height: 1.6; max-width: 46ch; margin-bottom: 1.75rem; }
+  .feat-body.on-dark h2 { color: #fff; }
+  .feat-body.on-dark .feat-lede { color: rgba(255,255,255,0.72); }
+
+  /* ───── Difference: interactive chips ───── */
+  .diff-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+  .diff-chip {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 9px 14px; border-radius: var(--r-pill); border: 1px solid var(--border);
+    background: var(--white); color: var(--muted); cursor: pointer; transition: all .2s; display: inline-flex; align-items: center; gap: .45rem;
+  }
+  .diff-chip .dc-n { color: var(--orange); }
+  .diff-chip:hover { border-color: var(--navy); color: var(--navy); }
+  .diff-chip.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .diff-chip.on .dc-n { color: var(--lime); }
+  .diff-detail {
+    background: var(--off); border: 1px solid var(--border); border-left: 3px solid var(--orange);
+    border-radius: var(--r-md); padding: 1.35rem 1.6rem; min-height: 104px;
+  }
+  .diff-detail h4 { font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; margin-bottom: .35rem; }
+  .diff-detail p { font-size: 14.5px; color: var(--muted); font-weight: 300; line-height: 1.55; }
+  .diff-detail .dd-cred { display: block; margin-top: .65rem; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lime); }
+  .fade-swap { animation: fadeSwap .4s ease; }
+  @keyframes fadeSwap { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  /* ───── Reviews: score counters + rotating quote ───── */
+  .score-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-bottom: 1.5rem; }
+  .score { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.1rem 1.2rem; box-shadow: var(--shadow-soft); }
+  .score .sc-num { font-family: var(--font-display); font-size: 34px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--navy); }
+  .score .sc-plat { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: .5rem; }
+  .score .sc-count { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; color: var(--orange); margin-top: 2px; }
+  .quote-rotator { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.5rem 1.75rem; box-shadow: var(--shadow-soft); min-height: 130px; position: relative; overflow: hidden; }
+  .quote-rotator .qr-mark { font-family: var(--font-display); font-size: 56px; line-height: .6; color: var(--orange); }
+  .quote-rotator .qr-text { font-family: var(--font-display); font-style: italic; font-size: 18px; line-height: 1.4; color: var(--navy); margin: .25rem 0 .85rem; }
+  .quote-rotator .qr-who { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .quote-rotator .qr-dots { position: absolute; right: 1.25rem; bottom: 1.1rem; display: flex; gap: 5px; }
+  .quote-rotator .qr-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); transition: background .3s; }
+  .quote-rotator .qr-dot.on { background: var(--orange); }
+
+  /* ───── Story: interactive timeline ───── */
+  .story-tabs { display: flex; gap: .5rem; margin-bottom: 1.25rem; }
+  .story-tab { flex: 1; background: transparent; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.6); border-radius: var(--r-sm); padding: .85rem; cursor: pointer; transition: all .2s; text-align: center; }
+  .story-tab .st-year { font-family: var(--font-display); font-size: 24px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .story-tab .st-lbl { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; margin-top: .35rem; display: block; }
+  .story-tab:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
+  .story-tab.on { background: var(--orange); border-color: var(--orange); color: #fff; }
+  .story-panel { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 1.5rem 1.75rem; min-height: 120px; }
+  .story-panel h4 { font-family: var(--font-display); color: #fff; font-size: 20px; margin-bottom: .5rem; letter-spacing: -0.01em; }
+  .story-panel p { color: rgba(255,255,255,0.72); font-size: 15px; font-weight: 300; line-height: 1.6; }
+
+  /* ───── Team: portrait marquee ───── */
+  .team-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .team-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+  .team-stat .ts-n { font-family: var(--font-display); font-size: 40px; font-weight: 800; letter-spacing: -0.03em; color: var(--lime); line-height: 1; }
+  .team-stat .ts-l { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: .4rem; }
+  .marquee { position: relative; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .marquee-track { display: flex; gap: 1.25rem; width: max-content; animation: marquee 46s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .portrait { position: relative; width: 190px; aspect-ratio: 3/4; border-radius: var(--r-lg); overflow: hidden; background: var(--navy-mid); flex-shrink: 0; box-shadow: 0 10px 30px -12px rgba(0,0,0,0.5); }
+  .portrait .ph-stripes { position: absolute; inset: 0; }
+  .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: 1; }
+  .portrait .p-grad { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, transparent 45%, rgba(13,27,42,0.92) 100%); }
+  .portrait .p-cap { position: absolute; left: 14px; bottom: 12px; z-index: 3; }
+  .portrait .p-name { font-family: var(--font-display); font-weight: 700; font-size: 17px; color: #fff; letter-spacing: -0.01em; }
+  .portrait .p-role { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lime); margin-top: 2px; }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+  /* ───── Standards: accordion ───── */
+  .acc { border-top: 1px solid var(--border); }
+  .acc-item { border-bottom: 1px solid var(--border); }
+  .acc-q { width: 100%; background: none; border: 0; text-align: left; display: flex; align-items: center; gap: 1rem; padding: 1.1rem 0; cursor: pointer; font-family: var(--font-display); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--navy); transition: color .2s; }
+  .acc-q:hover { color: var(--orange); }
+  .acc-x { width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; background: rgba(232,101,10,0.1); color: var(--orange); display: grid; place-items: center; transition: transform .3s; }
+  .acc-x svg { width: 13px; height: 13px; }
+  .acc-item.open .acc-x { transform: rotate(45deg); }
+  .acc-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .acc-a p { color: var(--muted); font-size: 15px; font-weight: 300; line-height: 1.6; padding: 0 0 1.2rem 2.6rem; }
+
+  /* ───── Scroll reveal ───── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+</style>
+</head>
+<body data-screen-label="04 Why JVTO">
+
+  <div class="ribbon">
+    <div class="container ribbon-row">
+      <div class="ribbon-marquee">
+        <span><i class="ribbon-dot"></i> PT Java Volcano Rendezvous</span>
+        <span>NIB · 1102230032918</span>
+        <span>Bripka Agung Sambuko · Ditpamobvit East Java</span>
+      </div>
+      <div class="ribbon-right">
+        <span>WhatsApp 08:00–22:00 WIB</span>
+        <span style="color:var(--lime)">✓ Verify Us</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero interior">
+    <div class="hero-bg">
+      <div class="ph-stripes warm"></div>
+      <img class="real-photo" src="https://javavolcano-touroperator.com/assets/img/hero/home.webp" alt="Java volcano landscape" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;" />
+    </div>
+    <div class="hero-overlay"></div>
+    <nav class="topnav">
+      <div class="container nav-inner">
+        <a href="homepage.html" class="brand">JVTO <small>· EST 2016</small></a>
+        <div class="nav-links">
+          <a href="tours.html">Tours</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="why-jvto.html">Why JVTO</a>
+          <a href="travel-guide.html">Travel Guide</a>
+        </div>
+        <div class="nav-cta">
+          <a href="verify-jvto.html" class="pill pill-verify">✓ Verify Us</a>
+          <a href="contact.html" class="pill pill-wa">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-inner container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow-row"><span class="eyebrow-pill">Why JVTO — Hub</span><span class="eyebrow-meta">FILE 004 / WHY JVTO</span></div>
+          <h1 class="hero-head">Six things that <span class="italic">separate</span> us.</h1>
+          <p class="hero-lede">A licensed private tour operator led by an active Tourist Police officer — Bripka Agung Sambuko of Ditpamobvit, East Java. Every claim below is verifiable.</p>
+        </div>
+        <div class="hero-meta-block">
+          <div class="meta-row"><span>Legal entity</span><strong>PT Java Volcano Rendezvous</strong></div>
+          <div class="meta-row"><span>NIB</span><strong>1102230032918</strong></div>
+          <div class="meta-row"><span>Founder</span><strong>Active Tourist Police</strong></div>
+          <div class="meta-row"><span>Tour format</span><strong>100% private</strong></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01 · THE JVTO DIFFERENCE -->
+  <section class="bg-white section stack">
+    <div class="container">
+      <div class="feat reverse reveal">
+        <div class="feat-media">
+          <figure class="media-frame">
+            <image-slot id="why-difference" shape="rounded" radius="40" src="https://javavolcano-touroperator.com/assets/img/hero/home.webp" placeholder="Drop a police-led safety / Ijen crater photo"></image-slot>
+            <span class="media-tag">Ditpamobvit · operational authority</span>
+            <div class="floating-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              <div><div class="fb-title">Official Safety Authority</div><div class="fb-sub">Active Tourist Police officer</div></div>
+            </div>
+          </figure>
+        </div>
+        <div class="feat-body">
+          <span class="feat-eyebrow"><span class="fe-num">§ 01</span> · The JVTO Difference</span>
+          <h2>Six differentiators, <span class="accent-orange">each verifiable.</span></h2>
+          <p class="feat-lede">Not marketing language — every one is backed by a credential you can check. Tap a pillar to see what proves it.</p>
+          <div class="diff-chips" id="diffChips">
+            <button class="diff-chip on" data-i="0"><span class="dc-n">01</span> Police-led</button>
+            <button class="diff-chip" data-i="1"><span class="dc-n">02</span> 100% private</button>
+            <button class="diff-chip" data-i="2"><span class="dc-n">03</span> All-inclusive</button>
+            <button class="diff-chip" data-i="3"><span class="dc-n">04</span> Ijen screening</button>
+            <button class="diff-chip" data-i="4"><span class="dc-n">05</span> Licenses</button>
+            <button class="diff-chip" data-i="5"><span class="dc-n">06</span> Plan B</button>
+          </div>
+          <div class="diff-detail" id="diffDetail">
+            <h4 id="ddTitle">Police-Led Safety Authority</h4>
+            <p id="ddText">Our founder is an active officer in Ditpamobvit — the directorate securing vital objects including Ijen Crater. No other East Java operator is led by an active Tourist Police officer.</p>
+            <span class="dd-cred" id="ddCred">Proof · SPRIN documents + independent press</span>
+          </div>
+          <a href="why-jvto-the-jvto-difference.html" class="inline-link" style="margin-top:1.5rem;">Read the difference →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · REVIEWS -->
+  <section class="bg-off section stack">
+    <div class="container">
+      <div class="feat reveal">
+        <div class="feat-media">
+          <figure class="media-frame">
+            <image-slot id="why-reviews" shape="rounded" radius="40" src="https://javavolcano-touroperator.com/assets/img/hero/home.webp" placeholder="Drop a guest / group summit photo"></image-slot>
+            <span class="media-tag">Verified across 3 platforms</span>
+            <div class="floating-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg>
+              <div><div class="fb-title">4.8 ★ Trustpilot</div><div class="fb-sub">51 verified reviews</div></div>
+            </div>
+          </figure>
+        </div>
+        <div class="feat-body">
+          <span class="feat-eyebrow"><span class="fe-num">§ 02</span> · Reviews</span>
+          <h2>Patterns, not a <span class="accent-orange">quote wall.</span></h2>
+          <p class="feat-lede">Feedback grouped by what it proves, across three independent platforms — verified, not cherry-picked.</p>
+          <div class="score-row" id="scoreRow">
+            <div class="score"><div class="sc-num" data-target="4.8" data-dec="1">0.0</div><div class="sc-plat">Trustpilot</div><div class="sc-count">51 reviews</div></div>
+            <div class="score"><div class="sc-num" data-target="4.90" data-dec="2">0.00</div><div class="sc-plat">Google Maps</div><div class="sc-count">123 reviews</div></div>
+            <div class="score"><div class="sc-num" data-target="4.95" data-dec="2">0.00</div><div class="sc-plat">TripAdvisor</div><div class="sc-count">21 reviews</div></div>
+          </div>
+          <div class="quote-rotator" id="quoteRotator">
+            <div class="qr-mark">&ldquo;</div>
+            <p class="qr-text" id="qrText">I don't think there is a better tour guide anywhere than Anjas — head and shoulders above the rest.</p>
+            <div class="qr-who" id="qrWho">John Joyce · Trustpilot · guide Anjas</div>
+            <div class="qr-dots" id="qrDots"></div>
+          </div>
+          <a href="why-jvto-reviews.html" class="inline-link" style="margin-top:1.5rem;">Read all reviews →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · OUR STORY -->
+  <section class="bg-white section stack">
+    <div class="container">
+      <div class="feat reverse reveal">
+        <div class="feat-media">
+          <figure class="media-frame">
+            <image-slot id="why-story" shape="rounded" radius="40" src="https://javavolcano-touroperator.com/assets/img/hero/home.webp" placeholder="Drop a founder / Bondowoso homestay photo"></image-slot>
+            <span class="media-tag">Bondowoso · since 2015</span>
+            <div class="floating-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>
+              <div><div class="fb-title">Est. 2015</div><div class="fb-sub">Ijen Bondowoso Homestay</div></div>
+            </div>
+          </figure>
+        </div>
+        <div class="feat-body on-dark" style="background:var(--navy); border-radius:var(--r-lg); padding:2.5rem;">
+          <span class="feat-eyebrow"><span class="fe-num" style="color:rgba(255,255,255,0.5)">§ 03</span> · Our Story</span>
+          <h2>From a homestay to a <span class="accent-orange">licensed operator.</span></h2>
+          <p class="feat-lede">Eleven years of operational continuity at one Bondowoso address — documented by third parties. Tap a year.</p>
+          <div class="story-tabs" id="storyTabs">
+            <button class="story-tab on" data-i="0"><span class="st-year">'15</span><span class="st-lbl">Homestay</span></button>
+            <button class="story-tab" data-i="1"><span class="st-year">'16</span><span class="st-lbl">PT formed</span></button>
+            <button class="story-tab" data-i="2"><span class="st-year">'23</span><span class="st-lbl">TDUP</span></button>
+          </div>
+          <div class="story-panel" id="storyPanel">
+            <h4 id="spTitle">The Guesthouse</h4>
+            <p id="spText">Mr. Sam opens the Ijen Bondowoso Homestay on Jl. Khairil Anwar No.102 — the same address JVTO operates from today. Booking.com guests rate the property 9.4 / 10.</p>
+          </div>
+          <a href="why-jvto-our-story.html" class="inline-link light" style="margin-top:1.5rem;">Read our story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · OUR TEAM -->
+  <section class="bg-navy section stack">
+    <div class="container">
+      <div class="reveal">
+        <div class="team-head">
+          <div>
+            <span class="feat-eyebrow" style="color:var(--lime)"><span class="fe-num" style="color:rgba(255,255,255,0.5)">§ 04</span> · Our Team</span>
+            <h2 style="font-family:var(--font-display); font-size:clamp(30px,3.6vw,48px); color:#fff; letter-spacing:-0.03em; line-height:1.04; max-width:18ch;">14 named crew. <span class="accent-orange">No freelancers.</span></h2>
+          </div>
+          <div class="team-stats">
+            <div class="team-stat"><div class="ts-n">7</div><div class="ts-l">Guides</div></div>
+            <div class="team-stat"><div class="ts-n">7</div><div class="ts-l">Drivers</div></div>
+            <div class="team-stat"><div class="ts-n">5</div><div class="ts-l">HPWKI KTA</div></div>
+          </div>
+        </div>
+        <div class="marquee"><div class="marquee-track" id="crewTrack"></div></div>
+        <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em; color:rgba(255,255,255,0.5); margin-top:1.75rem;">Hover to pause · individually photographed &amp; license-linked · recruited from Bondowoso &amp; Banyuwangi</p>
+        <a href="why-jvto-our-team.html" class="inline-link light" style="margin-top:1.5rem;">Meet the full team →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · COMMUNITY STANDARDS -->
+  <section class="bg-off section stack">
+    <div class="container">
+      <div class="feat reverse reveal">
+        <div class="feat-media">
+          <figure class="media-frame">
+            <image-slot id="why-standards" shape="rounded" radius="40" src="https://javavolcano-touroperator.com/assets/img/hero/home.webp" placeholder="Drop a sulfur-miner trail / Ijen route photo"></image-slot>
+            <span class="media-tag">Kawah Ijen · shared working path</span>
+            <div class="floating-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+              <div><div class="fb-title">Ecotourism-aligned</div><div class="fb-sub">Local Boys policy</div></div>
+            </div>
+          </figure>
+        </div>
+        <div class="feat-body">
+          <span class="feat-eyebrow"><span class="fe-num">§ 05</span> · Community Standards</span>
+          <h2>Read the rulebook <span class="accent-orange">before you book.</span></h2>
+          <p class="feat-lede">We publish what we don't do as plainly as what we do. Every policy is online before you pay.</p>
+          <div class="acc" id="standardsAcc">
+            <div class="acc-item open">
+              <button class="acc-q"><span class="acc-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> We don't operate shared groups</button>
+              <div class="acc-a"><p>Every tour is private to your booking — a dedicated vehicle, driver, and guide for your group alone.</p></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q"><span class="acc-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> We don't make verbal promises</button>
+              <div class="acc-a"><p>The E-Voucher is the binding document. If it is not on the voucher, it is not included.</p></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q"><span class="acc-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> We don't guarantee natural phenomena</button>
+              <div class="acc-a"><p>Blue Fire depends on weather and gas activity. We plan around the viewing window — we don't promise outcomes we can't control.</p></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q"><span class="acc-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> We don't source crew from marketplaces</button>
+              <div class="acc-a"><p>Every guide and driver is a named, registered team member recruited from local communities — aligned with national ecotourism principles (INDECON).</p></div>
+            </div>
+          </div>
+          <a href="why-jvto-community-standards.html" class="inline-link" style="margin-top:1.5rem;">See the standards →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + trust anchor -->
+  <section class="cta-block">
+    <div class="container">
+      <h2>Don't guess. <span class="accent-orange">Verify.</span></h2>
+      <div class="ctas">
+        <a class="primary" href="verify-jvto.html">Open the proof library <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="ghost" href="tours.html">Explore private tours</a>
+      </div>
+      <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; color:rgba(255,255,255,0.5); margin-top:2.5rem;">PT Java Volcano Rendezvous · NIB 1102230032918 · Trustpilot 4.8 / 5 (51 reviews, verified 2026-05-09)</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JVTO</div>
+          <p>Private volcano tours in Java featuring Bromo, Ijen, and more. Expert guides, verifiable credentials, unforgettable adventures.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a class="social-btn" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Why JVTO</h4>
+          <ul>
+            <li><a href="why-jvto-the-jvto-difference.html">The JVTO Difference</a></li>
+            <li><a href="why-jvto-reviews.html">Reviews</a></li>
+            <li><a href="why-jvto-our-story.html">Our Story</a></li>
+            <li><a href="why-jvto-our-team.html">Our Team</a></li>
+            <li><a href="why-jvto-community-standards.html">Community Standards</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">+62 822 4478 8833</a></li>
+            <li><a href="contact.html">hello@javavolcano-touroperator.com</a></li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Jl. Khairil Anwar No.102A,<br />Bondowoso, East Java</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Verified</h4>
+          <ul>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">PT Java Volcano Rendezvous</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">NIB 1102230032918</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Trustpilot 4.8 / 5 (51 reviews)</li>
+            <li><a href="verify-jvto.html">→ Open proof library</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2026 PT Java Volcano Rendezvous · All rights reserved · NIB 1102230032918</small>
+        <div class="footer-legal">
+          <a href="policy-privacy.html">Privacy</a>
+          <a href="policy.html">Terms</a>
+          <a href="policy-booking-payment-cancellation.html">Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab" href="contact.html" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.4-1.1c-.3-.1-.7-.1-.9.2l-.7.9c-.1.2-.4.2-.6.1-.8-.4-2.4-1.8-2.8-2.6-.1-.2-.1-.4.1-.6l.7-.8c.2-.2.2-.5.1-.8l-1-2.5c-.2-.5-.7-.6-1.1-.4-1.1.6-1.8 1.7-1.7 2.9.1 2.7 3.6 6.2 6.3 6.5 1.2.1 2.4-.6 2.9-1.7.2-.5 0-.9-.4-1.1z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.2-1.4c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3.1-.2-.3C4.1 15 3.7 13.5 3.7 12 3.7 7.5 7.5 3.7 12 3.7s8.3 3.8 8.3 8.3-3.8 8.2-8.3 8.2z"/></svg>
+  </a>
+
+  <script>
+  (function () {
+    /* ── Scroll reveal ── */
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); } });
+    }, { threshold: 0.18 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    /* ── 01 Difference chips ── */
+    var diffData = [
+      ['Police-Led Safety Authority', "Our founder is an active officer in Ditpamobvit — the directorate securing vital objects including Ijen Crater. No other East Java operator is led by an active Tourist Police officer.", 'Proof · SPRIN documents + independent press'],
+      ['100% Private Tours', 'A dedicated vehicle, driver, and guide assigned to your group only. No shared groups, no mixed itineraries, no timing compromises.', 'Proof · NIB + TDUP, OSS-verifiable'],
+      ['All-Inclusive Clarity', 'Transport, accommodation, permits, water and safety gear written into the price. If it is not on the E-Voucher, it is not included.', 'Proof · Inclusions & Exclusions Policy'],
+      ['Ijen Health-Screening', 'When BBKSDA rules require it, we coordinate a QR-verified surat sehat through an SIP-licensed doctor — scannable at the crater gate.', 'Proof · BBKSDA SE.1658/KSA.9/2024'],
+      ['Verifiable Licenses', 'NIB, TDUP, HPWKI-credentialed guides, BBKSDA clearance, ISIC provider and ecotourism alignment — a proof library, not a logo wall.', 'Proof · /verify-jvto/legal'],
+      ['Plan B Framework', 'Documented alternative routes activated when a site closes or conditions change — a written SOP published before you book.', 'Proof · Travel Guide, pre-booking']
+    ];
+    var chips = document.querySelectorAll('#diffChips .diff-chip');
+    var ddT = document.getElementById('ddTitle'), ddX = document.getElementById('ddText'), ddC = document.getElementById('ddCred'), ddBox = document.getElementById('diffDetail');
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        chips.forEach(function (o) { o.classList.remove('on'); });
+        c.classList.add('on');
+        var d = diffData[+c.dataset.i];
+        ddT.textContent = d[0]; ddX.textContent = d[1]; ddC.textContent = d[2];
+        ddBox.classList.remove('fade-swap'); void ddBox.offsetWidth; ddBox.classList.add('fade-swap');
+      });
+    });
+
+    /* ── 02 Review score count-up ── */
+    var counted = false;
+    var scoreRow = document.getElementById('scoreRow');
+    var sio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !counted) {
+          counted = true;
+          scoreRow.querySelectorAll('.sc-num').forEach(function (n) {
+            var tgt = parseFloat(n.dataset.target), dec = +n.dataset.dec, t0 = null, dur = 1200;
+            function step(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / dur, 1); var eased = 1 - Math.pow(1 - p, 3); n.textContent = (eased * tgt).toFixed(dec); if (p < 1) requestAnimationFrame(step); }
+            requestAnimationFrame(step);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    if (scoreRow) sio.observe(scoreRow);
+
+    /* ── 02 Review quote rotator ── */
+    var quotes = [
+      ["I don't think there is a better tour guide anywhere than Anjas — head and shoulders above the rest.", 'John Joyce · Trustpilot · guide Anjas'],
+      ['Being a solo traveler it was safe and stress free with JVTO.', 'Karthika TS · Trustpilot'],
+      ['When we went down the steep crater, he held our hands to prevent us from falling.', 'Wing Shan Lui · Google · guide Rendi'],
+      ['One of our friends was injured and they helped him as well. Fantastic planning.', 'Jiang Tianjian · Trustpilot'],
+      ['Our driver Yandi was really reliable and friendly. He briefed us on what to expect.', 'Divya_Stri · Trustpilot · driver Yandi']
+    ];
+    var qT = document.getElementById('qrText'), qW = document.getElementById('qrWho'), qDots = document.getElementById('qrDots');
+    var qi = 0;
+    quotes.forEach(function (_, i) { var d = document.createElement('span'); d.className = 'qr-dot' + (i === 0 ? ' on' : ''); qDots.appendChild(d); });
+    var dots = qDots.querySelectorAll('.qr-dot');
+    function showQuote(i) {
+      qi = i;
+      qT.style.opacity = 0; qW.style.opacity = 0;
+      setTimeout(function () {
+        qT.textContent = quotes[i][0]; qW.textContent = quotes[i][1];
+        qT.style.transition = 'opacity .4s'; qW.style.transition = 'opacity .4s';
+        qT.style.opacity = 1; qW.style.opacity = 1;
+        dots.forEach(function (d, j) { d.classList.toggle('on', j === i); });
+      }, 250);
+    }
+    setInterval(function () { showQuote((qi + 1) % quotes.length); }, 4200);
+
+    /* ── 03 Story timeline ── */
+    var storyData = [
+      ['The Guesthouse', 'Mr. Sam opens the Ijen Bondowoso Homestay on Jl. Khairil Anwar No.102 — the same address JVTO operates from today. Booking.com guests rate the property 9.4 / 10.'],
+      ['PT Java Volcano Rendezvous', 'The company is incorporated on 2016-01-01. Stefan Loose Reiseführer Indonesien (4th Ed., 2018) names "Agung" as operator at the same address — an independent German guidebook.'],
+      ['TDUP Formalization', 'The Tourism Business Permit is formalized, completing the regulatory chain. NIB 1102230032918 is OSS-verifiable through Indonesia\u2019s government system.']
+    ];
+    var sTabs = document.querySelectorAll('#storyTabs .story-tab');
+    var spT = document.getElementById('spTitle'), spX = document.getElementById('spText'), spPanel = document.getElementById('storyPanel');
+    sTabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        sTabs.forEach(function (o) { o.classList.remove('on'); });
+        t.classList.add('on');
+        var d = storyData[+t.dataset.i];
+        spT.textContent = d[0]; spX.textContent = d[1];
+        spPanel.classList.remove('fade-swap'); void spPanel.offsetWidth; spPanel.classList.add('fade-swap');
+      });
+    });
+
+    /* ── 04 Crew marquee ── */
+    var crew = [
+      ['Anjas', 'Guide', 'https://javavolcano-touroperator.com/uploads/1768270423657-690185912-anjas.png'],
+      ['Taufik', 'Guide', 'https://javavolcano-touroperator.com/uploads/1768228083285-919198019-taufik_1_.png'],
+      ['Rendi', 'Guide', 'https://javavolcano-touroperator.com/uploads/1768228514527-518051332-rendi.png'],
+      ['Kiki', 'Guide', 'https://javavolcano-touroperator.com/uploads/1768271545598-834784538-kiki.png'],
+      ['Gufron', 'Guide', 'https://javavolcano-touroperator.com/uploads/1768225567764-405955176-gufron.png'],
+      ['Fauzi', 'Guide', 'https://javavolcano-touroperator.com/uploads/1768226003889-338819579-fauzi.png'],
+      ['Boy', 'Guide', 'https://javavolcano-touroperator.com/uploads/1768228191022-893381041-boy.png'],
+      ['Yandi', 'Driver', 'https://javavolcano-touroperator.com/uploads/1768270364125-144711646-yandi.png'],
+      ['Fredi', 'Driver', 'https://javavolcano-touroperator.com/uploads/1768276791622-262250680-freddy.png'],
+      ['Holili', 'Driver', 'https://javavolcano-touroperator.com/uploads/1768277053384-470130286-holili.jpg'],
+      ['Joyo', 'Driver', 'https://javavolcano-touroperator.com/uploads/1768277336049-911840775-joyo.png']
+    ];
+    var track = document.getElementById('crewTrack');
+    function portrait(p) {
+      return '<div class="portrait"><div class="ph-stripes"></div>' +
+        '<img src="' + p[2] + '" alt="' + p[0] + '" loading="lazy" />' +
+        '<div class="p-grad"></div><div class="p-cap"><div class="p-name">' + p[0] + '</div><div class="p-role">' + p[1] + '</div></div></div>';
+    }
+    var html = crew.map(portrait).join('');
+    track.innerHTML = html + html; /* duplicate for seamless loop */
+
+    /* ── 05 Standards accordion ── */
+    document.querySelectorAll('#standardsAcc .acc-item').forEach(function (item) {
+      var q = item.querySelector('.acc-q'), a = item.querySelector('.acc-a');
+      function setH() { a.style.maxHeight = item.classList.contains('open') ? a.scrollHeight + 'px' : '0px'; }
+      if (item.classList.contains('open')) setH();
+      q.addEventListener('click', function () {
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('#standardsAcc .acc-item').forEach(function (o) { o.classList.remove('open'); o.querySelector('.acc-a').style.maxHeight = '0px'; });
+        if (!wasOpen) { item.classList.add('open'); setH(); }
+      });
+    });
+  })();
+  </script>
+
+  <div id="tweaks-root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+</body>
+</html>

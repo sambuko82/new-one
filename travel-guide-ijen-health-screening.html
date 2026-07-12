@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ijen Health Screening · JVTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jvto-system.css" />
+<script>window.__JVTO_TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{"palette":"default","density":"comfortable","displayItalic":true}/*EDITMODE-END*/;</script>
+<style>
+  .steps { list-style:none; padding:0; margin:1.5rem 0 2.5rem; counter-reset:stp; }
+  .steps > li { counter-increment:stp; display:grid; grid-template-columns:38px 1fr; column-gap:1.2rem; padding:1.3rem 0; border-top:1px solid var(--border); align-items:start; }
+  .steps > li:last-child { border-bottom:1px solid var(--border); }
+  .steps > li::before { content:counter(stp); font-family:var(--font-mono); font-size:13px; font-weight:700; color:var(--orange); background:rgba(245,166,35,0.1); border-radius:50%; width:30px; height:30px; display:grid; place-items:center; }
+  .steps .st { font-family:var(--font-display); font-size:18px; font-weight:700; color:var(--navy); letter-spacing:-0.01em; margin-bottom:.25rem; }
+  .steps .sp { font-size:15px; color:var(--muted); font-weight:300; line-height:1.6; }
+  .cred-table { width:100%; border-collapse:collapse; margin:1.5rem 0 2.5rem; }
+  .cred-table th { text-align:left; font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); font-weight:700; padding:0 1rem .8rem 0; border-bottom:1px solid var(--border); }
+  .cred-table td { padding:1.1rem 1rem 1.1rem 0; border-bottom:1px solid var(--border); color:var(--navy); vertical-align:top; font-size:15px; line-height:1.55; font-weight:400; }
+  .cred-table td:first-child { font-weight:700; }
+  .cred-table .mono { font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.02em; }
+  .cred-table a { color:var(--orange); border-bottom:1px solid currentColor; word-break:break-word; }
+  .gate { border:1px solid var(--border); border-left:3px solid var(--orange); background:rgba(232,101,10,0.05); border-radius:var(--r-md); padding:1.5rem 1.75rem; margin:2rem 0; }
+  .gate .micro { display:block; margin:0 0 .55rem; color:var(--orange); }
+  .gate p { font-size:16px; line-height:1.6; margin:0; color:var(--navy); font-weight:500; }
+  .note-box { border:1px solid var(--border); border-left:3px solid var(--lime); background:rgba(140,198,63,0.05); border-radius:var(--r-md); padding:1.4rem 1.6rem; margin:2.5rem 0; }
+  .note-box .micro { display:block; margin:0 0 .55rem; color:var(--navy); }
+  .note-box p { font-size:15px; line-height:1.6; margin:0; color:var(--navy); font-weight:400; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Ijen Health-Screening Coordination",
+  "url": "https://javavolcano-touroperator.com/travel-guide/ijen-health-screening",
+  "about": {"@type": "MedicalProcedure", "name": "Ijen pre-ascent health screening", "howPerformed": "Oxygen saturation (SpO2), blood pressure, resting heart rate, and respiratory history are recorded digitally; a QR-verified health certificate (surat sehat) is issued by a licensed physician and scanned at the BBKSDA crater access gate."},
+  "lastReviewed": "2026-05-26",
+  "reviewedBy": {"@type": "Person", "name": "Dr. Ahmad Irwandanu", "jobTitle": "Licensed Medical Doctor (Dokter Umum), SIP-credentialed", "identifier": "STR QN00001073380217"},
+  "isPartOf": {"@type": "Organization", "@id": "https://javavolcano-touroperator.com/#organization", "name": "PT Java Volcano Rendezvous"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Is Ijen health screening mandatory with JVTO?","acceptedAnswer":{"@type":"Answer","text":"Ijen crater access can require a recent local health certificate when BBKSDA rules apply (Surat Edaran SE.1658/KSA.9/2024). This is a regulatory requirement, not a JVTO policy. When screening is required, JVTO coordinates the clinic workflow with Dr. Ahmad Irwandanu (SIP-licensed, Kemenkes-verifiable). The surat sehat carries a QR code checked at the BBKSDA gate."}},
+    {"@type":"Question","name":"Who performs the health screening for JVTO Ijen tours?","acceptedAnswer":{"@type":"Answer","text":"Dr. Ahmad Irwandanu, a licensed medical doctor (Dokter Umum) registered with Kemenkes RI, SatuSehat SDMK, and KKI. His STR is publicly verifiable at satusehat.kemkes.go.id. Screening can be done at Klinik Bakti Husada (Bondowoso), Puskesmas Licin (Banyuwangi), or at your partner hotel before departure."}},
+    {"@type":"Question","name":"What does the Ijen health screening check?","acceptedAnswer":{"@type":"Answer","text":"Oxygen saturation (SpO2), blood pressure, resting heart rate, and respiratory history. Results are recorded digitally. A QR-verified surat sehat is issued if you pass, and the certificate is scanned at the crater access gate. No valid QR code means no access to the crater zone."}},
+    {"@type":"Question","name":"What happens if I do not pass the Ijen health screening?","acceptedAnswer":{"@type":"Answer","text":"If you are assessed unfit, the climb is cancelled for that individual, not the group; you can wait at base camp or a safe zone while the group continues. The screening session cost is non-refundable. This is a BBKSDA safety rule, not JVTO discretion."}}
+  ]
+}
+</script>
+</head>
+<body data-screen-label="05a Ijen Health Screening">
+
+  <div class="ribbon">
+    <div class="container ribbon-row">
+      <div class="ribbon-marquee">
+        <span><i class="ribbon-dot"></i> PT Java Volcano Rendezvous</span>
+        <span>NIB · 1102230032918</span>
+        <span>Tourist Police-Led</span>
+      </div>
+      <div class="ribbon-right">
+        <span>EN · IDR · USD · EUR</span>
+        <span style="color:var(--lime)">✓ Verify Us</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero interior">
+    <div class="hero-bg"><div class="ph-stripes warm"></div></div>
+    <div class="hero-overlay"></div>
+    <nav class="topnav">
+      <div class="container nav-inner">
+        <a href="homepage.html" class="brand">JVTO <small>· EST 2016</small></a>
+        <div class="nav-links">
+          <a href="tours.html">Tours</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="why-jvto.html">Why JVTO</a>
+          <a href="travel-guide.html">Travel Guide</a>
+        </div>
+        <div class="nav-cta">
+          <a href="verify-jvto.html" class="pill pill-verify">✓ Verify Us</a>
+          <a href="contact.html" class="pill pill-wa">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-inner container">
+      <div class="ph-label tr">Hero photo · pre-ascent screening at hotel · 1920×800</div>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow-row"><span class="eyebrow-pill">Conditional · BBKSDA SE.1658</span><span class="eyebrow-meta">GUIDE / IJEN-HEALTH</span></div>
+          <h1 class="hero-head">Ijen health-screening <span class="italic accent-orange">coordination.</span></h1>
+          <p class="hero-lede">Ijen crater access can require a recent health certificate under BBKSDA rules. When it does, JVTO coordinates the check with a named, licensed physician — and the certificate is QR-verified at the gate, not a souvenir letter.</p>
+        </div>
+        <div class="hero-meta-block"><div class="meta-row"><span>Regulatory basis</span><strong>BBKSDA SE.1658/KSA.9/2024</strong></div><div class="meta-row"><span>Physician</span><strong>Dr. Ahmad Irwandanu · SIP</strong></div><div class="meta-row"><span>Where</span><strong>Your hotel, the evening before</strong></div><div class="meta-row"><span>Gate check</span><strong>QR-verified</strong></div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-off section stack">
+    <div class="container">
+      <div class="article-layout">
+        <aside class="article-side">
+          <div class="side-label">Travel Guide</div>
+          <ul>
+            <li><a class="" href="travel-guide.html">Guide overview</a></li><li><a class="active" href="travel-guide-ijen-health-screening.html">Ijen Health Screening</a></li><li><a class="" href="travel-guide-mount-bromo-logistics.html">Mount Bromo Logistics</a></li><li><a class="" href="travel-guide-tumpak-sewu-logistics.html">Tumpak Sewu Logistics</a></li><li><a class="" href="travel-guide-packing-list.html">Packing List</a></li><li><a class="" href="travel-guide-packing-and-fitness.html">Packing &amp; Fitness</a></li><li><a class="" href="travel-guide-weather-and-closures.html">Weather &amp; Closures</a></li><li><a class="" href="travel-guide-safety-on-tours.html">Safety on Tours</a></li><li><a class="" href="travel-guide-booking-information.html">Booking Information</a></li><li><a class="" href="travel-guide-police-escort-for-groups.html">Police Escort for Groups</a></li><li><a class="" href="travel-guide-faq.html">FAQ</a></li>
+          </ul>
+          <a href="tours.html" class="inline-link" style="margin-top: 1.5rem;">Browse tours →</a>
+        </aside>
+        <article class="prose">
+          
+    <span class="micro">Reading time · 6 min · Medical reference</span>
+    <p class="lede">Ijen access rules can require a recent local health certificate. This is a regulatory requirement set by BBKSDA — the government conservation authority for Kawah Ijen — not a rule JVTO invents. When it applies, JVTO coordinates the clinic workflow with a named, SIP-licensed physician, and the certificate is QR-verified at the crater gate.</p>
+
+    <h2>The rule is BBKSDA's, not ours</h2>
+    <p>The screening requirement is set by <strong>BBKSDA Surat Edaran SE.1658/KSA.9/2024</strong> and reflected in the public crater-access ticket terms at tiket.bbksdajatim.org, which require a health certificate from a doctor for crater-zone entry when conditions meet the threshold. JVTO's role is to <strong>coordinate</strong> the clinic workflow so you can satisfy that requirement — not to impose it. That distinction matters: we are the logistics layer on a government safety rule, not the authority behind it.</p>
+
+    <h2>Why screening exists</h2>
+    <p>Kawah Ijen is a <strong>2,386-metre active volcano</strong> with a sulfur lake at its crater. Sulfur dioxide and hydrogen sulfide are released continuously from the crater floor, the night ascent runs from roughly 01:00 to 04:00, and the air at the rim can change from breathable to dangerous within minutes when the wind shifts. The screening is designed to catch the conditions that turn this environment into a medical emergency — before you are standing on the rim.</p>
+
+    <h2>The four-step protocol</h2>
+    <p>When access rules require it, the workflow runs through the Ijen Digital Health Security System:</p>
+    <ol class="steps">
+      <li><div><div class="st">Pre-hike health check</div><div class="sp">JVTO coordinates the check at a partner clinic, or as a session at your hotel or the JVTO office, the evening before your hike.</div></div></li>
+      <li><div><div class="st">Vitals recorded digitally</div><div class="sp">Your readings are entered into the digital system — not a handwritten note.</div></div></li>
+      <li><div><div class="st">QR-verified certificate issued</div><div class="sp">A <em>surat sehat</em> (health clearance) is issued by Dr. Ahmad Irwandanu, carrying a QR code tied to his licence.</div></div></li>
+      <li><div><div class="st">Scanned at the crater gate</div><div class="sp">BBKSDA staff scan the QR code at the access gate. The certificate is checked, not just issued and ignored.</div></div></li>
+    </ol>
+
+    <h2>What the check measures</h2>
+    <table class="cred-table">
+      <thead><tr><th>Metric</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>Oxygen saturation (SpO₂)</td><td>Baseline lung function before high-altitude sulfur exposure.</td></tr>
+        <tr><td>Blood pressure</td><td>Cardiovascular risk at 2,386 m (systolic / diastolic).</td></tr>
+        <tr><td>Resting heart rate</td><td>Cardiovascular baseline.</td></tr>
+        <tr><td>Respiratory history</td><td>Asthma or bronchitis — directly relevant to gas-mask use and sulfur exposure.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Your physician: Dr. Ahmad Irwandanu</h2>
+    <p>Every JVTO <em>surat sehat</em> is issued by a named, individually auditable doctor — not an in-house printout. The certificate cannot be faked without a valid SIP number behind it, and you can check the licence before you book.</p>
+    <table class="cred-table">
+      <thead><tr><th>Field</th><th>Detail &amp; verification</th></tr></thead>
+      <tbody>
+        <tr><td>Dr. Ahmad Irwandanu</td><td>Licensed Medical Doctor (Dokter Umum), SIP-credentialed. Based in Bondowoso, East Java. Registered with Kemenkes RI · SatuSehat SDMK · KKI.</td></tr>
+        <tr><td>STR</td><td><span class="mono"><a href="https://satusehat.kemkes.go.id/sdmk/nakes/QN00001073380217">satusehat.kemkes.go.id</a></span></td></tr>
+        <tr><td>KKI check</td><td><span class="mono"><a href="https://www.kki.go.id/cekdokter/form">kki.go.id/cekdokter</a></span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Where it happens</h2>
+    <p>Screening is not a clinic detour bolted onto your morning. In most cases a nurse visits your hotel the evening before the hike. The institutional chain behind the certificate is what makes it real:</p>
+    <table class="cred-table">
+      <thead><tr><th>Facility</th><th>Type</th></tr></thead>
+      <tbody>
+        <tr><td>Klinik Bakti Husada<br /><span style="font-weight:400; color:var(--muted); font-size:13px;">Bondowoso</span></td><td>Certified medical clinic (Kemenkes RI) — a physical clinic, not a mobile or improvised service.</td></tr>
+        <tr><td>Puskesmas Licin<br /><span style="font-weight:400; color:var(--muted); font-size:13px;">Banyuwangi</span></td><td>Official government health centre (Dinkes Banyuwangi); an Ijen-screening partner.</td></tr>
+        <tr><td>Hotel / JVTO office<br /><span style="font-weight:400; color:var(--muted); font-size:13px;">Bondowoso or Banyuwangi</span></td><td>Mobile session by Dr. Irwandanu — screening done at your hotel before departure.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="gate">
+      <span class="micro">The hard gate</span>
+      <p>No valid QR code = no access to the crater zone. This is a BBKSDA rule. We will not take you up without it.</p>
+    </div>
+
+    <h2>If you are assessed unfit</h2>
+    <p>It is rare but possible. If the screening determines you should not ascend, the climb is cancelled <strong>for that individual, not the group</strong> — you can wait at base camp or a safe zone while the rest of your party continues. The screening session cost is non-refundable. This is a BBKSDA safety decision, not JVTO discretion.</p>
+
+    <h2>Why this is not bureaucratic theater</h2>
+    <p>Between 2015 and 2026, four tourists died at Kawah Ijen. <strong>Two of the four were fitness-related</strong>: a 68-year-old visitor in 2015 (exhaustion and respiratory distress while ascending), and a 64-year-old visitor in 2023 (a cardiac event near the upper trail, who collapsed despite supplemental oxygen). Both involved cardiovascular or respiratory failure in people who lacked the fitness for the climb — exactly the pattern an SpO₂, blood-pressure, heart-rate and respiratory check is designed to catch. The screening targets a documented, recurring cause of death at this specific volcano.</p>
+
+    <h2>What you should do before the trip</h2>
+    <ol>
+      <li>Disclose any pre-existing cardiovascular or respiratory condition in your inquiry form.</li>
+      <li>Bring any home-country medical paperwork relevant to altitude or respiratory conditions.</li>
+      <li>Get a good night of sleep before the screening session.</li>
+      <li>Avoid alcohol the night before — it can register as elevated blood pressure.</li>
+    </ol>
+
+    <div class="note-box">
+      <span class="micro">Verify before you book</span>
+      <p>You can check Dr. Irwandanu's licence at the Kemenkes SatuSehat and KKI registries linked above, and read the regulatory and police-safety context on the <a href="verify-jvto-police-safety.html">Police &amp; Safety proof page</a>. The certificate behind your climb is auditable — by design.</p>
+    </div>
+  
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta-block">
+    <div class="container">
+      <h2>Ready for operational <span class="accent-orange">certainty?</span></h2>
+      <div class="ctas">
+        <a class="primary" href="tours.html">Explore tours <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="ghost" href="verify-jvto.html">Verify JVTO</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JVTO</div>
+          <p>Private volcano tours in Java featuring Bromo, Ijen, and more. Expert guides, verifiable credentials, unforgettable adventures.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a class="social-btn" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="tours.html">All Tours</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="why-jvto.html">Why JVTO</a></li>
+            <li><a href="verify-jvto.html">Verify JVTO</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="policy.html">Legal &amp; Transparency</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">+62 822 4478 8833</a></li>
+            <li><a href="contact.html">hello@javavolcano-touroperator.com</a></li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Jl. Khairil Anwar No.102A,<br />Bondowoso, East Java 68214</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Verified</h4>
+          <ul>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">PT Java Volcano Rendezvous</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">NIB 1102230032918</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Trustpilot 4.8 · TripAdvisor 4.95</li>
+            <li><a href="verify-jvto.html">→ Open proof library</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2026 PT Java Volcano Rendezvous · All rights reserved · NIB 1102230032918</small>
+        <div class="footer-legal">
+          <a href="policy-privacy.html">Privacy</a>
+          <a href="policy.html">Terms</a>
+          <a href="policy-booking-payment-cancellation.html">Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab" href="contact.html" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.4-1.1c-.3-.1-.7-.1-.9.2l-.7.9c-.1.2-.4.2-.6.1-.8-.4-2.4-1.8-2.8-2.6-.1-.2-.1-.4.1-.6l.7-.8c.2-.2.2-.5.1-.8l-1-2.5c-.2-.5-.7-.6-1.1-.4-1.1.6-1.8 1.7-1.7 2.9.1 2.7 3.6 6.2 6.3 6.5 1.2.1 2.4-.6 2.9-1.7.2-.5 0-.9-.4-1.1z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.2-1.4c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3.1-.2-.3C4.1 15 3.7 13.5 3.7 12 3.7 7.5 7.5 3.7 12 3.7s8.3 3.8 8.3 8.3-3.8 8.2-8.3 8.2z"/></svg>
+  </a>
+  <div id="tweaks-root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+</body>
+</html>

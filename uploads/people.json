@@ -1,0 +1,219 @@
+{
+  "generated": "2026-06-01",
+  "source": "wiki/people/crew-registry.md + wiki/people/agung-sambuko.md + wiki/people/dr-ahmad-irwandanu.md",
+  "canonical": true,
+  "founder": {
+    "id": "agung-sambuko",
+    "full_name": "Agung Sambuko",
+    "operational_name": "Mr. Sam",
+    "press_name": "Bripka Agung Sambuko",
+    "schema_id": "/#agung-sambuko",
+    "schema_type": "Person",
+    "job_title_schema": "Active Tourist Police Officer, Ditpamobvit East Java",
+    "role": "Founder & Active Tourist Police Officer",
+    "police_unit": "Ditpamobvit (Direktorat Pengamanan Objek Vital) — East Java",
+    "police_rank": "Bripka",
+    "organization": "PT Java Volcano Rendezvous",
+    "portrait_url": "https://javavolcano-touroperator.com/founder/agung_sambuko.jpg",
+    "police_portrait_url": "https://javavolcano-touroperator.com/founder/mr-sam-tourist-police-portrait.png",
+    "wikipedia_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Agung_Sambuko.jpg",
+    "trust_claim_owned": "C1",
+    "trust_claim_supports": "C5",
+    "press_coverage": [
+      {"publisher": "Detik.com", "date": "2021-03-14", "url": "https://news.detik.com/berita-jawa-timur/d-5492690/suka-duka-polisi-pariwisata-bondowoso-tegakkan-prokes-sambil-lawan-dingin"},
+      {"publisher": "Radar Jember / Jawa Pos", "date": "2021-03-24", "url": "https://radarjember.jawapos.com/bondowoso/791102263/polpar-dibentuk-untuk-mendukung-ijen-geopark"},
+      {"publisher": "Radar Jember / Jawa Pos", "date": "2021-05-27", "url": "https://radarjember.jawapos.com/bondowoso/791103903/tak-seharusnya-bau-menyengat-itu-ada"}
+    ],
+    "proof_documents": [
+      {"type": "SPRIN POLPAR", "sha256": "03c8578dc22956faa366d957badecfe38868d4760359cd8059fb2d6b145dfeab", "url": "https://javavolcano-touroperator.com/legal/SPRIN-POLPAR.png"},
+      {"type": "SPRIN WAL TRAVEL 2024-02-12", "sha256": "179b061eae558943fdccc51d2ea3c8233a704b61f03ca3d212433f3e8d6f3bd3", "url": "https://javavolcano-touroperator.com/legal/SPRIN-WAL-TRAVEL-2024-02-12.png"}
+    ]
+  },
+  "medical_officer": {
+    "id": "dr-ahmad-irwandanu",
+    "name": "Dr. Ahmad Irwandanu",
+    "title": "Licensed Medical Doctor (SIP-credentialed)",
+    "schema_id": "/#dr-ahmad-irwandanu",
+    "schema_type": "Person",
+    "role": "Medical Officer — Ijen Health-Screening Coordination",
+    "base": "Bondowoso, East Java",
+    "str_number": "QN00001073380217",
+    "str_verification_url": "https://satusehat.kemkes.go.id/sdmk/nakes/QN00001073380217",
+    "kki_check_url": "https://www.kki.go.id/cekdokter/form",
+    "registries": ["Kemenkes RI", "SatuSehat SDMK", "KKI (Konsil Kedokteran Indonesia)"],
+    "trust_claim_owned": "C4",
+    "trust_claim_supports": "C1",
+    "screening_system_url": "https://health.mountijen.com"
+  },
+  "crew": {
+    "total": 14,
+    "guides": 7,
+    "drivers": 7,
+    "kta_confirmed": 11,
+    "kta_pending": 3,
+    "hpwki_ahu_id": "AHU-0001072.AH.01.07.TAHUN 2024",
+    "trust_claim_owned": "C7",
+    "trust_claim_supports": ["C1", "C8"],
+    "members": [
+      {
+        "id": "anjas",
+        "role": "Guide",
+        "kta": "KTA-G-2024-006",
+        "kta_status": "confirmed",
+        "languages": ["EN", "ID"],
+        "archetypes": ["Youth/Creative", "Content Architect"],
+        "strengths": "Astrophotography, volcanic terrain navigation, East Java cultural heritage",
+        "review_count": 12,
+        "review_rating": 4.91,
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768270423657-690185912-anjas.png",
+        "kta_image_url": "https://javavolcano-touroperator.com/uploads/1771428583288-513992233-kta_anjas.jpg",
+        "instagram": "instagram.com/anjasstywn"
+      },
+      {
+        "id": "taufik",
+        "role": "Guide",
+        "kta": "KTA-G-2024-007",
+        "kta_status": "confirmed",
+        "languages": ["EN", "ID"],
+        "strengths": "Safety-first, logistics, punctuality, photography",
+        "review_count": 8,
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768228083285-919198019-taufik_1_.png",
+        "kta_image_url": "https://javavolcano-touroperator.com/uploads/1771428704448-911506028-kta_taufik.jpg",
+        "instagram": "instagram.com/taufik_fik.21"
+      },
+      {
+        "id": "rendi",
+        "role": "Guide",
+        "kta": "KTA-G-2024-002",
+        "kta_status": "confirmed",
+        "languages": ["EN", "ID"],
+        "archetypes": ["Safety Specialist"],
+        "strengths": "Mountain rescue, first aid, expedition safety, Ijen crater safety procedures",
+        "review_count": 22,
+        "review_rating": 5.0,
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768228514527-518051332-rendi.png",
+        "kta_image_url": "https://javavolcano-touroperator.com/uploads/1771428760524-516116110-kta_rendi.jpg",
+        "instagram": "instagram.com/rrivaldy17"
+      },
+      {
+        "id": "kiki",
+        "role": "Guide",
+        "kta": "KTA-G-2024-008",
+        "kta_status": "confirmed",
+        "languages": ["EN", "ID"],
+        "strengths": "Photography, friendly, logistics, safety-first",
+        "review_count": 17,
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768271545598-834784538-kiki.png",
+        "kta_image_url": "https://javavolcano-touroperator.com/uploads/1771428489070-55145932-kta_kiki.jpg",
+        "instagram": "instagram.com/kiki.the.explorer"
+      },
+      {
+        "id": "gufron",
+        "role": "Guide",
+        "kta": "KTA-G-2024-001",
+        "kta_status": "confirmed",
+        "languages": ["EN", "ID"],
+        "archetypes": ["Expert Guide"],
+        "strengths": "Volcano photography, geology, Ijen crater safety, East Java cultural heritage",
+        "review_count": 20,
+        "google_5star_rate": "16/16",
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768225567764-405955176-gufron.png",
+        "kta_image_url": "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg",
+        "instagram": "instagram.com/gfranosept"
+      },
+      {
+        "id": "fauzi",
+        "role": "Guide",
+        "kta": "KTA-G-2024-010",
+        "kta_status": "confirmed",
+        "languages": ["ID"],
+        "strengths": "Photography, attentive, safety-first, finding uncrowded spots",
+        "review_count": 6,
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768226003889-338819579-fauzi.png",
+        "instagram": "instagram.com/srjdnfauzi_"
+      },
+      {
+        "id": "boy",
+        "role": "Guide",
+        "kta": "KTA-G-2024-004",
+        "kta_status": "confirmed",
+        "operational_name": "Boy (Ahboy)",
+        "languages": ["EN", "ID"],
+        "strengths": "Friendly, safety-first, logistics, great photos, local knowledge",
+        "review_count": 23,
+        "note": "Most-reviewed guide",
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768228191022-893381041-boy.png",
+        "instagram": "instagram.com/trisbalii"
+      },
+      {
+        "id": "yandi",
+        "role": "Driver",
+        "kta": "KTA-D-2024-003",
+        "kta_status": "confirmed",
+        "languages": ["EN", "ID"],
+        "archetypes": ["Senior Touring Specialist"],
+        "review_count": 16,
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768270364125-144711646-yandi.png"
+      },
+      {
+        "id": "fredi",
+        "role": "Driver",
+        "kta": "KTA-D-2024-005",
+        "kta_status": "confirmed",
+        "languages": ["EN", "ID"],
+        "archetypes": ["Reliability Anchor"],
+        "strengths": "Punctuality, safe driving, professional attitude",
+        "review_count": 20,
+        "note": "Most-reviewed driver",
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768276791622-262250680-freddy.png"
+      },
+      {
+        "id": "holili",
+        "role": "Driver",
+        "kta": "KTA-D-2024-009",
+        "kta_status": "confirmed",
+        "languages": ["ID"],
+        "review_count": 6,
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768277053384-470130286-holili.jpg"
+      },
+      {
+        "id": "joyo",
+        "role": "Driver",
+        "kta": "KTA-D-2024-011",
+        "kta_status": "confirmed",
+        "operational_name": "Joyo",
+        "languages": ["ID"],
+        "archetypes": ["Precision Professional"],
+        "review_count": 19,
+        "portrait_url": "https://javavolcano-touroperator.com/uploads/1768277336049-911840775-joyo.png"
+      },
+      {
+        "id": "yusuf",
+        "role": "Driver",
+        "kta": null,
+        "kta_status": "pending",
+        "languages": ["ID"],
+        "review_count": 7,
+        "note": "All 7 reviews are 5★ in 2026. KTA codes pending SSOT verification."
+      },
+      {
+        "id": "dika",
+        "role": "Driver",
+        "kta": null,
+        "kta_status": "pending",
+        "languages": ["ID"],
+        "review_count": 3,
+        "note": "Confirmed active driver in DB (id=72). KTA pending."
+      },
+      {
+        "id": "pras",
+        "role": "Driver",
+        "kta": null,
+        "kta_status": "pending",
+        "languages": ["EN", "ID"],
+        "review_count": 6,
+        "note": "Confirmed active driver in DB (id=77). Strong English. KTA pending."
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Travel Guide FAQ · JVTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jvto-system.css" />
+<script>window.__JVTO_TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{"palette":"default","density":"comfortable","displayItalic":true}/*EDITMODE-END*/;</script>
+<style>
+  .faq-main { min-width:0; }
+  .faq-intro { font-size:21px; font-weight:300; color:var(--muted); line-height:1.55; max-width:60ch; margin:0 0 2.75rem; }
+  .faq-cat { margin-top:2.75rem; }
+  .faq-cat:first-of-type { margin-top:0; }
+  .faq-cat-label { font-family:var(--font-mono); font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--orange); display:flex; align-items:center; gap:.85rem; margin-bottom:.4rem; }
+  .faq-cat-label::after { content:""; flex:1; height:1px; background:var(--border); }
+  .faq-acc { border-top:1px solid var(--border); }
+  .faq-item { border-bottom:1px solid var(--border); }
+  .faq-q { width:100%; background:none; border:0; text-align:left; display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 0; cursor:pointer; font-family:var(--font-display); font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--navy); transition:color .2s; line-height:1.3; }
+  .faq-q:hover { color:var(--orange); }
+  .faq-x { width:26px; height:26px; flex-shrink:0; border-radius:50%; background:rgba(232,101,10,0.1); color:var(--orange); display:grid; place-items:center; transition:transform .3s; margin-top:1px; }
+  .faq-x svg { width:13px; height:13px; }
+  .faq-item.open .faq-x { transform:rotate(45deg); }
+  .faq-a { max-height:0; overflow:hidden; transition:max-height .4s ease; }
+  .faq-a p { color:var(--navy); font-size:15.5px; font-weight:400; line-height:1.65; padding:0 0 1.3rem 2.65rem; max-width:70ch; }
+  .faq-a p a { color:var(--orange); border-bottom:1px solid currentColor; }
+  .faq-a .cond { display:block; font-family:var(--font-mono); font-size:10.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--lime); margin-top:.6rem; }
+  .faq-ask { margin-top:3rem; background:var(--off); border:1px solid var(--border); border-left:3px solid var(--gold); border-radius:var(--r-md); padding:1.5rem 1.75rem; }
+  .faq-ask p { margin:0; font-size:15px; line-height:1.6; color:var(--navy); }
+  .faq-ask a { color:var(--orange); border-bottom:1px solid currentColor; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How can we contact JVTO before and during the tour?","acceptedAnswer":{"@type":"Answer","text":"JVTO's official channels are WhatsApp (+62 822 4478 8833, primary) and email (hello@javavolcano-touroperator.com). Both appear on your E-Voucher and confirmation. WhatsApp is the fastest channel for real-time logistics."}},
+    {"@type":"Question","name":"How do I book and confirm a tour?","acceptedAnswer":{"@type":"Answer","text":"Two official paths. Website Instant Book: choose your package, date and travelers on javavolcano-touroperator.com, review price and add-ons, accept the Terms and Cancellation Policy, and pay. WhatsApp-assisted: send your dates, origin, group size and requirements; JVTO confirms availability and price, sends a secure payment link, and issues your E-Voucher. A 20% deposit confirms the booking."}},
+    {"@type":"Question","name":"How do payments, deposits and deadlines work?","acceptedAnswer":{"@type":"Answer","text":"Standard deposit is 20% of total booking value, paid by card via a secure JVTO link. If Day 1 is within 14 days, up to 100% may be required. Card balance is due no later than 5 days before Day 1; bank wire or Wise no later than 3 days before. Cash at the JVTO office only if approved in writing."}},
+    {"@type":"Question","name":"Where can I read the full legal policy?","acceptedAnswer":{"@type":"Answer","text":"The full booking and cancellation text is published at javavolcano-touroperator.com/policy/booking-payment-cancellation."}},
+    {"@type":"Question","name":"Are your tours private or shared?","acceptedAnswer":{"@type":"Answer","text":"All JVTO tours are private only. JVTO does not mix bookings with other guests or sell seat-in-coach options. Your vehicle, driver, and guide are arranged for your party alone."}},
+    {"@type":"Question","name":"What is included in the price?","acceptedAnswer":{"@type":"Answer","text":"All packages include private transport (AC MPV or Hiace by group size), a dedicated crew, all entrance fees and permits, daily mineral water, full pick-up to drop-off assistance, a JVTO travel T-shirt, and meals as stated (breakfast minimum). Bromo-inclusive packages add a private 4WD jeep. Ijen-relevant packages add gas masks, trekking poles, and health-screening coordination where BBKSDA rules require it. Bali-origin packages add the Gilimanuk-Ketapang ferry. Madakaripura helmets are provided by local site management, not by JVTO."}},
+    {"@type":"Question","name":"Do you offer ISIC student deals?","acceptedAnswer":{"@type":"Answer","text":"Yes. JVTO is an official ISIC provider (ID 259268, verifiable at isic.org). Verified international students access adapted rates on selected packages via the ISIC Alive Verify API."}},
+    {"@type":"Question","name":"How much luggage can I bring?","acceptedAnswer":{"@type":"Answer","text":"One main suitcase or backpack per person plus one small daypack. For multi-destination routes with hotel changes, packing light is recommended."}},
+    {"@type":"Question","name":"What should I wear and bring for these tours?","acceptedAnswer":{"@type":"Answer","text":"Layered clothing for cold pre-dawn starts; closed shoes with good grip (hiking shoes recommended for Ijen and Tumpak Sewu); a raincoat (essential for Madakaripura, where you will get wet in the canyon); sunscreen and sunglasses for daytime stops. JVTO provides headlamps on Ijen routes."}},
+    {"@type":"Question","name":"How does the Ijen health screening work?","acceptedAnswer":{"@type":"Answer","text":"For tours that include the Ijen night hike, JVTO arranges health-screening coordination, conducted by licensed medical staff, as required under BBKSDA access regulations for the Ijen crater zone (Surat Edaran SE.1658/KSA.9/2024). Vitals recorded digitally include SpO2, blood pressure, heart rate, and respiratory history. The certificate carries a QR code verified by BBKSDA at the crater access gate. No valid QR code means no access to the crater zone."}},
+    {"@type":"Question","name":"What happens if I do not pass the Ijen health screening?","acceptedAnswer":{"@type":"Answer","text":"If screening staff or the JVTO team advise that you should not attempt the hike, JVTO follows that decision. The climb is cancelled for that individual, not the group; you can wait at base camp or a safe zone while the group continues. The screening session cost is non-refundable."}},
+    {"@type":"Question","name":"Do I need travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. JVTO strongly recommends valid travel insurance covering medical emergencies, evacuation and repatriation, trip interruption, and adventure activities such as volcanic hiking and canyon descent. Insurance is not included in tour pricing."}},
+    {"@type":"Question","name":"Can children or older travellers join JVTO tours?","acceptedAnswer":{"@type":"Answer","text":"Many families and older travellers have joined JVTO tours safely. The key is matching itinerary difficulty to real fitness and health. Some routes (the Tumpak Sewu canyon descent, the Ijen night hike) demand moderate fitness. JVTO advises on route selection during the inquiry stage."}},
+    {"@type":"Question","name":"What if I feel unwell during the tour?","acceptedAnswer":{"@type":"Answer","text":"Tell your driver or guide as soon as possible; do not wait for an emergency. Because tours are private, JVTO can adjust pace, change the order of activities, or pause for rest. For serious medical issues, JVTO coordinates with local clinics and your travel insurance."}},
+    {"@type":"Question","name":"Which documents should I keep with me?","acceptedAnswer":{"@type":"Answer","text":"Keep accessible: passport and required visas, travel insurance information, your JVTO E-Voucher and contact details, and an ISIC card if you are using student pricing. Carry a paper passport for crater-access gates."}},
+    {"@type":"Question","name":"What happens if Bromo or Ijen is closed on my dates?","acceptedAnswer":{"@type":"Answer","text":"JVTO follows official instructions from Indonesian authorities and park management. Depending on the situation, JVTO may adjust timings, use alternative viewpoints, replace destinations with safe alternatives, or activate its Plan B framework. Guests are briefed in advance and no guest is left without a program."}},
+    {"@type":"Question","name":"If it rains, will our tour be cancelled?","acceptedAnswer":{"@type":"Answer","text":"Light or normal rain rarely cancels an entire tour, but it can make trails slippery, reduce visibility, or require timing and route changes. For safety-critical sections such as the Ijen crater rim and the Madakaripura canyon, JVTO may delay or reroute. Sunrise and Blue Fire views are conditional on weather."}},
+    {"@type":"Question","name":"Can you guarantee sunrise views or blue fire?","acceptedAnswer":{"@type":"Answer","text":"No. Weather, cloud, volcanic gas, and other natural factors are outside JVTO's control. JVTO designs itineraries to maximise the chance of good conditions but cannot promise specific natural phenomena. Blue Fire is a natural phenomenon subject to weather and gas activity."}},
+    {"@type":"Question","name":"What is Travel Credit and do you offer cash refunds?","acceptedAnswer":{"@type":"Answer","text":"JVTO uses a Travel Credit system instead of cash refunds for guest-initiated cancellations. If cancelled at least 48 hours before Day 1, 100% of eligible booking value converts to Lifetime Travel Credit (no expiry, transferable). If cancelled within 48 hours of Day 1, payment is fully forfeited and no Travel Credit is created. JVTO offers one free reschedule if requested at least 48 hours before Day 1."}},
+    {"@type":"Question","name":"Can you arrange an official police escort for our group?","acceptedAnswer":{"@type":"Answer","text":"For large groups (typically around 18 guests or more), JVTO can coordinate an official traffic police escort (Patwal) on certain road segments, for example from a toll exit to Bondowoso, when approved by the relevant Traffic Police unit. This is a coordination service, not a default inclusion."}},
+    {"@type":"Question","name":"Do large groups get any discounts or free places?","acceptedAnswer":{"@type":"Answer","text":"Yes. Direct bookings (website and WhatsApp only) receive Free-of-Charge incentives: 18 paying guests = 1 free place; 35 = 2 free places; 50 = 3 free places plus a 5% discount on the total package price for the entire group. Must be agreed in writing during booking. Not applicable to third-party platforms."}}
+  ]
+}
+</script>
+</head>
+<body data-screen-label="05j FAQ">
+
+  <div class="ribbon">
+    <div class="container ribbon-row">
+      <div class="ribbon-marquee">
+        <span><i class="ribbon-dot"></i> PT Java Volcano Rendezvous</span>
+        <span>NIB · 1102230032918</span>
+        <span>Tourist Police-Led</span>
+      </div>
+      <div class="ribbon-right">
+        <span>EN · IDR · USD · EUR</span>
+        <span style="color:var(--lime)">✓ Verify Us</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero interior">
+    <div class="hero-bg"><div class="ph-stripes warm"></div></div>
+    <div class="hero-overlay"></div>
+    <nav class="topnav">
+      <div class="container nav-inner">
+        <a href="homepage.html" class="brand">JVTO <small>· EST 2016</small></a>
+        <div class="nav-links">
+          <a href="tours.html">Tours</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="why-jvto.html">Why JVTO</a>
+          <a href="travel-guide.html">Travel Guide</a>
+        </div>
+        <div class="nav-cta">
+          <a href="verify-jvto.html" class="pill pill-verify">✓ Verify Us</a>
+          <a href="contact.html" class="pill pill-wa">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-inner container">
+      <div class="ph-label tr">Hero photo · reference · 1920×800</div>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow-row"><span class="eyebrow-pill">Reference</span><span class="eyebrow-meta">GUIDE / FAQ</span></div>
+          <h1 class="hero-head">Travel guide <span class="italic">FAQ.</span></h1>
+          <p class="hero-lede">Common questions in plain language. If yours is not here, ask via WhatsApp — a human answers.</p>
+        </div>
+        <div class="hero-meta-block"><div class="meta-row"><span>Updated</span><strong>May 2026</strong></div><div class="meta-row"><span>Questions</span><strong>20 canonical</strong></div><div class="meta-row"><span>Categories</span><strong>7</strong></div><div class="meta-row"><span>Schema</span><strong>FAQPage</strong></div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-off section stack">
+    <div class="container">
+      <div class="article-layout">
+        <aside class="article-side">
+          <div class="side-label">Travel Guide</div>
+          <ul><li><a class="" href="travel-guide.html">Guide overview</a></li><li><a class="" href="travel-guide-ijen-health-screening.html">Ijen Health Screening</a></li><li><a class="" href="travel-guide-mount-bromo-logistics.html">Mount Bromo Logistics</a></li><li><a class="" href="travel-guide-tumpak-sewu-logistics.html">Tumpak Sewu Logistics</a></li><li><a class="" href="travel-guide-packing-list.html">Packing List</a></li><li><a class="" href="travel-guide-packing-and-fitness.html">Packing &amp; Fitness</a></li><li><a class="" href="travel-guide-weather-and-closures.html">Weather &amp; Closures</a></li><li><a class="" href="travel-guide-safety-on-tours.html">Safety on Tours</a></li><li><a class="" href="travel-guide-booking-information.html">Booking Information</a></li><li><a class="" href="travel-guide-police-escort-for-groups.html">Police Escort for Groups</a></li><li><a class="active" href="travel-guide-faq.html">FAQ</a></li></ul>
+          <a href="tours.html" class="inline-link" style="margin-top:1.5rem;">Browse tours →</a>
+        </aside>
+        <div class="faq-main">
+      <span class="micro">20 canonical answers &middot; 7 categories</span>
+      <p class="faq-intro">Plain-language answers to the questions in almost every inquiry. Tap any question to expand. If yours is not here, ask via WhatsApp &mdash; a human answers, 08:00&ndash;22:00 WIB.</p>
+<div class="faq-cat"><div class="faq-cat-label">A · Booking, contact &amp; logistics</div><div class="faq-acc"><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> How can we contact JVTO before and during the tour?</button><div class="faq-a"><p>JVTO's official channels are WhatsApp (+62 822 4478 8833, primary) and email (hello@javavolcano-touroperator.com). Both appear on your E-Voucher and confirmation. WhatsApp is the fastest channel for real-time logistics.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> How do I book and confirm a tour?</button><div class="faq-a"><p>Two official paths. <strong>Website Instant Book</strong> — choose your package, date and travelers, review price and add-ons, accept the Terms &amp; Cancellation Policy, and pay. <strong>WhatsApp-assisted</strong> — send your dates, origin, group size and requirements; JVTO confirms availability and price, sends a secure payment link, and issues your E-Voucher. A 20% deposit confirms the booking either way.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> How do payments, deposits and deadlines work?</button><div class="faq-a"><p>Standard deposit is 20% of total booking value, paid by card via a secure JVTO link. If Day 1 is within 14 days, up to 100% may be required. Card balance is due no later than 5 days before Day 1; bank wire or Wise no later than 3 days before. Cash at the JVTO office only if approved in writing.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Where can I read the full legal policy?</button><div class="faq-a"><p>The full booking and cancellation text is published at <a href="policy-booking-payment-cancellation.html">/policy/booking-payment-cancellation</a>.</p></div></div></div></div><div class="faq-cat"><div class="faq-cat-label">B · What&rsquo;s included &amp; tour format</div><div class="faq-acc"><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Are your tours private or shared?</button><div class="faq-a"><p>All JVTO tours are private only. JVTO does not mix bookings with other guests or sell seat-in-coach options. Your vehicle, driver, and guide are arranged for your party alone.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> What is included in the price?</button><div class="faq-a"><p>All packages include private transport (AC MPV or Hiace by group size), a dedicated crew, all entrance fees and permits, daily mineral water, full pick-up to drop-off assistance, a JVTO travel T-shirt, and meals as stated (breakfast minimum). Bromo-inclusive packages add a private 4WD jeep. Ijen-relevant packages add gas masks, trekking poles, and health-screening coordination where BBKSDA rules require it. Bali-origin packages add the Gilimanuk&ndash;Ketapang ferry. Madakaripura helmets are provided by local site management &mdash; not by JVTO. See the <a href="policy-inclusions-exclusions.html">written inclusions &amp; exclusions</a>.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Do you offer ISIC student deals?</button><div class="faq-a"><p>Yes. JVTO is an official ISIC provider (ID 259268, verifiable at <a href="https://www.isic.org/discounts/?providerId=259268">isic.org</a>). Verified international students access adapted rates on selected packages via the ISIC Alive Verify API.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> How much luggage can I bring?</button><div class="faq-a"><p>One main suitcase or backpack per person plus one small daypack. For multi-destination routes with hotel changes, packing light is recommended.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> What should I wear and bring?</button><div class="faq-a"><p>Layered clothing for cold pre-dawn starts; closed shoes with good grip (hiking shoes recommended for Ijen and Tumpak Sewu); a raincoat (essential for Madakaripura, where you will get wet in the canyon); sunscreen and sunglasses for daytime stops. JVTO provides headlamps on Ijen routes.</p></div></div></div></div><div class="faq-cat"><div class="faq-cat-label">C · Ijen health screening</div><div class="faq-acc"><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> How does the Ijen health screening work?</button><div class="faq-a"><p>For tours that include the Ijen night hike, JVTO arranges health-screening coordination &mdash; conducted by licensed medical staff &mdash; as required under BBKSDA access regulations for the crater zone. Vitals recorded digitally include SpO&#8322;, blood pressure, heart rate, and respiratory history. The certificate carries a QR code verified by BBKSDA at the access gate. No valid QR code means no access to the crater zone. Full protocol on the <a href="travel-guide-ijen-health-screening.html">Ijen health-screening guide</a>.<span class="cond">Conditional &middot; BBKSDA Surat Edaran SE.1658/KSA.9/2024</span></p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> What happens if I do not pass the Ijen health screening?</button><div class="faq-a"><p>If screening staff or the JVTO team advise that you should not attempt the hike, JVTO follows that decision. The climb is cancelled for that individual, not the group; you can wait at base camp or a safe zone while the group continues. The screening session cost is non-refundable.<span class="cond">This is a BBKSDA safety rule, not JVTO discretion</span></p></div></div></div></div><div class="faq-cat"><div class="faq-cat-label">D · During the tour</div><div class="faq-acc"><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Do I need travel insurance?</button><div class="faq-a"><p>Yes. JVTO strongly recommends valid travel insurance covering medical emergencies, evacuation and repatriation, trip interruption, and adventure activities such as volcanic hiking and canyon descent. Insurance is not included in tour pricing.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Can children or older travellers join JVTO tours?</button><div class="faq-a"><p>Many families and older travellers have joined JVTO tours safely. The key is matching itinerary difficulty to real fitness and health. Some routes &mdash; the Tumpak Sewu canyon descent, the Ijen night hike &mdash; demand moderate fitness. JVTO advises on route selection during the inquiry stage.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> What if I feel unwell during the tour?</button><div class="faq-a"><p>Tell your driver or guide as soon as possible; do not wait for an emergency. Because tours are private, JVTO can adjust pace, change the order of activities, or pause for rest. For serious medical issues, JVTO coordinates with local clinics and your travel insurance.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Which documents should I keep with me?</button><div class="faq-a"><p>Keep accessible: passport and required visas, travel insurance information, your JVTO E-Voucher and contact details, and an ISIC card if you are using student pricing. Carry a paper passport for crater-access gates.</p></div></div></div></div><div class="faq-cat"><div class="faq-cat-label">E · Closures, weather &amp; Plan B</div><div class="faq-acc"><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> What happens if Bromo or Ijen is closed on my dates?</button><div class="faq-a"><p>JVTO follows official instructions from Indonesian authorities and park management. Depending on the situation, JVTO may adjust timings, use alternative viewpoints, replace destinations with safe alternatives, or activate its Plan B framework. Guests are briefed in advance and no guest is left without a program.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> If it rains, will our tour be cancelled?</button><div class="faq-a"><p>Light or normal rain rarely cancels an entire tour, but it can make trails slippery, reduce visibility, or require timing and route changes. For safety-critical sections such as the Ijen crater rim and the Madakaripura canyon, JVTO may delay or reroute. Sunrise and Blue Fire views are conditional on weather.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Can you guarantee sunrise views or blue fire?</button><div class="faq-a"><p>No. Weather, cloud, volcanic gas, and other natural factors are outside JVTO's control. JVTO designs itineraries to maximise the chance of good conditions but cannot promise specific natural phenomena. Blue Fire is a natural phenomenon subject to weather and gas activity.</p></div></div></div></div><div class="faq-cat"><div class="faq-cat-label">F · Cancellation &amp; Travel Credit</div><div class="faq-acc"><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> What is Travel Credit and do you offer cash refunds?</button><div class="faq-a"><p>JVTO uses a Travel Credit system instead of cash refunds for guest-initiated cancellations. Cancel at least 48 hours before Day 1 and 100% of eligible booking value converts to Lifetime Travel Credit (no expiry, transferable). Cancel within 48 hours of Day 1 and payment is fully forfeited with no Travel Credit. JVTO offers one free reschedule if requested at least 48 hours before Day 1.</p></div></div></div></div><div class="faq-cat"><div class="faq-cat-label">G · Police escort &amp; group benefits</div><div class="faq-acc"><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Can you arrange an official police escort for our group?</button><div class="faq-a"><p>For large groups (typically around 18 guests or more), JVTO can coordinate an official traffic police escort (Patwal) on certain road segments &mdash; for example from a toll exit to Bondowoso &mdash; when approved by the relevant Traffic Police unit. This is a coordination service, not a default inclusion. See <a href="travel-guide-police-escort-for-groups.html">Police escort for groups</a>.</p></div></div><div class="faq-item"><button class="faq-q"><span class="faq-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span> Do large groups get any discounts or free places?</button><div class="faq-a"><p>Yes. Direct bookings (website and WhatsApp only) receive Free-of-Charge incentives: 18 paying guests = 1 free place; 35 = 2 free places; 50 = 3 free places plus a 5% discount on the total package price for the entire group. Must be agreed in writing during booking. Not applicable to third-party platforms.</p></div></div></div></div>
+      <div class="faq-ask"><p><strong>Still have a question?</strong> Message JVTO on <a href="contact.html">WhatsApp (+62 822 4478 8833)</a> or email hello@javavolcano-touroperator.com. For credentials, open the <a href="verify-jvto.html">proof library</a>.</p></div>
+    </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta-block">
+    <div class="container">
+      <h2>Ready for operational <span class="accent-orange">certainty?</span></h2>
+      <div class="ctas">
+        <a class="primary" href="tours.html">Explore tours <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="ghost" href="verify-jvto.html">Verify JVTO</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JVTO</div>
+          <p>Private volcano tours in Java featuring Bromo, Ijen, and more. Expert guides, verifiable credentials, unforgettable adventures.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a class="social-btn" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="tours.html">All Tours</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="why-jvto.html">Why JVTO</a></li>
+            <li><a href="verify-jvto.html">Verify JVTO</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="policy.html">Legal &amp; Transparency</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">+62 822 4478 8833</a></li>
+            <li><a href="contact.html">hello@javavolcano-touroperator.com</a></li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Jl. Khairil Anwar No.102A,<br />Bondowoso, East Java 68214</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Verified</h4>
+          <ul>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">PT Java Volcano Rendezvous</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">NIB 1102230032918</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Trustpilot 4.8 · TripAdvisor 4.95</li>
+            <li><a href="verify-jvto.html">→ Open proof library</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2026 PT Java Volcano Rendezvous · All rights reserved · NIB 1102230032918</small>
+        <div class="footer-legal">
+          <a href="policy-privacy.html">Privacy</a>
+          <a href="policy.html">Terms</a>
+          <a href="policy-booking-payment-cancellation.html">Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab" href="contact.html" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.4-1.1c-.3-.1-.7-.1-.9.2l-.7.9c-.1.2-.4.2-.6.1-.8-.4-2.4-1.8-2.8-2.6-.1-.2-.1-.4.1-.6l.7-.8c.2-.2.2-.5.1-.8l-1-2.5c-.2-.5-.7-.6-1.1-.4-1.1.6-1.8 1.7-1.7 2.9.1 2.7 3.6 6.2 6.3 6.5 1.2.1 2.4-.6 2.9-1.7.2-.5 0-.9-.4-1.1z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.2-1.4c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3.1-.2-.3C4.1 15 3.7 13.5 3.7 12 3.7 7.5 7.5 3.7 12 3.7s8.3 3.8 8.3 8.3-3.8 8.2-8.3 8.2z"/></svg>
+  </a>
+  <div id="tweaks-root"></div>
+  <script>
+  (function () {
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      q.addEventListener('click', function () {
+        var open = item.classList.toggle('open');
+        a.style.maxHeight = open ? a.scrollHeight + 'px' : '0px';
+      });
+    });
+  })();
+  </script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+</body>
+</html>

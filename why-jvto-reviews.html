@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Reviews · JVTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jvto-system.css" />
+<script>window.__JVTO_TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "palette": "default",
+  "density": "compact",
+  "displayItalic": true
+}/*EDITMODE-END*/;</script>
+<style>
+  .agg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  @media (max-width: 760px) { .agg-grid { grid-template-columns: 1fr; } }
+  .agg {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg);
+    padding: 2.25rem 2.25rem 2rem; box-shadow: var(--shadow-soft);
+    display: flex; flex-direction: column; gap: .5rem;
+  }
+  .agg .agg-plat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+  .agg .agg-score { font-family: var(--font-display); font-size: 56px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--navy); }
+  .agg .agg-score small { font-size: 22px; font-weight: 500; color: var(--muted); }
+  .agg .agg-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; }
+  .agg .stars { color: var(--gold); display:inline-flex; gap:2px; }
+  .agg .stars svg { width:15px; height:15px; }
+
+  .themes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  @media (max-width: 760px) { .themes { grid-template-columns: 1fr; } }
+  .theme {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg);
+    padding: 2rem 2.25rem; box-shadow: var(--shadow-soft); display:flex; flex-direction:column; gap:.75rem;
+  }
+  .theme .t-code { font-family: var(--font-mono); font-size: 11px; font-weight:700; letter-spacing:0.22em; color: var(--orange); }
+  .theme h3 { font-size: 22px; letter-spacing:-0.01em; line-height:1.15; }
+  .theme p { color: var(--muted); font-size: 14.5px; font-weight: 300; line-height: 1.6; }
+
+  .excerpt-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:1.5rem; }
+  @media (max-width: 860px) { .excerpt-grid { grid-template-columns: 1fr; } }
+  .review .review-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); }
+  .review .review-quote { font-size: 19px; line-height: 1.4; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://javavolcano-touroperator.com/#organization",
+  "name": "Java Volcano Tour Operator",
+  "legalName": "PT Java Volcano Rendezvous",
+  "url": "https://javavolcano-touroperator.com",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "195",
+    "bestRating": "5"
+  },
+  "review": [
+    {"@type": "Review", "author": {"@type": "Person", "name": "John Joyce"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "Trustpilot"}, "reviewBody": "I don't think there is a better tour guide anywhere than Anjas — head and shoulders above the rest."},
+    {"@type": "Review", "author": {"@type": "Person", "name": "Kevin Foo"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "Trustpilot"}, "reviewBody": "Hiked up Mount Ijen with a 12 and 15 year old in the wee hours of morning. Taufik ensures all briefing is always done prior to all trips and is flexible with timing."},
+    {"@type": "Review", "author": {"@type": "Person", "name": "Wing Shan Lui"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "Google"}, "reviewBody": "When we went down the steep crater, Rendi held our hands to prevent us from falling."},
+    {"@type": "Review", "author": {"@type": "Person", "name": "Karthika TS"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "Trustpilot"}, "reviewBody": "Being a solo traveler it was safe and stress free with JVTO."}
+  ]
+}
+</script>
+</head>
+<body data-screen-label="04d Reviews">
+
+  <div class="ribbon">
+    <div class="container ribbon-row">
+      <div class="ribbon-marquee">
+        <span><i class="ribbon-dot"></i> PT Java Volcano Rendezvous</span>
+        <span>NIB · 1102230032918</span>
+        <span>Bripka Agung Sambuko · Ditpamobvit East Java</span>
+      </div>
+      <div class="ribbon-right">
+        <span>WhatsApp 08:00–22:00 WIB</span>
+        <span style="color:var(--lime)">✓ Verify Us</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero interior">
+    <div class="hero-bg"><div class="ph-stripes warm"></div></div>
+    <div class="hero-overlay"></div>
+    <nav class="topnav">
+      <div class="container nav-inner">
+        <a href="homepage.html" class="brand">JVTO <small>· EST 2016</small></a>
+        <div class="nav-links">
+          <a href="tours.html">Tours</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="why-jvto.html">Why JVTO</a>
+          <a href="travel-guide.html">Travel Guide</a>
+        </div>
+        <div class="nav-cta">
+          <a href="verify-jvto.html" class="pill pill-verify">✓ Verify Us</a>
+          <a href="contact.html" class="pill pill-wa">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-inner container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow-row"><span class="eyebrow-pill">Why JVTO · Reviews</span><span class="eyebrow-meta">FILE 004B</span></div>
+          <h1 class="hero-head">Patterns, not a <span class="italic">quote wall.</span></h1>
+          <p class="hero-lede">Reviews organized by platform and by theme — so you can check patterns, not cherry-picked excerpts. Each theme maps to a core operational claim.</p>
+        </div>
+        <div class="hero-meta-block">
+          <div class="meta-row"><span>Trustpilot</span><strong>4.8 / 5 · 51</strong></div>
+          <div class="meta-row"><span>Google Maps</span><strong>4.90 / 5 · 123</strong></div>
+          <div class="meta-row"><span>TripAdvisor</span><strong>4.95 / 5 · 21</strong></div>
+          <div class="meta-row"><span>Themes</span><strong>5 patterns</strong></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-off section stack">
+    <div class="container">
+      <div class="article-layout">
+        <aside class="article-side">
+          <div class="side-label">Why JVTO</div>
+          <ul>
+            <li><a href="why-jvto.html">Why JVTO overview</a></li>
+            <li><a href="why-jvto-the-jvto-difference.html">The JVTO Difference</a></li>
+            <li><a class="active" href="why-jvto-reviews.html">Reviews</a></li>
+            <li><a href="why-jvto-our-story.html">Our Story</a></li>
+            <li><a href="why-jvto-our-team.html">Our Team</a></li>
+            <li><a href="why-jvto-community-standards.html">Community Standards</a></li>
+          </ul>
+          <a href="verify-jvto.html" class="inline-link" style="margin-top:1.5rem;">Open proof library →</a>
+        </aside>
+
+        <div style="min-width:0;">
+          <span class="micro" style="display:block; margin-bottom:.75rem;">Platform Aggregate</span>
+          <h2 style="font-family:var(--font-display); font-size:clamp(28px,3vw,42px); letter-spacing:-0.02em; margin-bottom:2rem;">Verified across three platforms.</h2>
+
+          <div class="agg-grid" style="margin-bottom:1.25rem;">
+            <div class="agg">
+              <span class="agg-plat">Trustpilot</span>
+              <span class="agg-score">4.8<small> / 5</small></span>
+              <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg></span>
+              <span class="agg-meta"><span>51 reviews</span><span>Verified 2026-05-09</span></span>
+            </div>
+            <div class="agg">
+              <span class="agg-plat">Google Maps</span>
+              <span class="agg-score">4.90<small> / 5</small></span>
+              <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg></span>
+              <span class="agg-meta"><span>123 reviews</span><span>Verified 2026-05-26</span></span>
+            </div>
+            <div class="agg">
+              <span class="agg-plat">TripAdvisor</span>
+              <span class="agg-score">4.95<small> / 5</small></span>
+              <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5"/></svg></span>
+              <span class="agg-meta"><span>21 reviews</span><span>Verified 2026-05-12</span></span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; color:var(--muted); line-height:1.9;">
+            Live profiles: <a href="https://trustpilot.com/review/javavolcano-touroperator.com" style="color:var(--orange); border-bottom:1px solid currentColor;">Trustpilot</a> · <a href="https://www.google.com/maps?cid=1266403973589689021" style="color:var(--orange); border-bottom:1px solid currentColor;">Google Maps</a> · <a href="https://www.tripadvisor.com/Attraction_Review-g297715-d19983165-Reviews-Java_Volcano_Tour_Operator-Surabaya_East_Java_Java.html" style="color:var(--orange); border-bottom:1px solid currentColor;">TripAdvisor</a>
+          </p>
+
+          <hr style="border:0; border-top:1px solid var(--border); margin:3.5rem 0;" />
+
+          <span class="micro" style="display:block; margin-bottom:.75rem;">What guests say · Five themes</span>
+          <h2 style="font-family:var(--font-display); font-size:clamp(28px,3vw,42px); letter-spacing:-0.02em; margin-bottom:2rem;">Five recurring patterns.</h2>
+
+          <div class="themes" style="margin-bottom:1.5rem;">
+            <div class="theme">
+              <span class="t-code">T1 · Private Tour Quality</span>
+              <h3>No rush, no compromises on timing.</h3>
+              <p>Guests repeatedly mention dedicated private guides and vehicles — no adjustments because another group needs to be somewhere. Private structure lets the crew respond to the actual group, not a fixed schedule for strangers.</p>
+            </div>
+            <div class="theme">
+              <span class="t-code">T2 · Guide Knowledge &amp; English</span>
+              <h3>Named guides, route-specific knowledge.</h3>
+              <p>Reviews frequently name individual guides and praise English-speaking ability alongside route knowledge. Guides are credited for pre-activity briefings, proactive photography, and flexibility for impromptu stops — consistent across platforms.</p>
+            </div>
+            <div class="theme">
+              <span class="t-code">T3 · Ijen Experience Quality</span>
+              <h3>The hike, the knowledge, the preparation.</h3>
+              <p>Guests on Ijen routes describe hiking to the crater in pre-dawn hours. Blue Fire is a natural phenomenon subject to weather and gas activity. Reviews describe the experience and safety prep — not a guarantee of any specific sighting.</p>
+            </div>
+            <div class="theme">
+              <span class="t-code">T4 · Safety &amp; Trust</span>
+              <h3>Prepared, well-informed, before each activity.</h3>
+              <p>The founder's Tourist Police background is referenced directly in some reviews. Guests on multi-day tours describe guides responding effectively to changed conditions — including one incident where an injured group member was assisted.</p>
+            </div>
+            <div class="theme">
+              <span class="t-code">T5 · All-Inclusive Clarity</span>
+              <h3>Costs as described — no surprises.</h3>
+              <p>Guests note no unexpected fees at checkpoints, no mid-trip negotiation for tickets or logistics. The written-inclusions model means guests arrive knowing exactly what is covered.</p>
+            </div>
+          </div>
+
+          <hr style="border:0; border-top:1px solid var(--border); margin:3.5rem 0;" />
+
+          <span class="micro" style="display:block; margin-bottom:.75rem;">Selected excerpts</span>
+          <h2 style="font-family:var(--font-display); font-size:clamp(28px,3vw,42px); letter-spacing:-0.02em; margin-bottom:2rem;">In guests' own words.</h2>
+
+          <div class="excerpt-grid">
+            <div class="review">
+              <span class="review-tag">T1 · Family tour · guide Taufik</span>
+              <p class="review-quote">"Hiked up mount ijen with a 12 and 15 years old in the wee hours of morning… Taufik ensure all briefing is always done prior to all trips and flexible with timing. When i wanted to eat local durians, he even dropped by a well known durian stall."</p>
+              <div class="review-foot"><span class="review-name">Kevin Foo</span><span class="review-source">Trustpilot</span></div>
+            </div>
+            <div class="review">
+              <span class="review-tag">T2 · Named guide · Anjas</span>
+              <p class="review-quote">"I don't think there is a better tour guide anywhere than Anjas — head and shoulders above the rest."</p>
+              <div class="review-foot"><span class="review-name">John Joyce</span><span class="review-source">Trustpilot</span></div>
+            </div>
+            <div class="review">
+              <span class="review-tag">T2 · Guide Fauzi · driver Fredi</span>
+              <p class="review-quote">"Fauzi was very attentive to our needs, ensured we were comfortable and safe at all times, and always went the extra mile to help us."</p>
+              <div class="review-foot"><span class="review-name">Han Waye</span><span class="review-source">Trustpilot · May 2026</span></div>
+            </div>
+            <div class="review">
+              <span class="review-tag">T2 · Steep terrain · guide Rendi</span>
+              <p class="review-quote">"When we went down the steep crater, he held our hands to prevent us from falling."</p>
+              <div class="review-foot"><span class="review-name">Wing Shan Lui</span><span class="review-source">Google · KTA-G-2024-002</span></div>
+            </div>
+            <div class="review">
+              <span class="review-tag">T3 · Ijen route · guide Ahboy</span>
+              <p class="review-quote">"Ahboy was a phenomenal Ijen guide — knowledgeable, went out of his way for safety, logistics, equipment."</p>
+              <div class="review-foot"><span class="review-name">Jason Li</span><span class="review-source">Trustpilot · KTA-G-2024-004</span></div>
+            </div>
+            <div class="review">
+              <span class="review-tag">T4 · Solo traveler</span>
+              <p class="review-quote">"Being a solo traveler it was safe and stress free with JVTO."</p>
+              <div class="review-foot"><span class="review-name">Karthika TS</span><span class="review-source">Trustpilot</span></div>
+            </div>
+            <div class="review">
+              <span class="review-tag">T4 · Emergency handling</span>
+              <p class="review-quote">"One of our friends was injured and they helped him as well. Fantastic planning."</p>
+              <div class="review-foot"><span class="review-name">Jiang Tianjian</span><span class="review-source">Trustpilot</span></div>
+            </div>
+            <div class="review">
+              <span class="review-tag">T1/T2 · Guide Kiki · driver Derry</span>
+              <p class="review-quote">"Kiki and Derry made the whole experience really enjoyable. Service was excellent, vibes were immaculate, and were really accommodating with our requests. 10/10"</p>
+              <div class="review-foot"><span class="review-name">Yong Xiang Leow</span><span class="review-source">Trustpilot · May 2026</span></div>
+            </div>
+            <div class="review">
+              <span class="review-tag">T5 · Logistics · driver Yandi</span>
+              <p class="review-quote">"Our driver Yandi was really reliable and friendly. He briefed us on what to expect."</p>
+              <div class="review-foot"><span class="review-name">Divya_Stri</span><span class="review-source">Trustpilot · KTA-D-2024-003</span></div>
+            </div>
+          </div>
+
+          <div class="data-box" style="margin-top:3rem; grid-template-columns:1fr;">
+            <div>
+              <div class="k">Named guide attribution</div>
+              <div class="v" style="font-weight:400; font-size:16px; line-height:1.65;">Reviews that name guides — Anjas, Taufik, Rendi, Gufron, Kiki, Fauzi, Boy (Ahboy) — are linked to their profiles in <a href="why-jvto-our-team.html" style="color:var(--orange); border-bottom:1px solid currentColor;">Our Team</a>. Each profile includes the guide's KTA credential, languages, routes, and selected review mentions. Named guides are verified against the HPWKI crew registry, not sourced from freelance marketplaces.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <div class="container">
+      <h2>Read the patterns. <span class="accent-orange">Then verify.</span></h2>
+      <div class="ctas">
+        <a class="primary" href="why-jvto-our-team.html">Meet the named crew <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="ghost" href="verify-jvto.html">Verify JVTO</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JVTO</div>
+          <p>Private volcano tours in Java featuring Bromo, Ijen, and more. Expert guides, verifiable credentials, unforgettable adventures.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a class="social-btn" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Why JVTO</h4>
+          <ul>
+            <li><a href="why-jvto-the-jvto-difference.html">The JVTO Difference</a></li>
+            <li><a href="why-jvto-reviews.html">Reviews</a></li>
+            <li><a href="why-jvto-our-story.html">Our Story</a></li>
+            <li><a href="why-jvto-our-team.html">Our Team</a></li>
+            <li><a href="why-jvto-community-standards.html">Community Standards</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">+62 822 4478 8833</a></li>
+            <li><a href="contact.html">hello@javavolcano-touroperator.com</a></li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Jl. Khairil Anwar No.102A,<br />Bondowoso, East Java</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Verified</h4>
+          <ul>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">PT Java Volcano Rendezvous</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">NIB 1102230032918</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Trustpilot 4.8 / 5 (51 reviews)</li>
+            <li><a href="verify-jvto.html">→ Open proof library</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2026 PT Java Volcano Rendezvous · All rights reserved · NIB 1102230032918</small>
+        <div class="footer-legal">
+          <a href="policy-privacy.html">Privacy</a>
+          <a href="policy.html">Terms</a>
+          <a href="policy-booking-payment-cancellation.html">Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab" href="contact.html" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.4-1.1c-.3-.1-.7-.1-.9.2l-.7.9c-.1.2-.4.2-.6.1-.8-.4-2.4-1.8-2.8-2.6-.1-.2-.1-.4.1-.6l.7-.8c.2-.2.2-.5.1-.8l-1-2.5c-.2-.5-.7-.6-1.1-.4-1.1.6-1.8 1.7-1.7 2.9.1 2.7 3.6 6.2 6.3 6.5 1.2.1 2.4-.6 2.9-1.7.2-.5 0-.9-.4-1.1z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.2-1.4c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3.1-.2-.3C4.1 15 3.7 13.5 3.7 12 3.7 7.5 7.5 3.7 12 3.7s8.3 3.8 8.3 8.3-3.8 8.2-8.3 8.2z"/></svg>
+  </a>
+  <div id="tweaks-root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+</body>
+</html>

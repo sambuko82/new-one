@@ -1,0 +1,71 @@
+{
+  "compiled_at": "2026-05-28T09:15:55+00:00",
+  "compiler_version": "0.1.0",
+  "extended_at": "2026-06-01T00:00:00+07:00",
+  "inputs": {
+    "claims": 9,
+    "evidence": 18,
+    "entities": 50,
+    "decisions": 3,
+    "narratives": 9
+  },
+  "outputs": {
+    "claims": 9,
+    "schema_files": 3,
+    "faq_items": 9,
+    "aeo_snippets": 9
+  },
+  "validation": {
+    "F1": "pass",
+    "F2": "pass",
+    "F3": "pass",
+    "F4": "pass",
+    "F5": "pass",
+    "F6": "pass",
+    "F7": "pass",
+    "F8": "pass"
+  },
+  "input_hashes": {
+    "claim-registry.yml": "sha256:f3323f36bcd48b7f",
+    "evidence-registry.yml": "sha256:4e21cbbf2486af95",
+    "entity-registry.yml": "sha256:5d123c0437b898ba",
+    "decision-registry.yml": "sha256:b3052e0432c339c2",
+    "conflict-log.md": "sha256:e9e081bfb93e9359",
+    "aeo-claims.md": "sha256:b2785f4234b1e7ec"
+  },
+  "extended_bundle": {
+    "generated": "2026-06-01",
+    "description": "Extended domain exports added to trust-bundle. Covers all major wiki domains for website implementation.",
+    "files": [
+      {
+        "file": "products.json",
+        "description": "22 tour packages with full pax-tier pricing (IDR), ijen_relevant flag, health_screening flag, destinations, URLs",
+        "source": "wiki/products/packages-full-pricing.md",
+        "packages_count": 22
+      },
+      {
+        "file": "policies.json",
+        "description": "Booking rules, cancellation (48h threshold), inclusions/exclusions, vehicle allocation, FOC tiers, health screening protocol, forbidden wording",
+        "source": "wiki/sources/jvto-policy-pack-v6.md + wiki/website/brand-voice.md"
+      },
+      {
+        "file": "destinations.json",
+        "description": "5 destinations: entity summaries, geo-coordinates, key facts, JVTO packages, health screening flags, AEO block paths",
+        "source": "wiki/destinations/*.md",
+        "destinations_count": 5
+      },
+      {
+        "file": "people.json",
+        "description": "Founder (Agung Sambuko), Medical Officer (Dr. Ahmad Irwandanu), 14 crew members with KTA status, portrait URLs, review counts",
+        "source": "wiki/people/crew-registry.md + agung-sambuko.md + dr-ahmad-irwandanu.md",
+        "crew_count": 14
+      },
+      {
+        "file": "operational.json",
+        "description": "Travel times, temperatures, Ijen closure schedule, seasonal guide, 23 hotel partners by itinerary phase, room allocation rules",
+        "source": "wiki/website/operational-facts.md + hotels.md",
+        "hotels_count": 23
+      }
+    ]
+  }
+}

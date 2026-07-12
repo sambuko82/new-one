@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Blog · JVTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jvto-system.css" />
+<script>window.__JVTO_TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{"palette":"default","density":"comfortable","displayItalic":true}/*EDITMODE-END*/;</script>
+<style>
+  .pillar-list { display: flex; flex-direction: column; gap: 0; }
+  .pillar-row {
+    display: grid; grid-template-columns: 88px 1.4fr 1fr; gap: 3rem; align-items: start;
+    padding: 3rem 0; border-top: 1px solid var(--border);
+  }
+  .pillar-row:last-child { border-bottom: 1px solid var(--border); }
+  @media (max-width: 880px) { .pillar-row { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; } }
+  .pillar-idx { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 0.18em; color: var(--orange); padding-top: .5rem; }
+  .pillar-main .tag { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; display: block; }
+  .pillar-main h3 { font-size: clamp(26px, 3vw, 38px); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1.1rem; }
+  .pillar-main p { color: var(--muted); font-size: 16px; font-weight: 300; line-height: 1.65; max-width: 60ch; }
+  .pillar-links { display: flex; flex-direction: column; gap: .25rem; padding-top: .25rem; }
+  .pillar-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--border); transition: color .2s; font-size: 15px; font-weight: 500; }
+  .pillar-links .pillar-link:first-child { border-top: 0; }
+  .pillar-link:hover { color: var(--orange); }
+  .pillar-link svg { width: 16px; height: 16px; flex-shrink: 0; transition: transform .2s; }
+  .pillar-link:hover svg { transform: translateX(4px); }
+  .ground-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  @media (max-width: 880px) { .ground-grid { grid-template-columns: 1fr; } }
+  .ground { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-soft); padding: 2.25rem; }
+  .ground .ix { width: 26px; height: 26px; color: var(--orange); margin-bottom: 1.1rem; }
+  .ground h3 { font-size: 20px; margin-bottom: .6rem; line-height: 1.2; }
+  .ground p { color: var(--muted); font-size: 14px; font-weight: 300; line-height: 1.6; }
+
+  .post-feature {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 0;
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg);
+    overflow: hidden; box-shadow: var(--shadow-soft);
+    transition: transform .4s ease, box-shadow .4s ease;
+  }
+  .post-feature:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
+  @media (max-width: 880px) { .post-feature { grid-template-columns: 1fr; } }
+  .post-feature-media { position: relative; min-height: 320px; background: var(--navy); }
+  .post-feature-body { padding: 3rem 3.25rem; display: flex; flex-direction: column; }
+  @media (max-width: 880px) { .post-feature-body { padding: 2.25rem; } }
+  .post-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .tag-orange { color: var(--orange); font-weight: 700; }
+  .post-feature-body h3 { font-size: clamp(26px, 2.8vw, 36px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.1rem; }
+  .post-feature:hover h3 { color: var(--orange); }
+  .post-feature-body p { color: var(--muted); font-size: 16px; font-weight: 300; line-height: 1.65; max-width: 56ch; margin-bottom: 2rem; }
+  .post-cta { margin-top: auto; display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--navy); }
+  .post-cta svg { width: 16px; height: 16px; transition: transform .2s; }
+  .post-feature:hover .post-cta { color: var(--orange); }
+  .post-feature:hover .post-cta svg { transform: translateX(4px); }
+</style>
+</head>
+<body data-screen-label="08 Blog">
+
+  <div class="ribbon">
+    <div class="container ribbon-row">
+      <div class="ribbon-marquee">
+        <span><i class="ribbon-dot"></i> PT Java Volcano Rendezvous</span>
+        <span>NIB · 1102230032918</span>
+        <span>Tourist Police-Led</span>
+      </div>
+      <div class="ribbon-right">
+        <span>EN · IDR · USD · EUR</span>
+        <span style="color:var(--lime)">✓ Verify Us</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero interior">
+    <div class="hero-bg"><div class="ph-stripes"></div></div>
+    <div class="hero-overlay"></div>
+    <nav class="topnav">
+      <div class="container nav-inner">
+        <a href="homepage.html" class="brand">JVTO <small>· EST 2016</small></a>
+        <div class="nav-links">
+          <a href="tours.html">Tours</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="why-jvto.html">Why JVTO</a>
+          <a href="travel-guide.html">Travel Guide</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="nav-cta">
+          <a href="verify-jvto.html" class="pill pill-verify">✓ Verify Us</a>
+          <a href="contact.html" class="pill pill-wa">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-inner container">
+      <div class="ph-label tr">Hero photo · field notes · 1920×800</div>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow-row"><span class="eyebrow-pill">Field notes</span><span class="eyebrow-meta">FILE 008 / BLOG</span></div>
+          <h1 class="hero-head">From the <span class="italic">ground.</span></h1>
+          <p class="hero-lede">Current conditions, safety protocols, packing guidance, and the regulations that govern each destination we operate — published by the people on-site year-round.</p>
+        </div>
+        <div class="hero-meta-block"><div class="meta-row"><span>Topic pillars</span><strong>5</strong></div><div class="meta-row"><span>Based in</span><strong>Bondowoso</strong></div><div class="meta-row"><span>Author</span><strong>JVTO ops team</strong></div><div class="meta-row"><span>Sponsored content</span><strong>None</strong></div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-off section stack">
+    <div class="container">
+      <div style="max-width: 70ch;">
+        <span class="micro" style="display:block; margin-bottom:1.5rem;">Why this blog exists</span>
+        <p style="font-size:clamp(22px,2.6vw,30px); font-family:var(--font-display); font-weight:300; line-height:1.35; letter-spacing:-0.01em; color:var(--navy); margin-bottom:2rem;">East Java is not a destination you improvise. Crater access rules change. Volcanic gas levels shift overnight. A waterfall canyon that was passable last week may be running too high today.</p>
+        <p style="color:var(--muted); font-size:18px; font-weight:300; line-height:1.65; margin-bottom:1.25rem;">This blog covers what we actually know from the ground: current conditions, safety protocols, packing guidance, route facts, and the regulations that govern each destination we operate. Mr. Sam's team — KTA-credentialed guides and drivers based in Bondowoso — is on-site year-round. What they learn, we publish here.</p>
+        <p style="color:var(--navy); font-size:18px; font-weight:500; line-height:1.65;">No sponsored content. No tour-aggregator rewrites. Just operational information you can act on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white section stack">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 01</span>
+        <h2 class="section-title">Latest from <span class="accent-orange">the field.</span></h2>
+        <span class="section-meta">Published posts</span>
+      </div>
+      <a class="post-feature" href="blog-why-not-unlicensed-ijen-operator.html">
+        <div class="post-feature-media"><div class="ph-stripes warm"></div><span class="ph-label">Cover · ijen rim at dawn · 1280×960</span></div>
+        <div class="post-feature-body">
+          <div class="post-meta"><span class="tag-orange">Kawah Ijen</span><span>27 May 2026 · 6 min read</span></div>
+          <h3>Why you should not visit Mount Ijen with an unlicensed operator</h3>
+          <p>The volcano is the same. Everything around it — your legal recourse, the safety chain, the regulatory framework that protects you — is not. A practical, openly-disclosed guide to the four risk categories, plus a seven-point checklist you can use with any operator.</p>
+          <span class="post-cta">Read the post <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="bg-off section stack">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 02</span>
+        <h2 class="section-title">Five <span class="accent-orange">topic pillars.</span></h2>
+        <span class="section-meta">What we cover</span>
+      </div>
+      <div class="pillar-list">
+
+        <div class="pillar-row">
+          <div class="pillar-idx">01</div>
+          <div class="pillar-main">
+            <span class="tag">Kawah Ijen</span>
+            <h3>Conditions, access rules &amp; the Blue Fire</h3>
+            <p>Blue Fire is a natural phenomenon driven by volcanic gas combustion — not guaranteed on any single visit. We cover how BBKSDA SE.1658/KSA.9/2024 governs crater-zone access, what a valid QR code means and why it matters, the monthly closure schedule (first Friday of every month), and how health-certificate screening coordination works when access rules require it.</p>
+          </div>
+          <div class="pillar-links">
+            <a class="pillar-link" href="destination-ijen.html">Ijen crater overview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-ijen-health-screening.html">Ijen health screening <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-weather-and-closures.html">Weather &amp; closures <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="pillar-row">
+          <div class="pillar-idx">02</div>
+          <div class="pillar-main">
+            <span class="tag">Mount Bromo</span>
+            <h3>Sunrise, the Tengger Caldera &amp; the Yadnya Kasada festival</h3>
+            <p>Bromo's pre-dawn slot means arriving at the viewpoint by 03:30–04:00 — a jeep convoy across the Sea of Sand in the dark, temperatures of 5–15°C, and timing around the Yadnya Kasada festival (lunar calendar, access may be restricted) when it falls. We document the full route, the jeep sequence, and how JVTO's Plan-B SOP works when festival crowds or closures force a route change.</p>
+          </div>
+          <div class="pillar-links">
+            <a class="pillar-link" href="destination-bromo.html">Mount Bromo overview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-mount-bromo-logistics.html">Bromo logistics <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-safety-on-tours.html">Safety on tours <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="pillar-row">
+          <div class="pillar-idx">03</div>
+          <div class="pillar-main">
+            <span class="tag">Madakaripura</span>
+            <h3>The waterfall canyon that gets you wet</h3>
+            <p>Madakaripura is the tallest waterfall in Java. The approach involves wading through a stream, navigating narrow canyon passages, and standing under water — waterproof bags are not optional. We cover what to pack, how the canyon entry works, what helmets are provided (by local site management, not JVTO), and how to read the water levels before committing to the descent.</p>
+          </div>
+          <div class="pillar-links">
+            <a class="pillar-link" href="destination-madakaripura.html">Madakaripura overview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-packing-list.html">Packing list <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="pillar-row">
+          <div class="pillar-idx">04</div>
+          <div class="pillar-main">
+            <span class="tag">Tumpak Sewu</span>
+            <h3>Steep trail, fixed ropes &amp; the canyon floor</h3>
+            <p>The descent to the Tumpak Sewu canyon floor involves steep, wet sections with fixed-rope handholds — water shoes with grip matter here. We cover trail conditions by season, fitness requirements, what the canyon floor looks like at different water volumes, and the practical difference between the viewpoint visit and the full canyon descent.</p>
+          </div>
+          <div class="pillar-links">
+            <a class="pillar-link" href="destination-tumpak-sewu.html">Tumpak Sewu overview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-tumpak-sewu-logistics.html">Tumpak Sewu logistics <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-packing-and-fitness.html">Packing &amp; fitness <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="pillar-row">
+          <div class="pillar-idx">05</div>
+          <div class="pillar-main">
+            <span class="tag">Preparation</span>
+            <h3>Packing guides, health checks &amp; what to declare at booking</h3>
+            <p>Across all East Java volcano tours, the recurring preparation mistakes are the same: wrong footwear, no warm layer for pre-dawn starts, dietary requirements not declared at booking. We publish destination-specific packing lists, explain how health-screening coordination works on Ijen routes, and outline what dietary needs (vegetarian, vegan, gluten-free) must be confirmed before Day 1.</p>
+          </div>
+          <div class="pillar-links">
+            <a class="pillar-link" href="travel-guide-packing-list.html">Packing list <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-booking-information.html">Booking information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="pillar-link" href="travel-guide-faq.html">FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white section stack stack-end">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 03</span>
+        <h2 class="section-title">Written from <span class="accent-orange">on-site.</span></h2>
+        <span class="section-meta">How we work</span>
+      </div>
+      <div class="ground-grid">
+        <div class="ground">
+          <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h3>On the ground, year-round</h3>
+          <p>KTA-credentialed guides and drivers based in Bondowoso operate these routes every week — not a content desk writing from a screen.</p>
+        </div>
+        <div class="ground">
+          <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          <h3>No sponsored content</h3>
+          <p>Nothing here is paid placement or an aggregator rewrite. Every pillar maps to a destination or operational topic we run ourselves.</p>
+        </div>
+        <div class="ground">
+          <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <h3>Information you can act on</h3>
+          <p>Current conditions, access regulations, and packing facts written to be used before you travel — not generic destination filler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <div class="container">
+      <h2>Read the rulebook <span class="accent-orange">before you book.</span></h2>
+      <div class="ctas">
+        <a class="primary" href="travel-guide.html">Open the travel guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="ghost" href="contact.html">Ask the team</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JVTO</div>
+          <p>Private volcano tours in Java featuring Bromo, Ijen, and more. Expert guides, verifiable credentials, unforgettable adventures.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a class="social-btn" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="tours.html">All Tours</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="isic-student-package.html">Student Tours</a></li>
+            <li><a href="why-jvto.html">Why JVTO</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">+62 822 4478 8833</a></li>
+            <li><a href="contact.html">hello@javavolcano-touroperator.com</a></li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Jl. Khairil Anwar No.102A,<br />Bondowoso, East Java 68214</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Verified</h4>
+          <ul>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">PT Java Volcano Rendezvous</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">NIB 1102230032918</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Trustpilot 4.8 / 5 (51 reviews)</li>
+            <li><a href="verify-jvto.html">→ Open proof library</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2026 PT Java Volcano Rendezvous · All rights reserved · NIB 1102230032918</small>
+        <div class="footer-legal">
+          <a href="policy-privacy.html">Privacy</a>
+          <a href="policy.html">Terms</a>
+          <a href="policy-booking-payment-cancellation.html">Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab" href="contact.html" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.4-1.1c-.3-.1-.7-.1-.9.2l-.7.9c-.1.2-.4.2-.6.1-.8-.4-2.4-1.8-2.8-2.6-.1-.2-.1-.4.1-.6l.7-.8c.2-.2.2-.5.1-.8l-1-2.5c-.2-.5-.7-.6-1.1-.4-1.1.6-1.8 1.7-1.7 2.9.1 2.7 3.6 6.2 6.3 6.5 1.2.1 2.4-.6 2.9-1.7.2-.5 0-.9-.4-1.1z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.2-1.4c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3.1-.2-.3C4.1 15 3.7 13.5 3.7 12 3.7 7.5 7.5 3.7 12 3.7s8.3 3.8 8.3 8.3-3.8 8.2-8.3 8.2z"/></svg>
+  </a>
+  <div id="tweaks-root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+</body>
+</html>

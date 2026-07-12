@@ -1,0 +1,228 @@
+{
+  "generated": "2026-06-01",
+  "source": "wiki/destinations/*.md",
+  "canonical": true,
+  "destinations": [
+    {
+      "id": "kawah-ijen",
+      "name": "Kawah Ijen (Ijen Crater)",
+      "aliases": ["Ijen", "Ijen Crater", "Kawah Ijen"],
+      "type": "Active stratovolcano",
+      "elevation_m": 2386,
+      "location": "Banyuwangi / Bondowoso Regency, East Java, Indonesia",
+      "canonical_url": "/destinations/ijen-crater",
+      "schema_type": "TouristAttraction",
+      "ijen_relevant": true,
+      "health_wording_mode": "conditional",
+      "geo": {
+        "lat": -8.0635,
+        "lon": 114.2361,
+        "bbox": {
+          "minlat": -8.07316,
+          "maxlat": -8.0539,
+          "minlon": 114.22426,
+          "maxlon": 114.24812
+        }
+      },
+      "3d_viewer_url": "/3d/ijen-crater",
+      "entity_summary": "Kawah Ijen is an active volcano at 2,386 m with the world's highest-volume acidic crater lake. Famous for the pre-dawn blue fire sulfuric-gas phenomenon — visible only in suitable weather and gas conditions. Access from Paltuding trailhead via a steep ~3 km night hike. BBKSDA East Java is the regulatory authority.",
+      "key_facts": {
+        "crater_lake": "Turquoise, highly acidic (≈ pH 0) — highest-volume acidic crater lake on Earth",
+        "famous_for": "Blue fire phenomenon, acidic lake, sulfur mining",
+        "best_season": "Dry season: April–October",
+        "access": "Night hike from Paltuding trailhead (~3 km, ~90 min ascent)",
+        "regulatory_authority": "BBKSDA East Java — https://bbksdajatim.org"
+      },
+      "blue_fire": {
+        "approved_language": "Blue Fire is a natural phenomenon subject to weather and gas activity.",
+        "forbidden": ["Blue Fire guaranteed", "100% Blue Fire visible"]
+      },
+      "health_screening": {
+        "required": true,
+        "conditional": true,
+        "regulation": "BBKSDA SE.1658/KSA.9/2024",
+        "gate_rule": "No Valid QR Code = No Crater Zone Access"
+      },
+      "jvto_packages": [
+        "ijen-2d1n", "ijen-bromo-madakaripura-3d2n", "bromo-madakaripura-ijen-3d2n",
+        "ijen-papuma-tumpak-sewu-bromo-4d3n", "ijen-bromo-madakaripura-4d3n",
+        "tumpak-sewu-bromo-ijen-4d3n", "ijen-papuma-tumpak-sewu-bromo-5d4n",
+        "ijen-bromo-madakaripura-malang-5d4n", "ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
+        "bali-bromo-ijen-3d2n", "bali-ijen-bromo-madakaripura-3d2n",
+        "bali-ijen-papuma-tumpak-sewu-bromo-4d3n", "bali-ijen-papuma-tumpak-sewu-bromo-5d4n"
+      ],
+      "claims_owned": ["C4"],
+      "claims_supports": ["C1"],
+      "aeo_block": "output/website/aeo/ijen.md"
+    },
+    {
+      "id": "mount-bromo",
+      "name": "Mount Bromo (Gunung Bromo)",
+      "aliases": ["Bromo", "Gunung Bromo", "Mount Bromo"],
+      "type": "Active stratovolcano",
+      "elevation_m": 2329,
+      "location": "Tengger Caldera, Probolinggo Regency, East Java",
+      "canonical_url": "/destinations/mount-bromo",
+      "schema_type": "TouristAttraction",
+      "ijen_relevant": false,
+      "health_wording_mode": "none",
+      "geo": {
+        "lat": -7.9308,
+        "lon": 112.9581,
+        "bbox": {
+          "minlat": -7.93998,
+          "maxlat": -7.9217,
+          "minlon": 112.95277,
+          "maxlon": 112.9635
+        }
+      },
+      "3d_viewer_url": "/3d/mount-bromo",
+      "entity_summary": "Mount Bromo is an active volcano in the Tengger caldera, East Java. Best known for the Penanjakan sunrise viewpoint over the sea-of-sand caldera floor and the active smoking crater. Accessed by 4WD jeep from Cemoro Lawang in the pre-dawn window (03:00–05:00).",
+      "key_facts": {
+        "national_park": "Bromo Tengger Semeru — BBKSDA permit required",
+        "famous_for": "Penanjakan sunrise viewpoint (2,770 m), Tengger caldera sea of sand, active smoking crater",
+        "best_season": "Dry season: April–October",
+        "best_time": "Pre-dawn 03:00–05:00 for sunrise",
+        "access": "4WD jeep from Cemoro Lawang — mandatory (no private vehicles in caldera zone)",
+        "entrance_fee": "IDR 160,000/person for foreign tourists (JVTO handles; guests do not pay separately)"
+      },
+      "health_screening": {
+        "required": false,
+        "note": "Unlike Ijen, Bromo does not have a BBKSDA health-certificate requirement."
+      },
+      "jvto_packages": [
+        "bromo-1d1n", "bromo-2d1n", "ijen-bromo-madakaripura-3d2n",
+        "bromo-madakaripura-ijen-3d2n", "ijen-bromo-madakaripura-4d3n",
+        "ijen-papuma-tumpak-sewu-bromo-4d3n", "tumpak-sewu-bromo-ijen-4d3n",
+        "ijen-papuma-tumpak-sewu-bromo-5d4n", "ijen-bromo-madakaripura-malang-5d4n",
+        "ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
+        "bali-bromo-ijen-3d2n", "bali-ijen-bromo-madakaripura-3d2n",
+        "bali-ijen-papuma-tumpak-sewu-bromo-4d3n", "bali-ijen-papuma-tumpak-sewu-bromo-5d4n"
+      ],
+      "claims_owned": [],
+      "claims_supports": ["C1", "C3"],
+      "aeo_block": "output/website/aeo/bromo.md"
+    },
+    {
+      "id": "madakaripura",
+      "name": "Madakaripura Waterfall (Air Terjun Madakaripura)",
+      "aliases": ["Madakaripura", "Madakaripura Waterfall", "Air Terjun Madakaripura"],
+      "type": "Horseshoe curtain waterfall in narrow canyon",
+      "height_m": {
+        "main_drop": 100,
+        "total_with_upper_tiers": 200,
+        "note": "Main curtain ~100 m (SSOT §9_4). Total incl. upper tiers ~200 m (indonesia.travel + multiple independent sources)."
+      },
+      "distinction": "Tallest waterfall in Java",
+      "location": "Probolinggo Regency, East Java, Indonesia",
+      "canonical_url": "/destinations/madakaripura-waterfall",
+      "schema_type": "TouristAttraction",
+      "ijen_relevant": false,
+      "health_wording_mode": "none",
+      "geo": {
+        "lat": -7.8490,
+        "lon": 113.0137,
+        "bbox": {
+          "minlat": -7.85401,
+          "maxlat": -7.84388,
+          "minlon": 113.00867,
+          "maxlon": 113.01865
+        }
+      },
+      "3d_viewer_url": "/3d/madakaripura-waterfall",
+      "entity_summary": "Madakaripura is Java's tallest waterfall in Probolinggo, East Java. A narrow canyon gorge leads to a horseshoe curtain waterfall fed from multiple directions. Historical context: said to be the final meditation site of Gajah Mada, Majapahit prime minister. Easy ~20 min trek from roadside parking.",
+      "key_facts": {
+        "historical_context": "Final meditation site of Gajah Mada, Majapahit prime minister (14th century)",
+        "access": "Easy ~20 min trek from roadside parking (~1.5 km canyon walk); horse option available",
+        "visitor_note": "Visitors will get wet — raincoat strongly recommended. Narrow canyon approach, wet stones.",
+        "helmet_note": "Helmets provided by local site management (NOT a JVTO inclusion)"
+      },
+      "jvto_packages": [
+        "bromo-2d1n", "ijen-bromo-madakaripura-3d2n", "bromo-madakaripura-ijen-3d2n",
+        "ijen-bromo-madakaripura-4d3n", "ijen-bromo-madakaripura-malang-5d4n",
+        "bali-ijen-bromo-madakaripura-3d2n"
+      ],
+      "claims_owned": [],
+      "claims_supports": ["C3"],
+      "aeo_block": "output/website/aeo/madakaripura.md"
+    },
+    {
+      "id": "tumpak-sewu",
+      "name": "Tumpak Sewu Waterfall (Air Terjun Tumpak Sewu)",
+      "aliases": ["Tumpak Sewu", "Coban Sewu", "Tumpak Sewu Waterfall"],
+      "nickname": "Java's Niagara",
+      "type": "Multi-tiered curtain waterfall",
+      "height_m": 120,
+      "location": "Lumajang Regency, East Java, Indonesia",
+      "canonical_url": "/destinations/tumpak-sewu-waterfall",
+      "schema_type": "TouristAttraction",
+      "ijen_relevant": false,
+      "health_wording_mode": "none",
+      "geo": {
+        "lat": -8.2310,
+        "lon": 112.9189,
+        "bbox": {
+          "minlat": -8.23184,
+          "maxlat": -8.23028,
+          "minlon": 112.91781,
+          "maxlon": 112.91997
+        }
+      },
+      "3d_viewer_url": "/3d/tumpak-sewu-waterfall",
+      "entity_summary": "Tumpak Sewu is a multi-tiered canyon waterfall (~120 m) in Lumajang, East Java. Nicknamed 'Java's Niagara' for its curtain of streams cascading over a curved cliff face into a canyon. Accessed via rim viewpoint or steep canyon descent (~300 steps).",
+      "key_facts": {
+        "access_options": [
+          "Rim viewpoint — panoramic, short walk from parking, suitable for all fitness levels",
+          "Base canyon descent — ~300 steps, ropes in places, moderate-challenging fitness"
+        ],
+        "fitness_requirement": "Moderate-challenging for canyon descent",
+        "guide_note": "JVTO guides assess fitness on the day and brief the descent before starting."
+      },
+      "jvto_packages": [
+        "ijen-papuma-tumpak-sewu-bromo-4d3n", "tumpak-sewu-bromo-ijen-4d3n",
+        "ijen-papuma-tumpak-sewu-bromo-5d4n", "ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
+        "bali-ijen-papuma-tumpak-sewu-bromo-4d3n", "bali-ijen-papuma-tumpak-sewu-bromo-5d4n"
+      ],
+      "claims_owned": [],
+      "claims_supports": ["C3"],
+      "aeo_block": "output/website/aeo/tumpak-sewu.md"
+    },
+    {
+      "id": "papuma-beach",
+      "name": "Papuma Beach (Pantai Papuma)",
+      "aliases": ["Papuma", "Pantai Papuma", "Papuma Beach and Cape", "Tanjung Papuma"],
+      "type": "White-sand beach with rocky cape (Tanjung Papuma)",
+      "elevation_m": {"beach": 0, "cape_headland": 86},
+      "location": "Jember Regency, East Java, Indonesia",
+      "canonical_url": "/destinations/papuma-beach",
+      "schema_type": "TouristAttraction",
+      "ijen_relevant": false,
+      "health_wording_mode": "none",
+      "geo": {
+        "lat": -8.4299,
+        "lon": 113.5551,
+        "bbox": {
+          "minlat": -8.43559,
+          "maxlat": -8.42432,
+          "minlon": 113.54986,
+          "maxlon": 113.56033
+        }
+      },
+      "3d_viewer_url": "/3d/papuma-beach",
+      "entity_summary": "Papuma Beach in Jember offers white sand and dramatic coastal rock formations. JVTO includes it as a coastal contrast stop on Papuma-family packages (4D+). Best for guests who want a beach break on an otherwise volcano-focused East Java itinerary.",
+      "key_facts": {
+        "role": "Coastal break between Ijen (2,386 m) and Tumpak Sewu legs — only coastal destination on JVTO East Java circuits",
+        "features": ["White sand beach", "Dramatic offshore rock formations", "Cape headland walk rising to ~86 m"],
+        "note": "All packages including Papuma also include Ijen. Papuma comes after the Ijen night hike."
+      },
+      "jvto_packages": [
+        "ijen-papuma-tumpak-sewu-bromo-4d3n", "ijen-papuma-tumpak-sewu-bromo-5d4n",
+        "ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
+        "bali-ijen-papuma-tumpak-sewu-bromo-4d3n", "bali-ijen-papuma-tumpak-sewu-bromo-5d4n"
+      ],
+      "claims_owned": [],
+      "claims_supports": ["C3"],
+      "aeo_block": "output/website/aeo/papuma.md"
+    }
+  ]
+}

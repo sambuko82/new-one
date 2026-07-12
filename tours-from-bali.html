@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tours from Bali · JVTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jvto-system.css" />
+<script>window.__JVTO_TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{"palette":"default","density":"comfortable","displayItalic":true}/*EDITMODE-END*/;</script>
+<style>
+  .price-idr { font-family: var(--font-display); font-size: 21px; font-weight: 700; color: var(--orange); letter-spacing: -0.02em; line-height: 1; }
+  .price-idr small { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 3px; letter-spacing: 0; }
+  /* itinerary block */
+  .itin { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-soft); overflow: hidden; margin-bottom: 2rem; }
+  .itin-head { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; padding: 2.25rem 2.5rem 1.75rem; border-bottom: 1px solid var(--border); }
+  @media (max-width: 640px) { .itin-head { grid-template-columns: 1fr; gap: 1.25rem; } }
+  .itin-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+  .itin-head h3 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.1; margin-bottom: .75rem; }
+  .itin-head p { color: var(--muted); font-size: 14.5px; font-weight: 300; line-height: 1.55; max-width: 62ch; }
+  .itin-price { text-align: right; flex-shrink: 0; }
+  @media (max-width: 640px) { .itin-price { text-align: left; } }
+  .itin-price .k { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
+  .itin-price .group { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: .6rem; line-height: 1.5; }
+  .day-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .day-table th { text-align: left; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); padding: 1.1rem 2.5rem; background: var(--off); }
+  .day-table td { padding: 1.1rem 2.5rem; border-top: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+  .day-table td.day-n { font-family: var(--font-mono); font-weight: 700; color: var(--orange); width: 64px; }
+  .day-table td.day-hotel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; color: var(--muted); white-space: nowrap; }
+  @media (max-width: 640px) { .day-table th, .day-table td { padding: .9rem 1.5rem; } .day-table td.day-hotel { white-space: normal; } }
+  .itin-foot { padding: 1.5rem 2.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+  .itin-note { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.55; max-width: 60ch; }
+  .incl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  @media (max-width: 880px) { .incl-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .incl-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .incl-list li { display: grid; grid-template-columns: 22px 1fr; gap: 1rem; align-items: start; font-size: 15px; line-height: 1.5; }
+  .incl-list li svg { width: 20px; height: 20px; color: var(--lime); margin-top: 2px; }
+  .incl-list li strong { font-weight: 600; }
+  .excl-box { background: var(--off); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem 2.25rem; }
+  .excl-box .micro { display: block; margin-bottom: 1rem; }
+  .excl-box ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+  .excl-box ul li { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); border-radius: var(--r-pill); padding: 8px 14px; background: var(--white); }
+  .facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 880px) { .facts-grid { grid-template-columns: 1fr; } }
+  .fact { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-soft); padding: 2.25rem; }
+  .fact .ix { width: 26px; height: 26px; color: var(--orange); margin-bottom: 1.1rem; }
+  .fact h3 { font-size: 22px; line-height: 1.2; margin-bottom: .75rem; }
+  .fact p { color: var(--muted); font-size: 14.5px; font-weight: 300; line-height: 1.6; }
+  .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  @media (max-width: 880px) { .booking-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .callout { border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem 1.5rem; margin-top: 1.25rem; background: var(--off); font-size: 14px; line-height: 1.55; color: var(--navy); }
+  .callout strong { font-weight: 700; }
+  .callout.lime { border-color: rgba(140,198,63,0.5); background: rgba(140,198,63,0.07); }
+  .security-note { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.6; margin-top: 1.5rem; max-width: 70ch; }
+</style>
+</head>
+<body data-screen-label="02b From Bali">
+
+  <div class="ribbon">
+    <div class="container ribbon-row">
+      <div class="ribbon-marquee">
+        <span><i class="ribbon-dot"></i> PT Java Volcano Rendezvous</span>
+        <span>NIB · 1102230032918</span>
+        <span>Tourist Police-Led</span>
+      </div>
+      <div class="ribbon-right">
+        <span>EN · IDR · USD · EUR</span>
+        <span style="color:var(--lime)">✓ Verify Us</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero interior">
+    <div class="hero-bg"><div class="ph-stripes warm"></div></div>
+    <div class="hero-overlay"></div>
+    <nav class="topnav">
+      <div class="container nav-inner">
+        <a href="homepage.html" class="brand">JVTO <small>· EST 2016</small></a>
+        <div class="nav-links">
+          <a href="tours.html">Tours</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="why-jvto.html">Why JVTO</a>
+          <a href="travel-guide.html">Travel Guide</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="nav-cta">
+          <a href="verify-jvto.html" class="pill pill-verify">✓ Verify Us</a>
+          <a href="contact.html" class="pill pill-wa">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-inner container">
+      <div class="ph-label tr">Hero photo · departure hub · bali · 1920×800</div>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow-row"><span class="eyebrow-pill">Departure hub · Bali</span><span class="eyebrow-meta">HUB / BALI</span></div>
+          <h1 class="hero-head">Tours from <span class="italic">Bali.</span></h1>
+          <p class="hero-lede">4 private East Java packages with the Bali–Java ferry crossing included. Kawah Ijen, Mount Bromo, Tumpak Sewu &amp; Papuma Beach — your own vehicle, your own crew.</p>
+        </div>
+        <div class="hero-meta-block"><div class="meta-row"><span>Hub</span><strong>Bali</strong></div><div class="meta-row"><span>Private packages</span><strong>4</strong></div><div class="meta-row"><span>Duration range</span><strong>3–5 days</strong></div><div class="meta-row"><span>From / person</span><strong>IDR 2,850,000</strong></div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-off section stack">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 01</span>
+        <h2 class="section-title">Bali to East Java — <span class="accent-orange">the route.</span></h2>
+        <span class="section-meta">Ferry included</span>
+      </div>
+      <p style="max-width:70ch; color:var(--muted); font-size:18px; font-weight:300; line-height:1.6; margin-bottom:1.5rem;">Every JVTO Bali package is 100% private — your group, your vehicle, your schedule. The Bali–Java ferry crossing (Gilimanuk–Ketapang) is included in every package. Mr. Sam, the founder, is an active officer of the Indonesian Tourist Police (Ditpamobvit East Java): every route, safety decision, and written rule traces back to someone who answers to police protocol.</p>
+      <p style="max-width:70ch; color:var(--muted); font-size:18px; font-weight:300; line-height:1.6;">All four packages cross from Bali to East Java by ferry on Day 1. Three packages finish in Surabaya (one-way overland); one returns you to Bali on Day 3. Pick-up is from your Bali hotel or address — Ubud, Seminyak, Canggu, or Lovina.</p>
+    </div>
+  </section>
+
+  <section class="bg-white section stack">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 02</span>
+        <h2 class="section-title">4 private tours <span class="accent-orange">from Bali.</span></h2>
+        <span class="section-meta">Day-by-day</span>
+      </div>
+      <p style="max-width:64ch; color:var(--muted); font-size:16px; font-weight:300; line-height:1.6; margin-bottom:3rem;">All packages include a dedicated vehicle, English-speaking crew, the Gilimanuk–Ketapang ferry, entrance fees, accommodation + breakfast, gas masks + trekking poles (Ijen), mineral water, and a JVTO T-shirt. Price is per person — no hidden local payments.</p>
+
+      <div class="itin">
+        <div class="itin-head">
+          <div>
+            <div class="itin-badges"><span class="badge">From Bali</span><span class="badge badge-dark">✓ Police-Led</span><span class="badge badge-lime">⚕ Health Check</span><span class="badge badge-dark">Returns to Bali</span></div>
+            <h3>3 Day Bromo &amp; Ijen Volcano Discovery</h3>
+            <p>The only Bali-return package. Cross to East Java on Day 1 for Bromo staging; Bromo crater sunrise with a private 4WD jeep, Madakaripura canyon, then Ijen staging; Ijen night hike, descent, and ferry return to Bali on Day 3.</p>
+          </div>
+          <div class="itin-price">
+            <div class="k">From / person</div>
+            <div class="price-idr">IDR 4,050,000<small>2 pax</small></div>
+            <div class="group">Scales to<br />IDR 2,850,000 at 11+ pax</div>
+          </div>
+        </div>
+        <table class="day-table">
+          <thead><tr><th>Day</th><th>Summary</th><th>Hotel</th></tr></thead>
+          <tbody>
+            <tr><td class="day-n">01</td><td>Bali → ferry → Bromo side</td><td class="day-hotel">Joglo Kecombrang Bromo</td></tr>
+            <tr><td class="day-n">02</td><td>Bromo sunrise · Madakaripura · transfer to Bondowoso</td><td class="day-hotel">Riverside Homestay</td></tr>
+            <tr><td class="day-n">03</td><td>Ijen climb · descent · return ferry → Bali</td><td class="day-hotel">—</td></tr>
+          </tbody>
+        </table>
+        <div class="itin-foot">
+          <div class="itin-note">Blue Fire is a natural phenomenon subject to weather and gas activity. Gas masks provided by JVTO.</div>
+          <a href="tour-bromo-ijen-combo-bali.html" class="btn-block" style="width:auto; padding:14px 24px;">View itinerary <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="itin">
+        <div class="itin-head">
+          <div>
+            <div class="itin-badges"><span class="badge">From Bali</span><span class="badge badge-dark">✓ Police-Led</span><span class="badge badge-lime">⚕ Health Check</span><span class="badge badge-dark">Ends in Surabaya</span></div>
+            <h3>3 Day Ijen, Bromo &amp; Madakaripura</h3>
+            <p>Ijen first, Bromo second. Cross to Banyuwangi on Day 1 for Ijen staging; Ijen night hike then transfer west to the Bromo side; Bromo crater sunrise, Madakaripura Waterfall, and finish in Surabaya. Solo pricing available.</p>
+          </div>
+          <div class="itin-price">
+            <div class="k">From / person</div>
+            <div class="price-idr">IDR 4,050,000<small>2 pax</small></div>
+            <div class="group">Solo IDR 7,500,000<br />11+ pax IDR 2,850,000</div>
+          </div>
+        </div>
+        <table class="day-table">
+          <thead><tr><th>Day</th><th>Summary</th><th>Hotel</th></tr></thead>
+          <tbody>
+            <tr><td class="day-n">01</td><td>Bali → ferry → Banyuwangi for Ijen staging</td><td class="day-hotel">Luminor Hotel</td></tr>
+            <tr><td class="day-n">02</td><td>Ijen climb · descent · transfer to Bromo side</td><td class="day-hotel">Joglo Kecombrang Bromo</td></tr>
+            <tr><td class="day-n">03</td><td>Bromo sunrise · Madakaripura · finish in Surabaya</td><td class="day-hotel">—</td></tr>
+          </tbody>
+        </table>
+        <div class="itin-foot">
+          <div class="itin-note">Ijen access rules can require a recent local health certificate; JVTO coordinates the clinic workflow when access rules require it.</div>
+          <a href="contact.html" class="btn-block" style="width:auto; padding:14px 24px;">Enquire on WhatsApp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="itin">
+        <div class="itin-head">
+          <div>
+            <div class="itin-badges"><span class="badge">From Bali</span><span class="badge badge-dark">✓ Police-Led</span><span class="badge badge-lime">⚕ Health Check</span><span class="badge badge-dark">Ends in Surabaya</span></div>
+            <h3>4 Day Ijen, Papuma Beach, Tumpak Sewu &amp; Bromo</h3>
+            <p>Four destinations across four days. Cross to Banyuwangi on Day 1 for Ijen staging; Ijen crater then transfer to the Papuma Beach coastal area in Jember; the Tumpak Sewu curtain waterfall (~120 m) and transfer to the Bromo side; Bromo crater sunrise, finish in Surabaya. Solo pricing available.</p>
+          </div>
+          <div class="itin-price">
+            <div class="k">From / person</div>
+            <div class="price-idr">IDR 4,900,000<small>2 pax</small></div>
+            <div class="group">Solo IDR 9,050,000<br />11+ pax IDR 3,475,000</div>
+          </div>
+        </div>
+        <table class="day-table">
+          <thead><tr><th>Day</th><th>Summary</th><th>Hotel</th></tr></thead>
+          <tbody>
+            <tr><td class="day-n">01</td><td>Bali → ferry → Banyuwangi for Ijen staging</td><td class="day-hotel">Luminor Hotel</td></tr>
+            <tr><td class="day-n">02</td><td>Ijen climb · descent · transfer to Papuma</td><td class="day-hotel">Doho Homestay</td></tr>
+            <tr><td class="day-n">03</td><td>Tumpak Sewu · transfer to Bromo side</td><td class="day-hotel">Joglo Kecombrang Bromo</td></tr>
+            <tr><td class="day-n">04</td><td>Bromo sunrise · finish in Surabaya</td><td class="day-hotel">—</td></tr>
+          </tbody>
+        </table>
+        <div class="itin-foot">
+          <div class="itin-note">The descent to the Tumpak Sewu canyon floor is steep and wet with fixed-rope sections — water shoes with grip recommended.</div>
+          <a href="contact.html" class="btn-block" style="width:auto; padding:14px 24px;">Enquire on WhatsApp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="itin">
+        <div class="itin-head">
+          <div>
+            <div class="itin-badges"><span class="badge">From Bali</span><span class="badge badge-dark">✓ Police-Led</span><span class="badge badge-lime">⚕ Health Check</span><span class="badge badge-dark">Ends in Surabaya</span></div>
+            <h3>5 Day Ijen, Papuma Beach, Tumpak Sewu &amp; Bromo</h3>
+            <p>The extended version of the 4-day circuit with additional time built into each transfer segment — recommended for groups who prefer a less compressed pace. Cross to Banyuwangi on Day 1; finish in Surabaya on Day 5.</p>
+          </div>
+          <div class="itin-price">
+            <div class="k">From / person</div>
+            <div class="price-idr">IDR 5,450,000<small>2 pax</small></div>
+            <div class="group">Scales to<br />IDR 4,050,000 at 11+ pax</div>
+          </div>
+        </div>
+        <table class="day-table">
+          <thead><tr><th>Day</th><th>Summary</th><th>Hotel</th></tr></thead>
+          <tbody>
+            <tr><td class="day-n">01</td><td>Bali → ferry → Banyuwangi for Ijen staging</td><td class="day-hotel">Luminor Hotel</td></tr>
+            <tr><td class="day-n">02</td><td>Ijen climb · descent · transfer to Papuma side</td><td class="day-hotel">Doho Homestay</td></tr>
+            <tr><td class="day-n">03</td><td>Papuma area · transfer to Tumpak Sewu staging</td><td class="day-hotel">Joglo Kecombrang Bromo</td></tr>
+            <tr><td class="day-n">04</td><td>Tumpak Sewu · transfer toward Bromo</td><td class="day-hotel">Joglo Kecombrang Bromo</td></tr>
+            <tr><td class="day-n">05</td><td>Bromo sunrise · finish in Surabaya</td><td class="day-hotel">—</td></tr>
+          </tbody>
+        </table>
+        <div class="itin-foot">
+          <div class="itin-note">Recommended for groups who want recovery time built into a four-destination circuit rather than a compressed schedule.</div>
+          <a href="contact.html" class="btn-block" style="width:auto; padding:14px 24px;">Enquire on WhatsApp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-off section stack">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 03</span>
+        <h2 class="section-title">Every Bali package <span class="accent-orange">includes — in writing.</span></h2>
+        <span class="section-meta">No surprise local payments</span>
+      </div>
+      <div class="incl-grid">
+        <ul class="incl-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Bali–Java ferry crossing.</strong> Gilimanuk–Ketapang, both directions (3D2N Bali-return package) or one-way Bali-to-Java (all other packages).</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Private transport.</strong> AC MPV (1–3 guests) or Toyota Hiace (4–9 guests). Fuel, tolls, and parking included.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Dedicated crew.</strong> English-speaking driver-guide (1–3 guests), or professional driver + escort guide (4+). Licensed local site guides at key locations.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Entrance fees, permits, and accommodation + breakfast</strong> on all nights, per itinerary.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Private 4WD jeep</strong> for the Bromo crater area. One jeep per ≤4 guests; additional jeeps for larger groups.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Gas masks and trekking poles</strong> for the Ijen crater hike, plus health-certificate screening coordination when current access rules require it.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Daily mineral water</strong>, full pick-up to drop-off from your Bali hotel, and a JVTO travel T-shirt (one per participant).</span></li>
+        </ul>
+        <div>
+          <div class="excl-box">
+            <span class="micro">Not included</span>
+            <ul>
+              <li>Flights</li>
+              <li>Tips</li>
+              <li>Personal expenses</li>
+              <li>Travel insurance</li>
+              <li>Indonesian visa (if applicable)</li>
+            </ul>
+          </div>
+          <div class="callout"><strong>End-point note.</strong> Three of four Bali packages finish in Surabaya — plan your onward transport from Surabaya (flights, train, or bus) in advance. Only the 3D2N Bromo &amp; Ijen Discovery returns you to Bali.</div>
+          <div class="callout lime"><strong>Written before you book.</strong> Ferry crossing, entrance fees, accommodation, gas masks, and all transport costs are bundled and confirmed in your voucher — no mid-trip negotiations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white section stack">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 04</span>
+        <h2 class="section-title">The facts behind <span class="accent-orange">the booking.</span></h2>
+        <span class="section-meta">Why JVTO</span>
+      </div>
+      <div class="facts-grid">
+        <div class="fact">
+          <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Police-led operations</h3>
+          <p>Mr. Sam holds the rank of Bripka and serves as an active officer of Ditpamobvit East Java (Tourist Police). Independent national press — Detik.com, 2021-03-14 — confirms active-duty status. No other tour operator in East Java is led by a serving Tourist Police officer.</p>
+        </div>
+        <div class="fact">
+          <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+          <h3>100% private — no shared groups</h3>
+          <p>Your booking receives a dedicated vehicle and crew. No join-in option exists. Group size determines vehicle type (MPV or Hiace); timing and route decisions apply to your group only.</p>
+        </div>
+        <div class="fact">
+          <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          <h3>All-inclusive — written before you book</h3>
+          <p>Ferry crossing, entrance fees, accommodation, gas masks, and all transport costs are bundled and confirmed in your voucher. The voucher is the booking reference — no mid-trip negotiations over ticket costs, fuel, or meals.</p>
+        </div>
+        <div class="fact">
+          <svg class="ix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 15h4"/></svg>
+          <h3>Verifiable credentials</h3>
+          <p>NIB 1102230032918 is verifiable via the Indonesian OSS system. HPWKI membership is registered under AHU-0001072.AH.01.07.TAHUN 2024. BBKSDA clearance and POLPAR authorisation are on file, and Dr. Ahmad Irwandanu holds a valid SIP license (Kemenkes/KKI verifiable).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy section stack">
+    <div class="container">
+      <div class="section-head dark" style="color:white;">
+        <span class="section-num" style="opacity:.6">§ 05</span>
+        <h2 class="section-title" style="color:white;">Check us <span class="accent-orange">before you book.</span></h2>
+        <span class="section-meta" style="color:rgba(255,255,255,0.55);">Independent signals</span>
+      </div>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead><tr><th>Signal</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="feature-row">Trustpilot 4.8 / 5 · 51 reviews</td><td>Independent — verified 2026-05-09</td></tr>
+            <tr><td class="feature-row">Google Maps 4.90 / 5 · 123 reviews</td><td>Independent</td></tr>
+            <tr><td class="feature-row">TripAdvisor 4.95 / 5 · 21 reviews</td><td>Independent</td></tr>
+            <tr><td class="feature-row">NIB 1102230032918</td><td>OSS-verifiable at oss.go.id</td></tr>
+            <tr><td class="feature-row">Founder: active Tourist Police officer</td><td>Detik.com press record, 2021</td></tr>
+            <tr><td class="feature-row">ISIC Student Tours</td><td>Provider ID 259268 — isic.org verifiable</td></tr>
+            <tr><td class="feature-row">Founded 2015</td><td>Booking.com 2015 award · Stefan Loose 2018, p. 287</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="security-note" style="color:rgba(255,255,255,0.6);">JVTO does not ask for CVV codes, OTP codes, or online banking passwords via chat or email. Pay only via the official JVTO website, listed bank accounts, or confirmed WhatsApp +62 822 4478 8833.</p>
+    </div>
+  </section>
+
+  <section class="bg-off section stack stack-end">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">§ 06</span>
+        <h2 class="section-title">Book direct — <span class="accent-orange">no agency fees.</span></h2>
+        <span class="section-meta">Four steps</span>
+      </div>
+      <div class="booking-grid">
+        <ol class="steps">
+          <li><div><h4>Message us</h4><p>WhatsApp +62 822 4478 8833 with your dates, group size, preferred package, and Bali pick-up location.</p></div></li>
+          <li><div><h4>Get a price confirmation</h4><p>You receive a per-person price per the table for your group size — no hidden local payments.</p></div></li>
+          <li><div><h4>Pay a 20% deposit</h4><p>Confirm the booking with a 20% deposit via secure JVTO checkout (card only).</p></div></li>
+          <li><div><h4>Receive your e-voucher</h4><p>Full trip details plus a pre-trip guide. The voucher is your binding booking reference.</p></div></li>
+        </ol>
+        <div>
+          <div class="data-box" style="grid-template-columns:1fr 1fr;">
+            <div><div class="k">Deposit</div><div class="v">20% of total · card only</div></div>
+            <div><div class="k">Balance deadline</div><div class="v">Card 5 days before · wire/Wise 3 days before Day 1</div></div>
+            <div><div class="k">Cancel ≥ 48h before</div><div class="v">100% → Lifetime Travel Credit (no expiry, transferable)</div></div>
+            <div><div class="k">Cancel &lt; 48h before</div><div class="v">Forfeited · no Travel Credit</div></div>
+          </div>
+          <div class="callout"><strong>Student pricing</strong> is available for verified ISIC cardholders (Provider ID 259268). Ask at booking, or see <a href="isic-student-package.html" class="accent-orange" style="font-weight:600;">student packages →</a></div>
+          <div class="callout"><strong>Group incentive</strong> (direct bookings only): 18 paying guests → 1 free place · 35 paying → 2 free places · 50 paying → 3 free places + 5% group discount.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <div class="container">
+      <h2>Plan your <span class="accent-orange">trip from Bali.</span></h2>
+      <div class="ctas">
+        <a class="primary" href="contact.html">Contact the team <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="ghost" href="tours.html">View all routes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">JVTO</div>
+          <p>Private volcano tours in Java featuring Bromo, Ijen, and more. Expert guides, verifiable credentials, unforgettable adventures.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a class="social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a class="social-btn" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="tours.html">All Tours</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="isic-student-package.html">Student Tours</a></li>
+            <li><a href="why-jvto.html">Why JVTO</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">+62 822 4478 8833</a></li>
+            <li><a href="contact.html">hello@javavolcano-touroperator.com</a></li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Jl. Khairil Anwar No.102A,<br />Bondowoso, East Java 68214</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Verified</h4>
+          <ul>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">PT Java Volcano Rendezvous</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">NIB 1102230032918</li>
+            <li style="color:rgba(255,255,255,0.55); font-weight:300;">Trustpilot 4.8 / 5 (51 reviews)</li>
+            <li><a href="verify-jvto.html">→ Open proof library</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2026 PT Java Volcano Rendezvous · All rights reserved · NIB 1102230032918</small>
+        <div class="footer-legal">
+          <a href="policy-privacy.html">Privacy</a>
+          <a href="policy.html">Terms</a>
+          <a href="policy-booking-payment-cancellation.html">Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab" href="contact.html" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.4-1.1c-.3-.1-.7-.1-.9.2l-.7.9c-.1.2-.4.2-.6.1-.8-.4-2.4-1.8-2.8-2.6-.1-.2-.1-.4.1-.6l.7-.8c.2-.2.2-.5.1-.8l-1-2.5c-.2-.5-.7-.6-1.1-.4-1.1.6-1.8 1.7-1.7 2.9.1 2.7 3.6 6.2 6.3 6.5 1.2.1 2.4-.6 2.9-1.7.2-.5 0-.9-.4-1.1z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.2-1.4c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3.1-.2-.3C4.1 15 3.7 13.5 3.7 12 3.7 7.5 7.5 3.7 12 3.7s8.3 3.8 8.3 8.3-3.8 8.2-8.3 8.2z"/></svg>
+  </a>
+  <div id="tweaks-root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+</body>
+</html>
