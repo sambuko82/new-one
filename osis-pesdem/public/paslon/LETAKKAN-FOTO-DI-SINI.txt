@@ -1,0 +1,8 @@
+Letakkan foto pasangan calon di folder ini dengan nama PERSIS:
+
+  01.jpg  → PASLON 01 (Aura & Khaulah)   = foto PERTAMA  (seragam SMP putih biru)
+  02.jpg  → PASLON 02 (Kinara & Bilal)   = foto KETIGA   (jas almamater)
+  03.jpg  → PASLON 03 (Aisy & Tedy)      = foto KEDUA    (seragam Pramuka)
+
+Rasio ideal 4:3 (landscape) atau potret dengan wajah di bagian atas.
+Alternatif tanpa deploy ulang: Panel Panitia → "Pengaturan & Unduh" → "Ganti foto".
