@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:artifact": "vite build -c vite.artifact.config.js && node scripts/inline-artifact.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.118.0",

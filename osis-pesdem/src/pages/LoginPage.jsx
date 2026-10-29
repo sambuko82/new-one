@@ -15,6 +15,21 @@ export default function LoginPage() {
   const [busy, setBusy] = useState(false)
 
   if (isAdmin) return <Navigate to="/admin" replace />
+  if (mode === 'artifact')
+    return (
+      <div className="grid min-h-screen place-items-center px-4 py-10">
+        <div className="w-full max-w-md rounded-3xl border border-white/10 bg-navy-800/70 p-6 text-center">
+          <Logo className="mx-auto h-16 w-16" />
+          <h1 className="mt-4 font-display text-lg font-bold text-white">Panel Panitia</h1>
+          <p className="mt-2 text-sm text-white/70">
+            Panel ini otomatis terbuka untuk akun claude.ai <b className="text-white">pemilik</b> atau <b className="text-white">Editor</b> artefak ini. Akun Anda saat ini hanya bisa melihat hasil.
+          </p>
+          <Link to="/" className="btn-gold mt-5 inline-block">
+            Lihat Dashboard Hasil
+          </Link>
+        </div>
+      </div>
+    )
 
   const submit = async (e) => {
     e.preventDefault()

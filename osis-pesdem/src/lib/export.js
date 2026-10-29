@@ -3,6 +3,9 @@ import autoTable from 'jspdf-autotable'
 import * as XLSX from 'xlsx'
 import { APP_TITLE, APP_SLOGAN, ACTION_LABELS } from './constants'
 import { fmt, fmtPct, fmtTime } from './election'
+import { saveFile } from './artifactApi'
+
+const inArtifact = import.meta.env.VITE_BACKEND === 'artifact'
 
 const stamp = () => {
   const d = new Date()
@@ -87,7 +90,8 @@ export function exportPDF(results, logs, candidates) {
     doc.text(`Halaman ${i} dari ${pages}`, W - 40, H - 20, { align: 'right' })
     doc.text('Tanda tangan Ketua Panitia: ____________________', 40, H - 20)
   }
-  doc.save(`hasil-pesdem-osis-${stamp()}.pdf`)
+  const name = `hasil-pesdem-osis-${stamp()}.pdf`
+  return inArtifact ? saveFile(name, doc.output('arraybuffer')) : doc.save(name)
 }
 
 export function exportExcel(results, logs, candidates) {
@@ -122,5 +126,6 @@ export function exportExcel(results, logs, candidates) {
   ws2['!cols'] = [{ wch: 24 }, { wch: 10 }, { wch: 12 }, { wch: 10 }, { wch: 9 }, { wch: 9 }, { wch: 28 }, { wch: 40 }]
   XLSX.utils.book_append_sheet(wb, ws2, 'Riwayat')
 
-  XLSX.writeFile(wb, `hasil-pesdem-osis-${stamp()}.xlsx`)
+  const name = `hasil-pesdem-osis-${stamp()}.xlsx`
+  return inArtifact ? saveFile(name, XLSX.write(wb, { type: 'array', bookType: 'xlsx' })) : XLSX.writeFile(wb, name)
 }

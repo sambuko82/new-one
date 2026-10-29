@@ -19,8 +19,14 @@ export default function ResultsHidden({ settings, candidates, large = false }) {
   return (
     <div className="flex flex-col gap-6">
       <div className="mx-auto max-w-2xl rounded-3xl border border-gold-400/40 bg-gold-500/10 p-6 text-center">
-        <p className={`font-display font-extrabold text-gold-300 ${large ? 'text-4xl' : 'text-2xl'}`}>🔒 Hasil belum ditampilkan</p>
-        <p className={`mt-2 text-white/80 ${large ? 'text-xl' : 'text-sm'}`}>Panitia sedang melakukan penghitungan suara. Hasil akan muncul otomatis di layar ini tanpa perlu refresh.</p>
+        <p className={`font-display font-extrabold text-gold-300 ${large ? 'text-4xl' : 'text-2xl'}`}>
+          {settings?._noAccess ? '🔑 Masuk untuk melihat hasil live' : '🔒 Hasil belum ditampilkan'}
+        </p>
+        <p className={`mt-2 text-white/80 ${large ? 'text-xl' : 'text-sm'}`}>
+          {settings?._noAccess
+            ? 'Hasil live hanya bisa dimuat setelah Anda masuk ke akun claude.ai. Setelah masuk, muat ulang halaman ini.'
+            : 'Panitia sedang melakukan penghitungan suara. Hasil akan muncul otomatis di layar ini tanpa perlu refresh.'}
+        </p>
         {settings?.show_results_at && (
           <p className={`mt-4 text-white ${large ? 'text-3xl' : 'text-lg'}`}>
             Ditampilkan dalam <Countdown target={settings.show_results_at} />

@@ -4,8 +4,11 @@
 import { supabase, isSupabaseConfigured } from './supabase'
 import { DEFAULT_CANDIDATES } from './constants'
 import { resizeImage } from './image'
+import { artifactApi } from './artifactApi'
 
-export const mode = isSupabaseConfigured ? 'supabase' : 'demo'
+// VITE_BACKEND=artifact → versi artefak claude.ai (penyimpanan bersama)
+const isArtifact = import.meta.env.VITE_BACKEND === 'artifact'
+export const mode = isArtifact ? 'artifact' : isSupabaseConfigured ? 'supabase' : 'demo'
 
 /* ======================================================================
  * SUPABASE BACKEND
@@ -287,4 +290,4 @@ const demoApi = {
   },
 }
 
-export const api = isSupabaseConfigured ? supabaseApi : demoApi
+export const api = isArtifact ? artifactApi : isSupabaseConfigured ? supabaseApi : demoApi

@@ -168,7 +168,7 @@ function SettingsPanel() {
   const exporting = async (kind) => {
     try {
       const [logs, { exportExcel, exportPDF }] = await Promise.all([api.fetchLogs(10000), import('../lib/export')])
-      kind === 'pdf' ? exportPDF(results, logs, candidates) : exportExcel(results, logs, candidates)
+      await (kind === 'pdf' ? exportPDF(results, logs, candidates) : exportExcel(results, logs, candidates))
     } catch (e) {
       toast(friendlyError(e), 'error')
     }
@@ -292,9 +292,11 @@ export default function AdminPage() {
             <Link to="/" className="btn-ghost">
               Dashboard
             </Link>
-            <button onClick={signOut} className="btn-ghost" title={user?.email}>
-              Keluar
-            </button>
+            {mode !== 'artifact' && (
+              <button onClick={signOut} className="btn-ghost" title={user?.email}>
+                Keluar
+              </button>
+            )}
           </>
         }
       />
